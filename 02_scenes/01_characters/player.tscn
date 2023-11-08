@@ -1,4 +1,25 @@
-[gd_scene format=3 uid="uid://d1o8paby40p2l"]
+[gd_scene load_steps=6 format=3 uid="uid://d1o8paby40p2l"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
+[ext_resource type="Texture2D" uid="uid://lafw5wdrabgo" path="res://01_assets/01_sprites/player.png" id="2_o0mks"]
+[ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/health_component.tscn" id="3_jo3xj"]
+[ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_p68kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hro4l"]
+size = Vector2(32, 32)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_kxc5o")
 metadata/_edit_group_ = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_o0mks")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_jo3xj")]
+
+[node name="hitboxComponent" parent="." node_paths=PackedStringArray("health_component", "collition_shape") instance=ExtResource("4_p68kg")]
+health_component = NodePath("../HealthComponent")
+collition_shape = NodePath("../collisionShape")
+
+[node name="collisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hro4l")
