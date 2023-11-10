@@ -1,23 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb3xadn0nffm0"]
+[gd_scene load_steps=6 format=3 uid="uid://wveguagwuor2"]
 
-[ext_resource type="PackedScene" uid="uid://d1v7jas5t343s" path="res://02_scenes/05_components/disntance_enemy.tscn" id="1_73evs"]
 [ext_resource type="Texture2D" uid="uid://bqu7avl5bhxpc" path="res://01_assets/01_sprites/enemy.png" id="1_w3yix"]
+[ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/health_component.tscn" id="2_g7oyf"]
+[ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="3_76ssk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_etdvk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxfse"]
 size = Vector2(32, 32)
 
-[node name="enemy" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqlh0"]
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="image" type="Sprite2D" parent="."]
 texture = ExtResource("1_w3yix")
 
-[node name="disntance_enemy" parent="." instance=ExtResource("1_73evs")]
+[node name="HealthComponent" parent="." instance=ExtResource("2_g7oyf")]
 
-[node name="HitboxComponent" parent="disntance_enemy" index="1" node_paths=PackedStringArray("collition_shape")]
-collition_shape = NodePath("CollisionShape2D")
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_76ssk")]
+collision_layer = 2
+collision_mask = 13
+health_component = NodePath("../HealthComponent")
 
-[node name="enemy_collision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_etdvk")
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_nxfse")
 
-[editable path="disntance_enemy"]
-[editable path="disntance_enemy/BulletComponent"]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_pqlh0")
+
+[editable path="HitboxComponent"]

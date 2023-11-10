@@ -12,12 +12,11 @@ var turn_velocity := Vector2.ZERO
 func _physics_process(delta: float) ->  void:
 	# Obtenemos la direccion del personaje
 	var direction = Input.get_vector('move_left',"move_right",'move_up','move_down')
-	
 	# Obtenemos la velocidad maxima del jugador en la direccion del input
 	desired_velocity = direction * max_speed
 	# Restamos a la velocidad y direccion deseada la velocidad actual del jugador.
 	turn_velocity = desired_velocity - velocity
-	print(turn_velocity)
+#	print(turn_velocity)
 	velocity += turn_velocity * drag
 	
 	move_and_slide()

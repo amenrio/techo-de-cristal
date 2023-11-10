@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://02_scenes/05_components/HitboxComponent.gd" id="1_sg7tu"]
 
 [node name="HitboxComponent" type="Area2D" node_paths=PackedStringArray("health_component")]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_sg7tu")
 health_component = NodePath("")
 

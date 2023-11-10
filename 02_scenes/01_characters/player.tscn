@@ -1,25 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1o8paby40p2l"]
+[gd_scene load_steps=9 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="Texture2D" uid="uid://lafw5wdrabgo" path="res://01_assets/01_sprites/player.png" id="2_o0mks"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/health_component.tscn" id="3_jo3xj"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_p68kg"]
+[ext_resource type="PackedScene" uid="uid://c0vpl5fyo46cy" path="res://02_scenes/05_components/weapon.tscn" id="5_hgwwk"]
+[ext_resource type="Texture2D" uid="uid://dkn3dkg8u4nsp" path="res://01_assets/01_sprites/weapon01.png" id="6_exgfl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hro4l"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rujx5"]
 size = Vector2(32, 32)
 
 [node name="player" type="CharacterBody2D"]
+collision_mask = 22
 script = ExtResource("1_kxc5o")
-metadata/_edit_group_ = true
+
+[node name="weapon" parent="." instance=ExtResource("5_hgwwk")]
+weapon_sprite = ExtResource("6_exgfl")
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_o0mks")
 
+[node name="player_collitionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_js4q1")
+
 [node name="HealthComponent" parent="." instance=ExtResource("3_jo3xj")]
 
-[node name="hitboxComponent" parent="." node_paths=PackedStringArray("health_component", "collition_shape") instance=ExtResource("4_p68kg")]
-health_component = NodePath("../HealthComponent")
-collition_shape = NodePath("../collisionShape")
+[node name="HitboxComponent" parent="." instance=ExtResource("4_p68kg")]
 
-[node name="collisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hro4l")
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_rujx5")
+
+[editable path="HitboxComponent"]

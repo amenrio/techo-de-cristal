@@ -7,6 +7,8 @@
 radius = 8.0
 
 [node name="BulletComponent" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
 script = ExtResource("1_0b4wc")
 sprite = ExtResource("2_idqac")
 
@@ -15,4 +17,4 @@ sprite = ExtResource("2_idqac")
 [node name="collition_shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0g3du")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
