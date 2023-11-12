@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lafw5wdrabgo" path="res://01_assets/01_sprites/player.png" id="2_o0mks"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/health_component.tscn" id="3_jo3xj"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_p68kg"]
-[ext_resource type="PackedScene" uid="uid://c0vpl5fyo46cy" path="res://02_scenes/05_components/weapon.tscn" id="5_hgwwk"]
+[ext_resource type="PackedScene" uid="uid://dpx4iglkyvp0s" path="res://02_scenes/05_components/weapon.tscn" id="5_hgwwk"]
 [ext_resource type="Texture2D" uid="uid://dkn3dkg8u4nsp" path="res://01_assets/01_sprites/weapon01.png" id="6_exgfl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]

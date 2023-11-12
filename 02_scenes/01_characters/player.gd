@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var max_speed := 500
 # Coeficiente de 'rozamiento', utilizado para suavizar los cambios de dirección
 @export_range(0,10, 0.1) var drag := 0.15
+@onready var weapon = $weapon
 
 var desired_velocity := Vector2.ZERO
 
@@ -20,4 +21,4 @@ func _physics_process(delta: float) ->  void:
 	velocity += turn_velocity * drag
 	
 	move_and_slide()
-	look_at(get_global_mouse_position())
+	weapon.look_at(get_global_mouse_position())

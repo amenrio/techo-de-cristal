@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0vpl5fyo46cy"]
+[gd_scene load_steps=3 format=3 uid="uid://dpx4iglkyvp0s"]
 
 [ext_resource type="Script" path="res://02_scenes/05_components/weapon.gd" id="1_4jilj"]
 [ext_resource type="PackedScene" uid="uid://djsscuerlbs64" path="res://02_scenes/05_components/bullet_component.tscn" id="2_pgto5"]

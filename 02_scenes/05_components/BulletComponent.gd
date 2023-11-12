@@ -2,8 +2,10 @@ extends Area2D
 class_name BulletComponent
 
 @export var damage: float = 10.0
-@export var bullet_speed: float = 100
 @export var sprite: Texture2D
+
+var bullet_speed: float
+var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,3 +18,6 @@ func _on_area_entered(area):
 	if area.has_method('damage'):
 		print("Has method damage")
 		area.damage(10)
+
+func _process(delta):
+	position += velocity.normalized() * delta * bullet_speed
