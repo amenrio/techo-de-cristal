@@ -2,9 +2,12 @@ extends Node2D
 
 @export var weapon_sprite: Texture2D
 @export var bulletSpeed: float = 200
-@onready var level = get_parent().get_node("/root/levelAlpha")
-@onready var bulletSpawn = get_parent().get_node("/root/levelAlpha/player/weapon/bullet_spawn_point")
-@onready var bullet_scene = load("res://02_scenes/05_components/bullet_component.tscn")
+@export var bullet_scene: PackedScene
+
+@onready var level = get_tree().current_scene
+
+@onready var bulletSpawn = $bullet_spawn_point
+
 signal fire
 
 # Called when the node enters the scene tree for the first time.
