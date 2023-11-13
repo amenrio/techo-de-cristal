@@ -5,12 +5,13 @@ extends CharacterBody2D
 # Coeficiente de 'rozamiento', utilizado para suavizar los cambios de dirección
 @export_range(0,10, 0.1) var drag := 0.15
 @onready var weapon = $weapon
+@onready var health_component = $HealthComponent
 
 var desired_velocity := Vector2.ZERO
 
 var turn_velocity := Vector2.ZERO
-
-func _physics_process(delta: float) ->  void:
+	
+func _physics_process(_delta: float) ->  void:
 	# Obtenemos la direccion del personaje
 	var direction = Input.get_vector('move_left',"move_right",'move_up','move_down')
 	# Obtenemos la velocidad maxima del jugador en la direccion del input

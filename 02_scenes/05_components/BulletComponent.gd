@@ -1,5 +1,5 @@
 extends Area2D
-class_name BulletComponent
+
 
 @export var damage: float = 10.0
 @export var sprite: Texture2D
@@ -17,7 +17,8 @@ func _on_area_entered(area):
 	print(area)
 	if area.has_method('damage'):
 		print("Has method damage")
-		area.damage(10)
+		area.damage(damage)
+	queue_free()
 
 func _process(delta):
 	position += velocity.normalized() * delta * bullet_speed

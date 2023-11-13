@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://csgvbo4n46gvx"]
+[gd_scene load_steps=10 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="Texture2D" uid="uid://lafw5wdrabgo" path="res://01_assets/01_sprites/player.png" id="2_o0mks"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/health_component.tscn" id="3_jo3xj"]
+[ext_resource type="PackedScene" uid="uid://djsscuerlbs64" path="res://02_scenes/05_components/bullet_component.tscn" id="4_8e3dc"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_p68kg"]
-[ext_resource type="PackedScene" uid="uid://dpx4iglkyvp0s" path="res://02_scenes/05_components/weapon.tscn" id="5_hgwwk"]
+[ext_resource type="PackedScene" uid="uid://dpx4iglkyvp0s" path="res://02_scenes/02_objects/weapon.tscn" id="5_hgwwk"]
 [ext_resource type="Texture2D" uid="uid://dkn3dkg8u4nsp" path="res://01_assets/01_sprites/weapon01.png" id="6_exgfl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]
@@ -12,12 +13,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rujx5"]
 size = Vector2(32, 32)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 22
 script = ExtResource("1_kxc5o")
 
 [node name="weapon" parent="." instance=ExtResource("5_hgwwk")]
 weapon_sprite = ExtResource("6_exgfl")
+bullet_scene = ExtResource("4_8e3dc")
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_o0mks")
@@ -27,10 +29,18 @@ position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_js4q1")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_jo3xj")]
+MAX_HEALTH = 300.0
 
-[node name="HitboxComponent" parent="." instance=ExtResource("4_p68kg")]
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_p68kg")]
+collision_layer = 1
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("RectangleShape2D_rujx5")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[editable path="HealthComponent"]
 [editable path="HitboxComponent"]

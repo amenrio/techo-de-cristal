@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://do7t4aw2geyt5"]
+
+[ext_resource type="Script" path="res://02_scenes/02_objects/spawner.gd" id="1_irp44"]
+[ext_resource type="PackedScene" uid="uid://wveguagwuor2" path="res://02_scenes/01_characters/enemy01.tscn" id="2_genf3"]
+
+[node name="spawner" type="Node2D"]
+script = ExtResource("1_irp44")
+enemies = Array[PackedScene]([ExtResource("2_genf3")])
+
+[node name="spawn_area" type="ReferenceRect" parent="."]
+offset_left = 110.0
+offset_top = 17.0
+offset_right = 410.0
+offset_bottom = 317.0
+
+[node name="spawn_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]

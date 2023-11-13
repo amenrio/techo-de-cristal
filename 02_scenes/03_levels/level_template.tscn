@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtk4j62brbjok"]
+[gd_scene load_steps=3 format=3 uid="uid://dderw5xslumkm"]
 
-[ext_resource type="PackedScene" uid="uid://d1o8paby40p2l" path="res://02_scenes/01_characters/player.tscn" id="1_e7f8m"]
-[ext_resource type="PackedScene" uid="uid://cb3xadn0nffm0" path="res://02_scenes/01_characters/enemy01.tscn" id="2_ak7w1"]
+[ext_resource type="PackedScene" uid="uid://csgvbo4n46gvx" path="res://02_scenes/01_characters/player.tscn" id="1_e7f8m"]
+[ext_resource type="PackedScene" uid="uid://do7t4aw2geyt5" path="res://02_scenes/02_objects/spawner.tscn" id="2_wjpsb"]
 
 [node name="levelTemplate" type="Node2D"]
 
@@ -9,4 +9,4 @@
 
 [node name="player_start" type="Marker2D" parent="."]
 
-[node name="enemy" parent="." instance=ExtResource("2_ak7w1")]
+[node name="spawner" parent="." instance=ExtResource("2_wjpsb")]

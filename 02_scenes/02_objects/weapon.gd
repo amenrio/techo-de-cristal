@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var weapon_sprite: Texture2D
-@export var bulletSpeed: float = 200
+@export var bulletSpeed: float = 500
 @export var bullet_scene: PackedScene
 
 @onready var level = get_tree().current_scene
