@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
-var speed = 100
+@export var loot: PackedScene
+var speed = 300
 var motion = Vector2(0,0)
 var go = true
 var damage = 10.0

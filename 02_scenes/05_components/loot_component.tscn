@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ll1gibctxlws"]
+
+[ext_resource type="Texture2D" uid="uid://x3abgiciceps" path="res://01_assets/01_sprites/loot01.png" id="1_k848m"]
+
+[node name="loot_component" type="Node2D"]
+
+[node name="loot_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_k848m")
+
+[node name="loot_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="loot_area"]

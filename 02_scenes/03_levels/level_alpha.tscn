@@ -14,7 +14,7 @@ dash_timeout = 2.0
 position = Vector2(980, 760)
 
 [node name="spawner" parent="." index="2"]
-position = Vector2(580, 415)
+position = Vector2(831, 388)
 
 [node name="spawn_area" parent="spawner" index="0"]
 offset_left = 0.0

@@ -29,7 +29,7 @@ position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_js4q1")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_jo3xj")]
-MAX_HEALTH = 300.0
+MAX_HEALTH = 100.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_p68kg")]
 collision_layer = 1
