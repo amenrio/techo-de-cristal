@@ -9,11 +9,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxfse"]
 size = Vector2(32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pqlh0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiprm"]
+size = Vector2(32, 32)
 
 [node name="enemy" type="CharacterBody2D"]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_kn3i3")
 
 [node name="image" type="Sprite2D" parent="."]
@@ -27,10 +28,6 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
 shape = SubResource("RectangleShape2D_nxfse")
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
-shape = SubResource("CircleShape2D_pqlh0")
-
 [node name="HealthComponent" parent="." instance=ExtResource("2_g7oyf")]
 MAX_HEALTH = 30.0
 
@@ -38,6 +35,9 @@ MAX_HEALTH = 30.0
 
 [node name="detection_radius" parent="movement_behaviour/detection_area" index="0"]
 scale = Vector2(10, 10)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tiprm")
 
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
 [connection signal="body_entered" from="movement_behaviour/detection_area" to="." method="_on_detection_area_body_entered"]
