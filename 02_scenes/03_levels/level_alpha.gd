@@ -1,7 +1,5 @@
 extends "res://02_scenes/03_levels/level_template.gd"
 
-@onready var lvl_timer = $level_timer
-@onready var timer_label = $player/Camera2D/Label
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

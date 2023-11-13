@@ -1,7 +1,10 @@
 extends Node2D
 
 # Called when the node enters the scene tree for the first time.
+
 @export var time_limit: float = 10
+
+@onready var timer_label = $player/Camera2D/Label
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
 	var player = $player
