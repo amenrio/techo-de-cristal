@@ -9,10 +9,6 @@ script = ExtResource("1_pt6n6")
 
 [node name="player" parent="." instance=ExtResource("1_e7f8m")]
 
-[node name="Label" type="Label" parent="player/Camera2D" index="0"]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="player_start" type="Marker2D" parent="."]
 
 [node name="spawner" parent="." instance=ExtResource("2_wjpsb")]

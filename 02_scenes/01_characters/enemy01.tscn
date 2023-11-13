@@ -32,6 +32,7 @@ position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_pqlh0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_g7oyf")]
+MAX_HEALTH = 30.0
 
 [node name="movement_behaviour" parent="." instance=ExtResource("4_njse5")]
 

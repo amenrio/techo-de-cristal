@@ -6,5 +6,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var string = "Time Left: %s" % lvl_timer.wait_time
-	timer_label.text = string
+#	var string = "Time Left: %s" % lvl_timer.wait_time
+#	timer_label.text = string
+	pass

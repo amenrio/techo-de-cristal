@@ -9,15 +9,17 @@ extends CharacterBody2D
 @export var dash_velocity:float=4000
 var canDash=true
 var isDashing=false
+@export var dash_timeout: float = 0.5
 var desired_velocity := Vector2.ZERO
 
 var turn_velocity := Vector2.ZERO
+
 func dash():
 	if Input.is_action_pressed('dash') and canDash:
 		velocity = velocity.normalized() * dash_velocity
 		canDash=false
 		isDashing=true
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(dash_timeout).timeout
 		isDashing=false
 		canDash=true
 		
