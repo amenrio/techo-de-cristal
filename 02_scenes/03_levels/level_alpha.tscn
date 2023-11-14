@@ -8,7 +8,7 @@ script = ExtResource("2_v0fk0")
 
 [node name="player" parent="." index="0"]
 position = Vector2(980, 760)
-dash_timeout = 2.0
+dash_timeout = 1.5
 
 [node name="player_start" parent="." index="1"]
 position = Vector2(980, 760)

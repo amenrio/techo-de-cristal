@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var dash_velocity:float=4000
 var canDash=true
 var isDashing=false
-@export var dash_timeout: float = 0.5
+@export var dash_timeout: float = 1
 var desired_velocity := Vector2.ZERO
 
 var turn_velocity := Vector2.ZERO
