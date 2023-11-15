@@ -9,7 +9,6 @@ script = ExtResource("2_v0fk0")
 [node name="player" parent="." index="0"]
 position = Vector2(980, 760)
 drag = 0.1
-dash_timeout = 1.5
 
 [node name="player_start" parent="." index="1"]
 position = Vector2(980, 760)
@@ -17,12 +16,6 @@ position = Vector2(980, 760)
 [node name="spawner" parent="." index="2"]
 position = Vector2(831, 388)
 spawn_timer = 1.0
-
-[node name="spawn_area" parent="spawner" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 300.0
-offset_bottom = 300.0
 
 [node name="level_timer" parent="." index="3"]
 wait_time = 5.0

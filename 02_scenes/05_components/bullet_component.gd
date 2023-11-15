@@ -3,11 +3,13 @@ extends Area2D
 
 @export var damage: float = 10.0
 @export var sprite: Texture2D
-var piercing: int
+var piercing: int = 0
 
 
-var bullet_speed: float
 var velocity = Vector2.ZERO
+var bullet_speed: float = 500
+var life_span:float = 0.5 # Effectively -> bullet_range
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,5 +23,7 @@ func _on_area_entered(area):
 
 func _process(delta):
 	position += velocity.normalized() * delta * bullet_speed
-	if piercing < 0:
+	life_span -= delta
+	if piercing < 0 or life_span <=0:
 		queue_free()
+	

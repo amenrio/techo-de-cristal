@@ -12,6 +12,6 @@ func setup(type, pos):
 	$image.texture = load(textures[type])
 	position = pos
 	
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	emit_signal("pickup")
 	queue_free()

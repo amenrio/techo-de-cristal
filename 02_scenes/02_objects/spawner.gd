@@ -5,7 +5,7 @@ extends Node2D
 @export var spawn_timer: float = 4.0
 @onready var current_level = get_tree().current_scene
 @onready var player = get_parent().get_node("player")
-@onready var spawn_area = $spawn_area
+@onready var spawn_area = $area
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

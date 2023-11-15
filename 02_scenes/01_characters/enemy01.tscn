@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://wveguagwuor2"]
+[gd_scene load_steps=8 format=3 uid="uid://wveguagwuor2"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy01.gd" id="1_kn3i3"]
 [ext_resource type="Texture2D" uid="uid://bqu7avl5bhxpc" path="res://01_assets/01_sprites/enemy.png" id="1_w3yix"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="2_g7oyf"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="3_76ssk"]
-[ext_resource type="PackedScene" uid="uid://2vhbmtcyircw" path="res://02_scenes/05_components/movement_behaviour.tscn" id="4_njse5"]
 [ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="6_n5ho7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxfse"]
@@ -33,16 +32,9 @@ shape = SubResource("RectangleShape2D_nxfse")
 [node name="HealthComponent" parent="." instance=ExtResource("2_g7oyf")]
 MAX_HEALTH = 30.0
 
-[node name="movement_behaviour" parent="." instance=ExtResource("4_njse5")]
-
-[node name="detection_radius" parent="movement_behaviour/detection_area" index="0"]
-scale = Vector2(10, 10)
-
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tiprm")
 
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
-[connection signal="body_entered" from="movement_behaviour/detection_area" to="." method="_on_detection_area_body_entered"]
 
 [editable path="HitboxComponent"]
-[editable path="movement_behaviour"]
