@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x3abgiciceps"
-path="res://.godot/imported/loot01.png-4ad23203f0c0c03470d0d8659eda0b14.ctex"
+uid="uid://boe50jcnqfuew"
+path="res://.godot/imported/masa.png-1e4032c97a081be16f3b3f6c0375efef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/loot01.png"
-dest_files=["res://.godot/imported/loot01.png-4ad23203f0c0c03470d0d8659eda0b14.ctex"]
+source_file="res://01_assets/01_sprites/masa.png"
+dest_files=["res://.godot/imported/masa.png-1e4032c97a081be16f3b3f6c0375efef.ctex"]
 
 [params]
 

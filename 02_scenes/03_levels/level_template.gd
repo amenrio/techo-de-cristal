@@ -11,6 +11,5 @@ func _ready():
 	var player_start = $player_start
 	player.position = player_start.position
 
-
 func _on_level_timer_timeout():
 	get_tree().paused = true# Replace with function body.

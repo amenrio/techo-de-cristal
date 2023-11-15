@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ll1gibctxlws"]
+
+[ext_resource type="Script" path="res://02_scenes/05_components/pickup_component.gd" id="1_7hywk"]
+[ext_resource type="Texture2D" uid="uid://x3abgiciceps" path="res://01_assets/01_sprites/citrico.png" id="2_yte36"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvoxf"]
+radius = 48.0
+
+[node name="pickup_component" type="Area2D"]
+script = ExtResource("1_7hywk")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_yte36")
+
+[node name="collision_zone" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hvoxf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

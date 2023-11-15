@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-@onready var player = get_tree().get_nodes_in_group("player")[0]
 @export var loot: PackedScene
+@onready var player = get_tree().get_nodes_in_group("player")[0]
+@onready var health_component = $HealthComponent
+
 var speed = 300
 var motion = Vector2(0,0)
 var go = true
 var damage = 10.0
 
+	
 func _physics_process(delta):
 	if go == true:
 		velocity = position.direction_to(player.position) * speed

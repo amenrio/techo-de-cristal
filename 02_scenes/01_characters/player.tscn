@@ -15,6 +15,7 @@ size = Vector2(32, 32)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 22
+motion_mode = 1
 script = ExtResource("1_kxc5o")
 
 [node name="weapon" parent="." instance=ExtResource("5_hgwwk")]

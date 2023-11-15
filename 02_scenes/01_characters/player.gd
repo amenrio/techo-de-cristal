@@ -3,10 +3,10 @@ extends CharacterBody2D
 # Velocidad de movimiento del jugador
 @export var max_speed := 500
 # Coeficiente de 'rozamiento', utilizado para suavizar los cambios de dirección
-@export_range(0,10, 0.1) var drag := 0.15
+@export_range(0.100, 0.250) var drag:= 0.15
 @onready var weapon = $weapon
 @onready var health_component = $HealthComponent
-@export var dash_velocity:float=4000
+@export var dash_velocity:float=2000
 var canDash=true
 var isDashing=false
 @export var dash_timeout: float = 1

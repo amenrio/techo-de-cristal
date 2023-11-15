@@ -13,10 +13,10 @@ collision_mask = 10
 script = ExtResource("1_cridv")
 sprite = ExtResource("2_8eeya")
 
-[node name="bullet_sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("3_mjln5")
 
-[node name="collition_shape" type="CollisionShape2D" parent="."]
+[node name="collision_zone" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0g3du")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

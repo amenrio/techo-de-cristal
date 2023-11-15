@@ -6,14 +6,15 @@
 [node name="spawner" type="Node2D"]
 script = ExtResource("1_irp44")
 enemies = Array[PackedScene]([ExtResource("2_genf3")])
+spawn_timer = 2.0
 
-[node name="spawn_area" type="ReferenceRect" parent="."]
+[node name="area" type="ReferenceRect" parent="."]
 offset_left = 110.0
 offset_top = 17.0
 offset_right = 410.0
 offset_bottom = 317.0
 
-[node name="spawn_timer" type="Timer" parent="."]
+[node name="timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="timer" to="." method="_on_spawn_timer_timeout"]
