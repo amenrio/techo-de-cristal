@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1v7jas5t343s"]
+
+[ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="1_x0pv1"]
+[ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="2_di31e"]
+[ext_resource type="PackedScene" uid="uid://djsscuerlbs64" path="res://02_scenes/05_components/bullet_component.tscn" id="3_sqq0v"]
+
+[node name="disntance_enemy" type="Node2D"]
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_x0pv1")]
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_di31e")]
+
+[node name="BulletComponent" parent="." instance=ExtResource("3_sqq0v")]
