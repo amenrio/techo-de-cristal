@@ -9,7 +9,7 @@ func _on_b_creditos_pressed():
 
 
 func _on_b_controles_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://02_scenes/04_screens/controls_screen.tscn")
 
 
 func _on_b_sair_pressed():
