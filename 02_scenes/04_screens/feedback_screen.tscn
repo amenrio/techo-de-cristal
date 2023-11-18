@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp42mvuqc64y0"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/feedback_screen.gd" id="1_octdh"]
+
+[node name="feedbackScreen" type="Node2D"]
+script = ExtResource("1_octdh")

@@ -151,3 +151,6 @@ offset_top = 23.0
 offset_right = 408.0
 offset_bottom = 49.0
 text = "150"
+
+[connection signal="pressed" from="bResultados" to="." method="_on_b_resultados_pressed"]
+[connection signal="pressed" from="bPausa" to="." method="_on_b_pausa_pressed"]
