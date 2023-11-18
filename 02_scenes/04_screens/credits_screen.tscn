@@ -22,7 +22,7 @@ theme_override_font_sizes/font_size = 43
 text = "Creditos"
 horizontal_alignment = 1
 
-[node name="bCreditos" type="Button" parent="."]
+[node name="bCreditosAtras" type="Button" parent="."]
 offset_left = 43.0
 offset_top = 413.0
 offset_right = 116.0
@@ -41,3 +41,5 @@ text = "Ana	                 Luis Carlos
 Sara                       Amaya
 Pablo                     Andrés"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="bCreditosAtras" to="." method="_on_b_creditos_atras_pressed"]
