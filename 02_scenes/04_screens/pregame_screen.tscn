@@ -51,3 +51,5 @@ offset_top = 8.0
 offset_right = 230.0
 offset_bottom = 47.0
 text = "\"Lembra, este plato faise así\""
+
+[connection signal="pressed" from="bContinuar" to="." method="_on_b_continuar_pressed"]
