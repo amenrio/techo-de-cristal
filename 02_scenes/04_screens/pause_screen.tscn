@@ -12,15 +12,14 @@ offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="nombreTitulo" type="Label" parent="."]
-offset_left = 109.0
-offset_top = 68.0
-offset_right = 276.0
-offset_bottom = 192.0
+offset_left = 235.0
+offset_top = 103.0
+offset_right = 402.0
+offset_bottom = 227.0
 theme = SubResource("Theme_r84ws")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 43
-text = "Titulo
-do Xogo"
+text = "Pausa"
 horizontal_alignment = 1
 
 [node name="bMenu" type="Button" parent="."]
@@ -31,10 +30,10 @@ offset_bottom = 271.0
 text = "Menu"
 
 [node name="bVolver" type="Button" parent="."]
-offset_left = 278.0
-offset_top = 297.0
-offset_right = 351.0
-offset_bottom = 328.0
+offset_left = 279.0
+offset_top = 201.0
+offset_right = 352.0
+offset_bottom = 232.0
 text = "Volver"
 
 [connection signal="pressed" from="bMenu" to="." method="_on_b_menu_pressed"]
