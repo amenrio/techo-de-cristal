@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuk24j5wdg104"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_iwvct"]
+
+[sub_resource type="Theme" id="Theme_u2luw"]
+
+[node name="controlsScreen" type="Node2D"]
+script = ExtResource("1_iwvct")
+
+[node name="fondo" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+metadata/_edit_use_anchors_ = true
+
+[node name="nombreCtr" type="Label" parent="."]
+offset_left = 241.0
+offset_top = 38.0
+offset_right = 408.0
+offset_bottom = 162.0
+theme = SubResource("Theme_u2luw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "Controles"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="bControlesAtras" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 413.0
+offset_right = 116.0
+offset_bottom = 444.0
+text = "Atrás"
+metadata/_edit_use_anchors_ = true
+
+[node name="textoCtr" type="Label" parent="."]
+offset_left = 129.0
+offset_top = 126.0
+offset_right = 503.0
+offset_bottom = 345.0
+theme = SubResource("Theme_u2luw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "moverse"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="bControlesAtras" to="." method="_on_b_controles_atras_pressed"]
