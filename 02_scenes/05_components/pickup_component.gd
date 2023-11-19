@@ -25,10 +25,6 @@ var special_list = ['2shot','3shot','health']
 
 func _ready():
 	$sprite.texture=load(textures[_name])
-	var special_chance = randi_range(1,100)
-	if special_chance <= 100:
-		_special_drop=true
-		_special_type = special_list[special_chance % 2]
 
 func _on_body_entered(body):
 	if body.is_in_group('player'):

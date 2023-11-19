@@ -19,11 +19,14 @@ func pickup_system(enemy):
 	call_deferred("add_child",pick_up)
 	var special_chance = randi_range(1,100)
 	if special_chance <= 15:
-		var extra_pickup = enemy.loot.instantiate()
-		extra_pickup._name = special_drops[randi_range(0,2)]
-		extra_pickup.position = new_position + Vector2(32,32)
-		call_deferred("add_child",extra_pickup)
-		print("Extra_item {type}".format({'type':extra_pickup._name}))
+		extra_drop(enemy,new_position)
+		
+func extra_drop(enemy,new_position):
+	var extra_pickup = enemy.loot.instantiate()
+	extra_pickup._name = special_drops[randi_range(0,2)]
+	extra_pickup.position = new_position + Vector2(32,32)
+	call_deferred("add_child",extra_pickup)
+	print("Extra_item {type}".format({'type':extra_pickup._name}))
 
 func _on_level_timer_timeout():
 	get_tree().paused = true# Replace with function body.
