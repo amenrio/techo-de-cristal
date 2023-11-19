@@ -5,8 +5,6 @@ signal pickup
 @export var _class:='ingredients'
 var _name:String
 
-var _special_drop=false
-var _special_type:String
 
 var textures = {
 	'chocolate': 'res://01_assets/01_sprites/chocolate.png',
