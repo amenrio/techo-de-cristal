@@ -1,0 +1,36 @@
+{
+	"hojaldre_chocolate": {
+		"name": "Hojaldre de Chocolate",
+		"ingredients": [
+			"masa",
+			"masa",
+			"chocolate"
+		],
+		"timer": 45
+	},
+	"churros_chocolate": {
+		"name": "Churros con Chocolate",
+		"ingredients": [
+			"chocolate",
+			"masa"
+		],
+		"timer": 30
+	},
+	"gofres_naranja": {
+		"name": "Gofres con Naranja",
+		"ingredients": [
+			"masa",
+			"citrico"
+		],
+		"timer": 30
+	},
+	"gofres_naranja_chocolate": {
+		"name": "Gofres con Naranja y Chocolate",
+		"ingredients": [
+			"masa",
+			"citrico",
+			"chocolate"
+		],
+		"timer": 45
+	}
+}

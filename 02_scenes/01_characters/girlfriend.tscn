@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5cw65yv7hyj"]
+
+[ext_resource type="Script" path="res://02_scenes/01_characters/girlfriend.gd" id="1_cwfag"]
+[ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="1_q40ly"]
+[ext_resource type="Texture2D" uid="uid://cf87snbh57h3p" path="res://01_assets/01_sprites/girlfriend.png" id="2_jpgmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3twd"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aj111"]
+radius = 141.004
+
+[node name="girlfriend" type="Area2D" groups=["girlfriend"]]
+collision_layer = 32
+script = ExtResource("1_cwfag")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("1_q40ly")]
+collision_layer = 32
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_r3twd")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_jpgmb")
+
+[node name="interaction_zone" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aj111")
+
+[editable path="HitboxComponent"]
