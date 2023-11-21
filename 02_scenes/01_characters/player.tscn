@@ -55,6 +55,7 @@ health_component = NodePath("../HealthComponent")
 shape = SubResource("RectangleShape2D_rujx5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.35, 1.35)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
