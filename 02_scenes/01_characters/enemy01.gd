@@ -17,9 +17,10 @@ func _ready():
 	$sprite.texture = load(actual_texture)
 	
 func _physics_process(_delta):
-	if following_player == true:
-		velocity = position.direction_to(player_instance.position) * max_speed
-	move_and_slide()
+	pass
+#	if following_player == true:
+#		velocity = position.direction_to(player_instance.position) * max_speed
+#	move_and_slide()
 
 func _on_hitbox_component_area_entered( area):
 	if area.has_method("damage"):

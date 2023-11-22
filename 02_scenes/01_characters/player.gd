@@ -23,8 +23,8 @@ var turn_velocity := Vector2.ZERO
 var objetivos:Array
 var inventory:Dictionary = {
 	"ingredients":{},
-	"modifiers":[],
-	"weapons":[]
+	"modifiers":{},
+	"weapons":{}
 	}
 	
 func talk_to_girlfriend():

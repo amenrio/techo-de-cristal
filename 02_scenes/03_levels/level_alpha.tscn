@@ -32,13 +32,13 @@ drag = 0.1
 position = Vector2(980, 760)
 
 [node name="spawner" parent="." index="3"]
-position = Vector2(831, 388)
+position = Vector2(955, 131)
 enemies = ExtResource("3_u7yq8")
 enemy_names = Array[String](["chocolate", "citrico", "masa"])
 spawn_timer = 1.0
 
 [node name="timer" parent="spawner" index="1"]
-wait_time = 4.0
+wait_time = 0.5
 
 [node name="level_timer" parent="." index="4"]
 wait_time = 5.0

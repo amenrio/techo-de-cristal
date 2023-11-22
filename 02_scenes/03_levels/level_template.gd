@@ -17,12 +17,13 @@ func pickup_system(enemy):
 	pick_up._name = enemy._name
 	pick_up.position = new_position
 	call_deferred("add_child",pick_up)
-	var special_chance = randi_range(1,100)
-	if special_chance <= 15:
-		extra_drop(enemy,new_position)
-		
+#	var special_chance = randi_range(1,100)
+#	if special_chance <= 15:
+#		extra_drop(enemy,new_position)
+#
 func extra_drop(enemy,new_position):
 	var extra_pickup = enemy.loot.instantiate()
+	extra_pickup._class = 'modifiers'
 	extra_pickup._name = special_drops[randi_range(0,2)]
 	extra_pickup.position = new_position + Vector2(32,32)
 	call_deferred("add_child",extra_pickup)
