@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgylo5vnl51"]
+
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/cronometro.tscn" id="1_v78e2"]
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/comanda.tscn" id="1_vpitl"]
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/inventario.tscn" id="3_yubts"]
+
+[sub_resource type="Theme" id="Theme_ii5fp"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="interfaces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_right = 640.0
+offset_bottom = 158.0
+
+[node name="MarginContainer" type="MarginContainer" parent="interfaces"]
+offset_left = -20.0
+offset_right = 620.0
+offset_bottom = 158.0
+theme = SubResource("Theme_ii5fp")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="interfaces/MarginContainer"]
+layout_mode = 2
+
+[node name="comandas" type="HBoxContainer" parent="interfaces/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="comanda" parent="interfaces/MarginContainer/HBoxContainer/comandas" instance=ExtResource("1_vpitl")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 29
+
+[node name="comanda2" parent="interfaces/MarginContainer/HBoxContainer/comandas" instance=ExtResource("1_vpitl")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 29
+
+[node name="comanda3" parent="interfaces/MarginContainer/HBoxContainer/comandas" instance=ExtResource("1_vpitl")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 29
+
+[node name="VSeparator" type="VSeparator" parent="interfaces/MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="cronometro" parent="interfaces/MarginContainer/HBoxContainer" instance=ExtResource("1_v78e2")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 68
+theme_override_constants/margin_bottom = 90
+
+[node name="inventario" parent="interfaces/MarginContainer/HBoxContainer" instance=ExtResource("3_yubts")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.19
