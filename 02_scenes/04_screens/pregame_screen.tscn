@@ -5,51 +5,65 @@
 [node name="pregameScreen" type="Node2D"]
 script = ExtResource("1_cijfa")
 
-[node name="fondo" type="ColorRect" parent="."]
-offset_right = 640.0
-offset_bottom = 480.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="interfaces" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="fondoplaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="imgFondo" type="TextureRect" parent="CanvasLayer/interfaces"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRectplaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
 offset_left = 245.0
 offset_top = 29.0
 offset_right = 615.0
 offset_bottom = 369.0
 color = Color(0.635294, 0.6, 0.466667, 1)
 
-[node name="bContinuar" type="Button" parent="."]
+[node name="bContinuar" type="Button" parent="CanvasLayer/interfaces"]
 offset_left = 520.0
 offset_top = 413.0
 offset_right = 606.0
 offset_bottom = 444.0
 text = "Continuar"
-metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2placeholder" type="ColorRect" parent="CanvasLayer/interfaces"]
 offset_left = 44.0
 offset_top = 298.0
 offset_right = 99.0
 offset_bottom = 432.0
 color = Color(0.635294, 0.6, 0.466667, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="ColorRect3placeholder" type="ColorRect" parent="CanvasLayer/interfaces"]
 offset_left = 112.0
 offset_top = 254.0
 offset_right = 165.0
 offset_bottom = 388.0
 color = Color(0.635294, 0.6, 0.466667, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="."]
+[node name="colorPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
 offset_left = 48.0
 offset_top = 196.0
 offset_right = 278.0
 offset_bottom = 236.0
 color = Color(0.231373, 0.156863, 0.0588235, 1)
 
-[node name="Label" type="Label" parent="ColorRect4"]
+[node name="dialogueplaceholder" type="Label" parent="CanvasLayer/interfaces/colorPlaceholder"]
+layout_mode = 0
 offset_top = 8.0
 offset_right = 230.0
 offset_bottom = 47.0
 text = "\"Lembra, este plato faise así\""
 
-[connection signal="pressed" from="bContinuar" to="." method="_on_b_continuar_pressed"]
+[connection signal="pressed" from="CanvasLayer/interfaces/bContinuar" to="." method="_on_b_continuar_pressed"]

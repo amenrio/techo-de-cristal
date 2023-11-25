@@ -7,15 +7,26 @@
 [node name="controlsScreen" type="Node2D"]
 script = ExtResource("1_iwvct")
 
-[node name="fondo" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="interfaces" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="fondoPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
 offset_right = 640.0
 offset_bottom = 480.0
 metadata/_edit_use_anchors_ = true
 
-[node name="nombreCtr" type="Label" parent="."]
+[node name="nombreCtr" type="Label" parent="CanvasLayer/interfaces"]
 offset_left = 241.0
 offset_top = 38.0
-offset_right = 408.0
+offset_right = 441.0
 offset_bottom = 162.0
 theme = SubResource("Theme_u2luw")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -24,15 +35,7 @@ text = "Controles"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="bControlesAtras" type="Button" parent="."]
-offset_left = 43.0
-offset_top = 413.0
-offset_right = 116.0
-offset_bottom = 444.0
-text = "Atrás"
-metadata/_edit_use_anchors_ = true
-
-[node name="textoCtr" type="Label" parent="."]
+[node name="textoCtr" type="Label" parent="CanvasLayer/interfaces"]
 offset_left = 129.0
 offset_top = 126.0
 offset_right = 503.0
@@ -44,4 +47,12 @@ text = "moverse"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="bControlesAtras" to="." method="_on_b_controles_atras_pressed"]
+[node name="bControlesAtras" type="Button" parent="CanvasLayer/interfaces"]
+offset_left = 43.0
+offset_top = 413.0
+offset_right = 116.0
+offset_bottom = 444.0
+text = "Atrás"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]

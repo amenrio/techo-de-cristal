@@ -7,11 +7,22 @@
 [node name="pauseScreen" type="Node2D"]
 script = ExtResource("1_nh62t")
 
-[node name="fondo" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="interfaces" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="fondoPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
 offset_right = 640.0
 offset_bottom = 480.0
 
-[node name="nombreTitulo" type="Label" parent="."]
+[node name="textoPausa" type="Label" parent="CanvasLayer/interfaces"]
 offset_left = 235.0
 offset_top = 103.0
 offset_right = 402.0
@@ -22,19 +33,20 @@ theme_override_font_sizes/font_size = 43
 text = "Pausa"
 horizontal_alignment = 1
 
-[node name="bMenu" type="Button" parent="."]
-offset_left = 279.0
-offset_top = 240.0
-offset_right = 352.0
-offset_bottom = 271.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/interfaces"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 300.0
+offset_right = 337.0
+offset_bottom = 366.0
+
+[node name="bMenu" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+layout_mode = 2
 text = "Menu"
 
-[node name="bVolver" type="Button" parent="."]
-offset_left = 279.0
-offset_top = 201.0
-offset_right = 352.0
-offset_bottom = 232.0
+[node name="bVolver" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+layout_mode = 2
 text = "Volver"
 
-[connection signal="pressed" from="bMenu" to="." method="_on_b_menu_pressed"]
-[connection signal="pressed" from="bVolver" to="." method="_on_b_volver_pressed"]
+[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bVolver" to="." method="_on_b_volver_pressed"]
