@@ -7,7 +7,8 @@ var following_player = false
 
 func _physics_process(_delta):
 	if following_player == true:
-		parent.velocity = parent.position.direction_to(player_instance.position) * max_speed
+		if is_instance_valid(player_instance):
+			parent.velocity = parent.position.direction_to(player_instance.position) * max_speed
 	parent.move_and_slide()
 
 

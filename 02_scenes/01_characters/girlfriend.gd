@@ -14,6 +14,7 @@ func _get_recipes():
 	recipes_dict = JSON.parse_string(recipes_text)
 	total_recipes = len(recipes_dict.keys())# Replace with function body.
 #	print(total_recipes)
+
 func get_random_recipe():
 	var _recipe_index = randi_range(0,total_recipes-1)
 	var _recipe_key = recipes_dict.keys()[_recipe_index]
@@ -22,7 +23,7 @@ func get_random_recipe():
 # FUNCION DECIR AL JUGADOR QUE COMANDAS HACE
 
 func set_level_comandas():
-	var _recipes_todo:Array
+	var _recipes_todo:Array = []
 	var _recipe = get_random_recipe()
 	return _recipe
 #	print(_recipe)
@@ -31,11 +32,11 @@ func set_level_comandas():
 
 # DAR NUEVAS COMANDAS
 func _ready():
-	var recipes_databse = _get_recipes()
+	var _recipes_databse = _get_recipes()
 	for idx in range(3):
 		comandas_nivel.append(set_level_comandas())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 

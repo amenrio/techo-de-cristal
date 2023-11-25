@@ -3,7 +3,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 var special_drops = ['2shot','3shot','health']
 @export var time_limit: float = 10
-
+@onready var pause_menu = $player/Camera2D/PauseMenu
+var paused = false
 #@onready var timer_label = $player/Camera2D/Label
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
@@ -11,6 +12,20 @@ func _ready():
 	var player_start = $player_start
 	player.position = player_start.position
 	
+func _process(_delta):
+	if Input.is_action_just_pressed('pause'):
+		pauseMenu()
+		
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+		
+	paused = !paused
+		
 func pickup_system(enemy):
 	var new_position = enemy.position
 	var pick_up = enemy.loot.instantiate()

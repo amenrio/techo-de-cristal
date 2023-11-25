@@ -28,6 +28,12 @@ position = Vector2(980, 760)
 collision_mask = 62
 drag = 0.1
 
+[node name="Camera2D" parent="player" index="5"]
+zoom = Vector2(1, 1)
+
+[node name="PauseMenu" parent="player/Camera2D" index="0"]
+visible = false
+
 [node name="player_start" parent="." index="2"]
 position = Vector2(980, 760)
 

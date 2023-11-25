@@ -15,6 +15,10 @@ var sprite_string = "res://01_assets/01_sprites/enemy_%s.png"
 func _ready():
 	var actual_texture = sprite_string % _name
 	$sprite.texture = load(actual_texture)
+	health_component.connect('death',death)
+	
+func death(_args):
+	queue_free()
 	
 func _physics_process(_delta):
 	pass
@@ -23,7 +27,7 @@ func _physics_process(_delta):
 #	move_and_slide()
 
 func _on_hitbox_component_area_entered( area):
-	if area.has_method("damage"):
+	if area.has_method("damage") and is_instance_valid(area):
 		area.damage(damage)
 		following_player = false
 		velocity = Vector2.ZERO

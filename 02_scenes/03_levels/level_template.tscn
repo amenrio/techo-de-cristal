@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dderw5xslumkm"]
+[gd_scene load_steps=5 format=3 uid="uid://dderw5xslumkm"]
 
 [ext_resource type="PackedScene" uid="uid://csgvbo4n46gvx" path="res://02_scenes/01_characters/player.tscn" id="1_e7f8m"]
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_template.gd" id="1_pt6n6"]
 [ext_resource type="PackedScene" uid="uid://do7t4aw2geyt5" path="res://02_scenes/02_objects/spawner.tscn" id="2_wjpsb"]
+[ext_resource type="PackedScene" uid="uid://ok5m2y52avmy" path="res://02_scenes/04_screens/pause_menu.tscn" id="4_gx3hq"]
 
 [node name="levelTemplate" type="Node2D"]
 script = ExtResource("1_pt6n6")
 
 [node name="player" parent="." instance=ExtResource("1_e7f8m")]
+
+[node name="PauseMenu" parent="player/Camera2D" index="0" instance=ExtResource("4_gx3hq")]
 
 [node name="player_start" type="Marker2D" parent="."]
 

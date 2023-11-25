@@ -27,6 +27,12 @@ var inventory:Dictionary = {
 	"weapons":{}
 	}
 	
+func _ready():
+	health_component.connect('death',player_death)
+	
+func player_death(_args):
+	get_tree().paused = true
+	
 func talk_to_girlfriend():
 	if Input.is_action_just_pressed("interact") and chismecito:
 		objetivos = girlfriend_instance.comandas_nivel
