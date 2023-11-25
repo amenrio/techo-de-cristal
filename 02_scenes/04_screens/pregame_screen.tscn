@@ -17,14 +17,17 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="fondoplaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="imgFondo" type="TextureRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRectplaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 245.0
 offset_top = 29.0
 offset_right = 615.0
@@ -32,6 +35,7 @@ offset_bottom = 369.0
 color = Color(0.635294, 0.6, 0.466667, 1)
 
 [node name="bContinuar" type="Button" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 520.0
 offset_top = 413.0
 offset_right = 606.0
@@ -39,6 +43,7 @@ offset_bottom = 444.0
 text = "Continuar"
 
 [node name="ColorRect2placeholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 298.0
 offset_right = 99.0
@@ -46,6 +51,7 @@ offset_bottom = 432.0
 color = Color(0.635294, 0.6, 0.466667, 1)
 
 [node name="ColorRect3placeholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 254.0
 offset_right = 165.0
@@ -53,6 +59,7 @@ offset_bottom = 388.0
 color = Color(0.635294, 0.6, 0.466667, 1)
 
 [node name="colorPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 196.0
 offset_right = 278.0

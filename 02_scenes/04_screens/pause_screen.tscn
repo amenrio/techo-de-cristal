@@ -19,10 +19,12 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="fondoPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="textoPausa" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 235.0
 offset_top = 103.0
 offset_right = 402.0
