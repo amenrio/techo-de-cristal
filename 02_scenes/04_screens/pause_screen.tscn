@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://i2udqkqkksy4"]
+[gd_scene load_steps=5 format=3 uid="uid://i2udqkqkksy4"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/pause_screen.gd" id="1_nh62t"]
+[ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_l8hfc"]
 
 [sub_resource type="Theme" id="Theme_r84ws"]
+
+[sub_resource type="Theme" id="Theme_k2p25"]
 
 [node name="pauseScreen" type="Node2D"]
 script = ExtResource("1_nh62t")
@@ -44,10 +47,13 @@ offset_bottom = 366.0
 
 [node name="bMenu" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_k2p25")
+theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "Menu"
 
 [node name="bVolver" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "Volver"
 
 [connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]

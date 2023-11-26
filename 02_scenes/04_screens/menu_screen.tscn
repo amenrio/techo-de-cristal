@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkb53h0ivrhpm"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/menuScreen.gd" id="1_friwq"]
-
-[sub_resource type="Theme" id="Theme_33i87"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_4r0wl"]
 
 [node name="menuScreen" type="Node2D"]
 script = ExtResource("1_friwq")
@@ -35,15 +34,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="nombreTitulo" type="Label" parent="CanvasLayer/interfaces"]
-offset_left = 109.0
-offset_top = 68.0
-offset_right = 276.0
-offset_bottom = 192.0
-theme = SubResource("Theme_33i87")
+layout_mode = 0
+offset_left = 97.0
+offset_top = 91.0
+offset_right = 449.0
+offset_bottom = 215.0
+theme = ExtResource("2_4r0wl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 43
-text = "Titulo
-do Xogo"
+text = "A fume de Carozo"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/interfaces"]
@@ -55,18 +54,22 @@ offset_bottom = 296.0
 
 [node name="bXogar" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4r0wl")
 text = "Xogar"
 
 [node name="bControles" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4r0wl")
 text = "Controles"
 
 [node name="bCreditos" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4r0wl")
 text = "Créditos"
 
 [node name="bSair" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4r0wl")
 text = "Saír"
 
 [connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
