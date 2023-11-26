@@ -33,7 +33,7 @@ func set_level_comandas():
 # DAR NUEVAS COMANDAS
 func _ready():
 	var _recipes_databse = _get_recipes()
-	for idx in range(3):
+	for idx in range(1):
 		comandas_nivel.append(set_level_comandas())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

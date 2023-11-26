@@ -9,10 +9,10 @@ extends CharacterBody2D
 
 @export var dash_velocity: float = 2000
 @export var dash_timeout: float = 1.5
-
+@onready var current_level = get_tree().current_scene
 @onready var health_component = $HealthComponent
 @onready var weapon = $weapon
-
+var comanda_instance = preload("res://02_scenes/02_objects/comanda.tscn")
 var canDash=true
 var isDashing=false
 
@@ -21,6 +21,7 @@ var chismecito=false
 var desired_velocity := Vector2.ZERO
 var turn_velocity := Vector2.ZERO
 var objetivos:Array
+
 var inventory:Dictionary = {
 	"ingredients":{},
 	"modifiers":{},
@@ -36,8 +37,11 @@ func player_death(_args):
 func talk_to_girlfriend():
 	if Input.is_action_just_pressed("interact") and chismecito:
 		objetivos = girlfriend_instance.comandas_nivel
-		print(objetivos)
-		
+		for comanda in objetivos:
+			var comanda_activa = comanda_instance.instantiate()
+			comanda_activa.init(comanda)
+			current_level.add_child(comanda_activa)
+			print("Añadida comanda")
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
@@ -65,6 +69,10 @@ func _physics_process(_delta: float) ->  void:
 	dash()
 	talk_to_girlfriend()
 	
+func check_completed_comandas():
+	var _ingredient_list = inventory["ingredients"]
+	
+
 func add_to_inventory(pickup_object):
 	"""Function that recieves the object that is being picked up
 	It's structure is {pickup_class:pickup_name}, ej: {"ingredients":"manzana"}
@@ -77,8 +85,8 @@ func add_to_inventory(pickup_object):
 		if not pickup_name in inventory[pickup_class]:
 			inventory[pickup_class].merge({pickup_name:0})
 		inventory[pickup_class][pickup_name]+=1
-	print(inventory)
-
+	
 func _on_interaction_zone_area_entered(area):
 	if area.is_in_group('girlfriend'):
-		chismecito=true # Replace with function body.
+		chismecito = true
+		# Replace with function body.

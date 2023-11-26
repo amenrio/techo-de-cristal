@@ -17,12 +17,11 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
 window/size/resizable=false
 window/size/borderless=true
-window/size/window_width_override=1920
-window/size/window_height_override=1080
 mouse_cursor/size/viewport_height=1080
 mouse_cursor/size/viewport_width=1920
 mouse_cursor/stretch/aspect="keep"
