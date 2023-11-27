@@ -51,10 +51,17 @@ theme = SubResource("Theme_k2p25")
 theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "Menu"
 
+[node name="bControles" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_k2p25")
+theme_override_fonts/font = ExtResource("2_l8hfc")
+text = "Controles"
+
 [node name="bVolver" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "Volver"
 
 [connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
 [connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bVolver" to="." method="_on_b_volver_pressed"]

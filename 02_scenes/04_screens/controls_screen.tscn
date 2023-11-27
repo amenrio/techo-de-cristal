@@ -19,11 +19,13 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="fondoPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 metadata/_edit_use_anchors_ = true
 
 [node name="nombreCtr" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 241.0
 offset_top = 38.0
 offset_right = 441.0
@@ -36,6 +38,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="textoCtr" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 126.0
 offset_right = 503.0
@@ -48,6 +51,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="bControlesAtras" type="Button" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 43.0
 offset_top = 413.0
 offset_right = 116.0
