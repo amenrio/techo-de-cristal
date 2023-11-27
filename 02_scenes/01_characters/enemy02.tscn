@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://de4yexnjnfet"]
+
+[ext_resource type="Script" path="res://02_scenes/01_characters/enemy02.gd" id="1_sr8wj"]
+[ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="2_tmdi8"]
+[ext_resource type="Texture2D" uid="uid://bqu7avl5bhxpc" path="res://01_assets/01_sprites/enemy.png" id="3_5wxqv"]
+[ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_51mka"]
+[ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="5_3qyqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxfse"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiprm"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7ip4"]
+radius = 54.0833
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nn7d"]
+radius = 96.2549
+
+[node name="enemyExplode" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 10
+script = ExtResource("1_sr8wj")
+loot = ExtResource("2_tmdi8")
+_name = "chocolate"
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_5wxqv")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_51mka")]
+collision_layer = 2
+collision_mask = 13
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("RectangleShape2D_nxfse")
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_3qyqs")]
+MAX_HEALTH = 30.0
+
+[node name="health_bar" parent="HealthComponent" index="0"]
+offset_left = -20.0
+offset_top = -38.0
+offset_right = 20.0
+offset_bottom = -22.0
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tiprm")
+
+[node name="activationRange" type="Area2D" parent="."]
+
+[node name="rangeShape" type="CollisionShape2D" parent="activationRange"]
+shape = SubResource("CircleShape2D_f7ip4")
+
+[node name="explosionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosionRange"]
+shape = SubResource("CircleShape2D_3nn7d")
+
+[node name="timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
+[connection signal="body_entered" from="activationRange" to="." method="_on_activation_range_body_entered"]
+[connection signal="body_exited" from="activationRange" to="." method="_on_activation_range_body_exited"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+
+[editable path="HitboxComponent"]
+[editable path="HealthComponent"]
