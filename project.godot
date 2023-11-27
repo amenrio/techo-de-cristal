@@ -19,9 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=2
 window/size/resizable=false
-window/size/borderless=true
 mouse_cursor/size/viewport_height=1080
 mouse_cursor/size/viewport_width=1920
 mouse_cursor/stretch/aspect="keep"

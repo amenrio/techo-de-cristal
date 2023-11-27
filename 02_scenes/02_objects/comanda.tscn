@@ -9,4 +9,18 @@ script = ExtResource("1_u6c6o")
 
 [node name="timer" type="Timer" parent="."]
 
+[node name="comanda_hbox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="name" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+
+[node name="ingredients" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+
+[node name="timer" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

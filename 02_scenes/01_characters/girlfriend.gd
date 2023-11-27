@@ -29,12 +29,15 @@ func set_level_comandas():
 #	print(_recipe)
 #		_recipes_todo.append({recipes_dict[randi_range(0,total_recipes-1]:})
 # FUNCION DE CHECKEAR LAS COMANDAS HECHAS
-
+func get_new_comandas(number_of_comandas:int):
+	var _recipes:Array = []
+	for i in range(number_of_comandas):
+		_recipes.append(get_random_recipe())
+	return _recipes
+		
 # DAR NUEVAS COMANDAS
 func _ready():
 	var _recipes_databse = _get_recipes()
-	for idx in range(1):
-		comandas_nivel.append(set_level_comandas())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

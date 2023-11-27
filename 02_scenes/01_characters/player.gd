@@ -12,11 +12,15 @@ extends CharacterBody2D
 @onready var current_level = get_tree().current_scene
 @onready var health_component = $HealthComponent
 @onready var weapon = $weapon
+
+@onready var hud_comanda = $Camera2D/hud_comandas
+
 var comanda_instance = preload("res://02_scenes/02_objects/comanda.tscn")
+var completed_comandas: Array
 var canDash=true
 var isDashing=false
 
-var chismecito=false
+var can_talk_to_girlfriend=false
 
 var desired_velocity := Vector2.ZERO
 var turn_velocity := Vector2.ZERO
@@ -34,14 +38,7 @@ func _ready():
 func player_death(_args):
 	get_tree().paused = true
 	
-func talk_to_girlfriend():
-	if Input.is_action_just_pressed("interact") and chismecito:
-		objetivos = girlfriend_instance.comandas_nivel
-		for comanda in objetivos:
-			var comanda_activa = comanda_instance.instantiate()
-			comanda_activa.init(comanda)
-			current_level.add_child(comanda_activa)
-			print("Añadida comanda")
+var ongoing_comanda:bool = false
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
@@ -65,13 +62,29 @@ func _physics_process(_delta: float) ->  void:
 	move_and_slide()
 	# Orientamos el arma hacia el raton
 	weapon.look_at(get_global_mouse_position())
-	
 	dash()
 	talk_to_girlfriend()
+
 	
 func check_completed_comandas():
-	var _ingredient_list = inventory["ingredients"]
-	
+	for comanda in objetivos:
+		if comanda.timed_out:
+			objetivos.erase(comanda)
+			continue
+
+		for ingredient in inventory["ingredients"]:
+			if ingredient in comanda.ingredients:
+				print("{ingredient} in comanda {comanda}".format({"ingredient":ingredient,"comanda":comanda.recipe_name}))
+				if inventory["ingredients"][ingredient] > 0:
+					inventory["ingredients"][ingredient] -= 1
+					comanda.ingredients.erase(ingredient)
+
+		if comanda.is_completed:
+			objetivos.erase(comanda)
+			hud_comanda.remove_child(comanda)
+			completed_comandas.append(comanda)
+			continue
+
 
 func add_to_inventory(pickup_object):
 	"""Function that recieves the object that is being picked up
@@ -85,8 +98,28 @@ func add_to_inventory(pickup_object):
 		if not pickup_name in inventory[pickup_class]:
 			inventory[pickup_class].merge({pickup_name:0})
 		inventory[pickup_class][pickup_name]+=1
+	check_completed_comandas()
 	
 func _on_interaction_zone_area_entered(area):
 	if area.is_in_group('girlfriend'):
-		chismecito = true
+		can_talk_to_girlfriend = true
 		# Replace with function body.
+
+func talk_to_girlfriend():
+	if Input.is_action_just_pressed("interact") and can_talk_to_girlfriend:
+		if len(objetivos) == 0:
+			for child in hud_comanda.get_children():
+				hud_comanda.remove_child(child)
+			var _objectives = girlfriend_instance.get_new_comandas(3)
+			for comanda in _objectives:
+				var comanda_activa = comanda_instance.instantiate()
+				comanda_activa.init(comanda)
+				hud_comanda.add_child(comanda_activa)
+				hud_comanda.add_spacer(false)
+				objetivos.append(comanda_activa)
+				print("Añadida comanda")
+#		check_completed_comandas()
+	
+func _on_interaction_zone_area_exited(area):
+	if area.is_in_group('girlfriend'):
+		can_talk_to_girlfriend = false # Replace with function body.

@@ -59,6 +59,12 @@ zoom = Vector2(1.35, 1.35)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
+[node name="hud_comandas" type="VBoxContainer" parent="Camera2D"]
+offset_left = -413.0
+offset_top = -229.0
+offset_right = -373.0
+offset_bottom = -189.0
+
 [node name="interaction_zone" type="Area2D" parent="."]
 collision_mask = 32
 
@@ -66,6 +72,7 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_xn3tx")
 
 [connection signal="area_entered" from="interaction_zone" to="." method="_on_interaction_zone_area_entered"]
+[connection signal="area_exited" from="interaction_zone" to="." method="_on_interaction_zone_area_exited"]
 
 [editable path="HealthComponent"]
 [editable path="HitboxComponent"]

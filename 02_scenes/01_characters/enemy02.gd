@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var hit_lag: float = 1.5
 @export var _name:String
 @export var explosionDelay: float = 2.5
+
 @onready var player_instance = get_tree().get_first_node_in_group("player")
 @onready var health_component = $HealthComponent
 @onready var actRange = $activationRange
