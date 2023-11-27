@@ -38,13 +38,8 @@ visible = false
 position = Vector2(980, 760)
 
 [node name="spawner" parent="." index="3"]
-<<<<<<< Updated upstream
-position = Vector2(955, 131)
-enemies = ExtResource("3_u7yq8")
-=======
 position = Vector2(831, 388)
 enemies = ExtResource("4_ne6th")
->>>>>>> Stashed changes
 enemy_names = Array[String](["chocolate", "citrico", "masa"])
 spawn_timer = 1.0
 
