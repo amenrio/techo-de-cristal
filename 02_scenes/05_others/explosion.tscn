@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjjyp30d1qe1"]
+
+[ext_resource type="Script" path="res://02_scenes/05_others/explosion.gd" id="1_8jb0j"]
+
+[sub_resource type="Gradient" id="Gradient_gpu0k"]
+colors = PackedColorArray(1, 0.267638, 0.618748, 1, 1, 0.798927, 0.849594, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t8n0u"]
+gradient = SubResource("Gradient_gpu0k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fif1k"]
+lifetime_randomness = 0.24
+emission_shape = 1
+emission_sphere_radius = 3.45
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 80.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_t8n0u")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+scale = Vector2(2, 2)
+amount = 400
+process_material = SubResource("ParticleProcessMaterial_fif1k")
+explosiveness = 1.0
+script = ExtResource("1_8jb0j")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
