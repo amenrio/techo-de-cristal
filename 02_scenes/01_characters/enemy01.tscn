@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://2vhbmtcyircw" path="res://02_scenes/05_components/followplayer_behaviour.tscn" id="6_cu011"]
 [ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="6_n5ho7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxfse"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_igar0"]
+radius = 16.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiprm"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fjop8"]
+radius = 16.0
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -29,7 +29,7 @@ collision_mask = 13
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
-shape = SubResource("RectangleShape2D_nxfse")
+shape = SubResource("CircleShape2D_igar0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_g7oyf")]
 MAX_HEALTH = 30.0
@@ -41,11 +41,18 @@ offset_right = 20.0
 offset_bottom = -22.0
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tiprm")
+shape = SubResource("CircleShape2D_fjop8")
 
 [node name="followplayer_behaviour" parent="." instance=ExtResource("6_cu011")]
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="navTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
+[connection signal="timeout" from="navTimer" to="." method="_on_nav_timer_timeout"]
 
 [editable path="HitboxComponent"]
 [editable path="HealthComponent"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_alpha.gd" id="2_v0fk0"]
 [ext_resource type="TileSet" uid="uid://bn5gcw7g71dpx" path="res://01_assets/04_resources/Tileset.tres" id="3_dmdj1"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
-[ext_resource type="PackedScene" uid="uid://de4yexnjnfet" path="res://02_scenes/01_characters/enemy02.tscn" id="4_ne6th"]
+[ext_resource type="PackedScene" uid="uid://d1vcsu1a0lffa" path="res://02_scenes/01_characters/enemy03.tscn" id="4_dn1aw"]
 
 [node name="levelAlpha" instance=ExtResource("1_tm6rn")]
 script = ExtResource("2_v0fk0")
@@ -39,7 +39,7 @@ position = Vector2(980, 760)
 
 [node name="spawner" parent="." index="3"]
 position = Vector2(852, 43)
-enemies = ExtResource("4_ne6th")
+enemies = ExtResource("4_dn1aw")
 enemy_names = Array[String](["chocolate", "citrico", "masa"])
 spawn_timer = 1.0
 
