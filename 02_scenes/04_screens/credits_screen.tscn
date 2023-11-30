@@ -27,10 +27,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="fondoplaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="nombreCreditos" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 241.0
 offset_top = 38.0
 offset_right = 415.0
@@ -43,6 +45,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="textoCreditos" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 126.0
 offset_right = 503.0
@@ -57,6 +60,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="bCreditosAtras" type="Button" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 43.0
 offset_top = 413.0
 offset_right = 116.0

@@ -2,19 +2,39 @@
 
 [sub_resource type="Theme" id="Theme_k2ebx"]
 
-[node name="cronometro" type="MarginContainer"]
-offset_right = 106.0
+[node name="cronometro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 92.0
 offset_bottom = 61.0
 
 [node name="ColorPlaceholder" type="ColorRect" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.780392, 0.54902, 0.603922, 1)
 
 [node name="cronIMG" type="TextureRect" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="numberTxt" type="Label" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -9.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_k2ebx")
 theme_type_variation = &"HeaderSmall"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
