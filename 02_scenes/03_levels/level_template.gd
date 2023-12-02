@@ -31,6 +31,7 @@ func pickup_system(enemy):
 	var pick_up = enemy.loot.instantiate()
 	pick_up._name = enemy._name
 	pick_up.position = new_position
+	print("FILE: level_template.gd - FUNC: PICKUP_SYSTEM(enemy), CALLER: DEATH SINGAL\nAdded %s pickup to the level" % pick_up._name)
 	call_deferred("add_child",pick_up)
 #	var special_chance = randi_range(1,100)
 #	if special_chance <= 15:

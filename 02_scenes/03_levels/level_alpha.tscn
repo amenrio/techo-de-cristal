@@ -44,7 +44,7 @@ enemy_names = Array[String](["chocolate", "citrico", "masa"])
 spawn_timer = 1.0
 
 [node name="timer" parent="spawner" index="1"]
-wait_time = 2.0
+wait_time = 4.0
 
 [node name="level_timer" parent="." index="4"]
 wait_time = 5.0

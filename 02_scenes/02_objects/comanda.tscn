@@ -20,6 +20,10 @@ layout_mode = 2
 [node name="ingredients" type="Label" parent="comanda_hbox"]
 layout_mode = 2
 
+[node name="completed_ingredients" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+
 [node name="timer" type="Label" parent="comanda_hbox"]
 layout_mode = 2
 

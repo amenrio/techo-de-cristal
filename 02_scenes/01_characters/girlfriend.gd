@@ -1,6 +1,6 @@
 extends Area2D
 
-var recipes_file = "res://04_game/recipes.json"
+var recipes_file = "res://04_game/recipes_v02.json"
 var recipes_text:String
 var recipes_dict:Dictionary
 var total_recipes:int

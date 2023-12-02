@@ -64,20 +64,28 @@ func _physics_process(_delta: float) ->  void:
 	weapon.look_at(get_global_mouse_position())
 	dash()
 	talk_to_girlfriend()
+	if Input.is_action_just_pressed('complete_comanda'):
+		check_completed_comandas()
 
 	
 func check_completed_comandas():
+	print(inventory["ingredients"])
 	for comanda in objetivos:
 		if comanda.timed_out:
+			
 			objetivos.erase(comanda)
 			continue
 
 		for ingredient in inventory["ingredients"]:
+			if inventory["ingredients"][ingredient] < 1:
+				continue
 			if ingredient in comanda.ingredients:
-				print("{ingredient} in comanda {comanda}".format({"ingredient":ingredient,"comanda":comanda.recipe_name}))
-				if inventory["ingredients"][ingredient] > 0:
+				if comanda.ingredients[ingredient] > 0:
 					inventory["ingredients"][ingredient] -= 1
-					comanda.ingredients.erase(ingredient)
+					print(inventory["ingredients"][ingredient])
+					comanda.ingredients[ingredient] -=1
+					comanda.completed_ingredients.append(ingredient)
+					continue
 
 		if comanda.is_completed:
 			objetivos.erase(comanda)
@@ -98,7 +106,7 @@ func add_to_inventory(pickup_object):
 		if not pickup_name in inventory[pickup_class]:
 			inventory[pickup_class].merge({pickup_name:0})
 		inventory[pickup_class][pickup_name]+=1
-	check_completed_comandas()
+
 	
 func _on_interaction_zone_area_entered(area):
 	if area.is_in_group('girlfriend'):

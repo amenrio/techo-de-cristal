@@ -3,7 +3,7 @@ extends "res://02_scenes/01_characters/enemy01.gd"
 @onready var shootDelay = $shootDelay
 @onready var castCheck = $RayCast2D
 @onready var range = $shootRange
-var initialTime: float = shootDelay.time_left
+@onready var initialTime: float = shootDelay.wait_time
 
 var playerIsTarget: bool = false
 var loaded: bool = false

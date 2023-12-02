@@ -1,13 +1,15 @@
 extends Control
 
 var recipe_name:String
-var ingredients:Array
+#var ingredients:Array
+var ingredients:Dictionary
 var _ingredients
+var completed_ingredients:Array
 var total_time: float
 @onready var timer = $timer
 var is_completed:bool
 var timed_out:bool=false
-
+@onready var completed_hud = $comanda_hbox/completed_ingredients
 @onready var name_hud = $comanda_hbox/name
 @onready var ingredients_hud = $comanda_hbox/ingredients
 @onready var timer_hud = $comanda_hbox/timer
@@ -29,10 +31,12 @@ func init_hud():
 	name_hud.text = recipe_name
 	ingredients_hud.text = str(ingredients)
 	timer_hud.text = str(total_time)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	ingredients_hud.text = str(ingredients)
 	timer_hud.text = str(int(timer.time_left))
+	completed_hud.text = str(completed_ingredients)
 	if len(ingredients)<=0:
 		is_completed=true
 

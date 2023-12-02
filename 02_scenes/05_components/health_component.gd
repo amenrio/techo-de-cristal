@@ -14,9 +14,12 @@ func _ready():
 	health_bar.max_value = MAX_HEALTH
 	health_bar.value = MAX_HEALTH
 	
+func _physics_process(delta):
+	if health <=0:
+		emit_signal('death',parent)
+		parent.queue_free()
+		
 func take_damage(damage):
 	health -= damage
 	health_bar.value = health
-	if health <= 0:
-		emit_signal('death',parent)
-		parent.queue_free()
+
