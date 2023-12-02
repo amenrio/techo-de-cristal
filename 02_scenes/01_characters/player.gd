@@ -6,15 +6,15 @@ extends CharacterBody2D
 @export_range(0.100, 0.250) var drag:= 0.15
 
 @onready var girlfriend_instance = get_tree().get_first_node_in_group('girlfriend')
-
+@onready var animation_tree:AnimationTree = $AnimationTree
 @export var dash_velocity: float = 2000
 @export var dash_timeout: float = 1.5
 @onready var current_level = get_tree().current_scene
 @onready var health_component = $HealthComponent
 @onready var weapon = $weapon
 
-@onready var hud_comanda = $Camera2D/hud_comandas
-
+@onready var hud_comanda = $hud_comandas
+var direction:Vector2
 var comanda_instance = preload("res://02_scenes/02_objects/comanda.tscn")
 var completed_comandas: Array
 var canDash=true
@@ -34,6 +34,7 @@ var inventory:Dictionary = {
 	
 func _ready():
 	health_component.connect('death',player_death)
+	animation_tree.active = true
 	
 func player_death(_args):
 	get_tree().paused = true
@@ -51,7 +52,7 @@ func dash():
 		
 func _physics_process(_delta: float) ->  void:
 	# Obtenemos la direccion del personaje
-	var direction = Input.get_vector('move_left',"move_right",'move_up','move_down')
+	direction = Input.get_vector('move_left',"move_right",'move_up','move_down')
 	# Obtenemos la velocidad maxima del jugador en la direccion del input
 	desired_velocity = direction * max_speed
 	# Restamos a la velocidad y direccion deseada la velocidad actual del jugador.
@@ -66,27 +67,43 @@ func _physics_process(_delta: float) ->  void:
 	talk_to_girlfriend()
 	if Input.is_action_just_pressed('complete_comanda'):
 		check_completed_comandas()
-
+	check_completed_comandas()
+			
+func _process(delta):
+	print(direction)
+	update_animation_tree()
+	
+func update_animation_tree():
+	if (desired_velocity == Vector2.ZERO):
+		animation_tree["parameters/conditions/idle"] = true
+		animation_tree["parameters/conditions/is_moving"] = false
+	else:
+		animation_tree["parameters/conditions/idle"] = false	
+		animation_tree["parameters/conditions/is_moving"] = true
+	if (desired_velocity != Vector2.ZERO):
+		animation_tree["parameters/Idle/blend_position"] = direction
+		animation_tree["parameters/Walk/blend_position"] = direction
 	
 func check_completed_comandas():
-	print(inventory["ingredients"])
 	for comanda in objetivos:
 		if comanda.timed_out:
-			
 			objetivos.erase(comanda)
+			hud_comanda.remove_child(comanda)
 			continue
-
-		for ingredient in inventory["ingredients"]:
-			if inventory["ingredients"][ingredient] < 1:
-				continue
-			if ingredient in comanda.ingredients:
-				if comanda.ingredients[ingredient] > 0:
-					inventory["ingredients"][ingredient] -= 1
-					print(inventory["ingredients"][ingredient])
-					comanda.ingredients[ingredient] -=1
-					comanda.completed_ingredients.append(ingredient)
+			
+		if not comanda.is_completed:
+			for ingredient in inventory["ingredients"]:
+				if inventory["ingredients"][ingredient] < 1:
 					continue
-
+				if ingredient in comanda.ingredients:
+					if not comanda.completed_ingredients.has(ingredient):
+							comanda.completed_ingredients[ingredient]=0
+					if comanda.ingredients[ingredient] > comanda.completed_ingredients[ingredient]:
+						inventory["ingredients"][ingredient] -= 1
+						print(inventory["ingredients"][ingredient])
+						comanda.ingredients[ingredient]
+						comanda.completed_ingredients[ingredient] +=1
+						continue
 		if comanda.is_completed:
 			objetivos.erase(comanda)
 			hud_comanda.remove_child(comanda)

@@ -2,17 +2,23 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 var special_drops = ['2shot','3shot','health']
-@export var time_limit: float = 10
+@export var time_limit = 180
 @onready var pause_menu = $player/Camera2D/PauseMenu
 var paused = false
+@onready var timer_node = $level_timer
+@onready var timer_label:Label = $player/Camera2D/level_timer_hud
 #@onready var timer_label = $player/Camera2D/Label
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _ready():
 	var player = $player
 	var player_start = $player_start
+	timer_node.wait_time = time_limit
 	player.position = player_start.position
+	timer_node.start()
 	
 func _process(_delta):
+	timer_label.text = str(int(timer_node.time_left))
 	if Input.is_action_just_pressed('pause'):
 		pauseMenu()
 		
@@ -46,4 +52,4 @@ func extra_drop(enemy,new_position):
 	print("Extra_item {type}".format({'type':extra_pickup._name}))
 
 func _on_level_timer_timeout():
-	get_tree().paused = true# Replace with function body.
+	$spawner/timer.stop()

@@ -4,7 +4,8 @@ var recipe_name:String
 #var ingredients:Array
 var ingredients:Dictionary
 var _ingredients
-var completed_ingredients:Array
+var completed_ingredients:Dictionary
+var sorted_completed_ingredients:Dictionary
 var total_time: float
 @onready var timer = $timer
 var is_completed:bool
@@ -16,7 +17,7 @@ var timed_out:bool=false
 
 func init(args):
 	recipe_name = args["name"]
-	ingredients = args["ingredients"]
+	ingredients = sort(args["ingredients"])
 #	total_time = args["timer"]
 	total_time = int(args["timer"])
 
@@ -34,11 +35,35 @@ func init_hud():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	sorted_completed_ingredients = sort(completed_ingredients)
 	ingredients_hud.text = str(ingredients)
 	timer_hud.text = str(int(timer.time_left))
-	completed_hud.text = str(completed_ingredients)
-	if len(ingredients)<=0:
+	completed_hud.text = str(sorted_completed_ingredients)
+	if equal(ingredients, completed_ingredients):
 		is_completed=true
+		timer.stop()
+		
+func equal(lh:Dictionary, rh:Dictionary):
+	var ingredient_keys = lh.keys()
+	for key in ingredient_keys:
+		if not rh.has(key):
+			return false
+		var tv = lh[key]
+		if typeof(tv) == TYPE_DICTIONARY:
+			if !equal(tv,	 rh[key]):
+				return false
+		elif tv != rh[key]:
+			return false
+	return true
+		
+func sort(dict):
+	var sorted_dict = {}
+	var keys = dict.keys()
+	keys.sort()
+
+	for key in keys:
+		sorted_dict[key] = dict[key]
+	return sorted_dict
 
 func _on_timer_timeout():
 	timer.stop()
