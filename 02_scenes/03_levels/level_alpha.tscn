@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcuy2pc318fdc"]
+[gd_scene load_steps=8 format=3 uid="uid://bcuy2pc318fdc"]
 
 [ext_resource type="PackedScene" uid="uid://dderw5xslumkm" path="res://02_scenes/03_levels/level_template.tscn" id="1_tm6rn"]
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_alpha.gd" id="2_v0fk0"]
 [ext_resource type="TileSet" uid="uid://bn5gcw7g71dpx" path="res://01_assets/04_resources/Tileset.tres" id="3_dmdj1"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
 [ext_resource type="PackedScene" uid="uid://d1vcsu1a0lffa" path="res://02_scenes/01_characters/enemy03.tscn" id="4_dn1aw"]
+[ext_resource type="AudioStream" uid="uid://gk7mv1ctba6x" path="res://01_assets/03_sound/02_music/mainSong_v01.mp3" id="6_sub0h"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v27qv"]
 
@@ -31,7 +32,7 @@ position = Vector2(980, 760)
 collision_mask = 62
 drag = 0.1
 
-[node name="Camera2D" parent="player" index="4"]
+[node name="Camera2D" parent="player" index="3"]
 zoom = Vector2(1.65, 1.65)
 
 [node name="PauseMenu" parent="player/Camera2D" index="0"]
@@ -43,13 +44,13 @@ offset_top = -111.0
 offset_right = -416.0
 offset_bottom = -88.0
 
-[node name="sprite" parent="player" index="7"]
+[node name="sprite" parent="player" index="6"]
 frame = 31
 
-[node name="weapon" parent="player" index="8"]
+[node name="weapon" parent="player" index="7"]
 visible = false
 
-[node name="AnimationTree" parent="player" index="9"]
+[node name="AnimationTree" parent="player" index="8"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_v27qv")
 parameters/Idle/blend_position = Vector2(0.00392163, 0.973799)
 
@@ -67,6 +68,11 @@ wait_time = 4.0
 
 [node name="girlfriend" parent="." index="5" instance=ExtResource("4_8kabd")]
 position = Vector2(977, 566)
+
+[node name="mainSong" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("6_sub0h")
+volume_db = -8.0
+autoplay = true
 
 [editable path="player"]
 [editable path="player/HealthComponent"]
