@@ -7,3 +7,7 @@ func _on_b_menu_pressed():
 
 func _on_b_volver_pressed():
 		get_tree().change_scene_to_file("res://02_scenes/04_screens/game_screen.tscn")
+
+
+func _on_b_controles_pressed():
+	get_tree().change_scene_to_file("res://02_scenes/04_screens/ongame_controls_screen.tscn")

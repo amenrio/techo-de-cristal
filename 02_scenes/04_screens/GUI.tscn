@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgylo5vnl51"]
+
+[ext_resource type="PackedScene" uid="uid://x66lrxm7vvm7" path="res://02_scenes/04_screens/cronometro.tscn" id="1_v78e2"]
+[ext_resource type="PackedScene" uid="uid://cw5bufylc4nfb" path="res://02_scenes/04_screens/comanda.tscn" id="1_vpitl"]
+[ext_resource type="PackedScene" uid="uid://q1hd3cool37" path="res://02_scenes/04_screens/inventario.tscn" id="3_yubts"]
+
+[sub_resource type="Theme" id="Theme_ii5fp"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="interfaces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cronometro" parent="interfaces" instance=ExtResource("1_v78e2")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -57.0
+offset_right = 105.0
+offset_bottom = 0.0
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="comandaMargin" type="MarginContainer" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -408.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme = SubResource("Theme_ii5fp")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="comandas" type="HBoxContainer" parent="interfaces/comandaMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="comanda" parent="interfaces/comandaMargin/comandas" instance=ExtResource("1_vpitl")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="comanda2" parent="interfaces/comandaMargin/comandas" instance=ExtResource("1_vpitl")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="comanda3" parent="interfaces/comandaMargin/comandas" instance=ExtResource("1_vpitl")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = 149.0
+offset_bottom = -213.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="inventario" parent="interfaces/MarginContainer" instance=ExtResource("3_yubts")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.19

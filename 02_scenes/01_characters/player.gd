@@ -13,7 +13,7 @@ extends CharacterBody2D
 @onready var health_component = $HealthComponent
 @onready var weapon = $weapon
 
-@onready var hud_comanda = $hud_comandas
+@onready var hud_comanda = $HUD_canvas_layer/hud_comandas
 var direction:Vector2
 var comanda_instance = preload("res://02_scenes/02_objects/comanda.tscn")
 var completed_comandas: Array
