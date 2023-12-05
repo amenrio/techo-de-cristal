@@ -5,7 +5,6 @@
 [ext_resource type="TileSet" uid="uid://bn5gcw7g71dpx" path="res://01_assets/04_resources/Tileset.tres" id="3_dmdj1"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
 [ext_resource type="PackedScene" uid="uid://de4yexnjnfet" path="res://02_scenes/01_characters/enemy02.tscn" id="4_qef1p"]
-[ext_resource type="PackedScene" uid="uid://d1vcsu1a0lffa" path="res://02_scenes/01_characters/enemy03.tscn" id="4_dn1aw"]
 [ext_resource type="AudioStream" uid="uid://gk7mv1ctba6x" path="res://01_assets/03_sound/02_music/mainSong_v01.mp3" id="6_sub0h"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v27qv"]
