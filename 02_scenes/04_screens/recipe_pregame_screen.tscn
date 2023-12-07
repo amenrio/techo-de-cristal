@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckytpfmi22hwr"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/recipe_pregameScreen.gd" id="1_cijfa"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_kk0lc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qdwom"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ci6q3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1272s"]
+
+[node name="pregameScreen" type="Node2D"]
+script = ExtResource("1_cijfa")
+
+[node name="interfaces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="TextureRect" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_qdwom")
+
+[node name="recipe" type="TextureRect" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 244.0
+offset_top = 31.0
+offset_right = -23.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_ci6q3")
+
+[node name="moza1" type="TextureRect" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 297.0
+offset_right = -543.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_ci6q3")
+
+[node name="moza2" type="TextureRect" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 253.0
+offset_right = -473.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_ci6q3")
+
+[node name="dialogueBox" type="TextureRect" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 199.0
+offset_right = -314.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_1272s")
+
+[node name="dialogue" type="Label" parent="interfaces/dialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 5.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_kk0lc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "\"Lembra, este plato faise así\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bContinuar" type="Button" parent="interfaces"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 413.0
+offset_right = 606.0
+offset_bottom = 444.0
+text = "Continuar"
+
+[connection signal="pressed" from="interfaces/bContinuar" to="." method="_on_b_continuar_pressed"]
