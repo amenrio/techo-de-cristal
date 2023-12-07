@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3fr4eiq4ufe3"]
+[gd_scene load_steps=4 format=3 uid="uid://d3fr4eiq4ufe3"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/gameScreen.gd" id="1_fhcjr"]
 [ext_resource type="PackedScene" uid="uid://bgylo5vnl51" path="res://02_scenes/04_screens/GUI.tscn" id="2_kfwvj"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_ts74a"]
 
 [node name="gameScreen" type="Node2D"]
 script = ExtResource("1_fhcjr")
@@ -22,10 +23,12 @@ offset_bottom = 390.0
 
 [node name="bResultados" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_ts74a")
 text = "Resultados"
 
 [node name="bPausa" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_ts74a")
 text = "Pausa"
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/bResultados" to="." method="_on_b_resultados_pressed"]

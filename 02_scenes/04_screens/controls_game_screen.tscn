@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuk24j5wdg104"]
+[gd_scene load_steps=4 format=3 uid="uid://b44fpv0kedsrb"]
 
-[ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_iwvct"]
-[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_77ttm"]
+[ext_resource type="Script" path="res://02_scenes/04_screens/controls_pregame_screen.gd" id="1_r7acm"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_muxel"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kx6my"]
 
-[node name="controlsScreen" type="Node2D"]
-script = ExtResource("1_iwvct")
+[node name="controlsPreameScreen" type="Node2D"]
+script = ExtResource("1_r7acm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -35,7 +35,7 @@ offset_top = 38.0
 offset_right = 441.0
 offset_bottom = 162.0
 scale = Vector2(1.0026, 1.04762)
-theme = ExtResource("2_77ttm")
+theme = ExtResource("2_muxel")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 43
 text = "Controles"
@@ -43,11 +43,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="story" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 357.0
 offset_top = 163.0
 offset_right = 586.0
 offset_bottom = 201.0
-theme = ExtResource("2_77ttm")
+theme = ExtResource("2_muxel")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "historia noseke"
@@ -59,21 +60,27 @@ offset_left = 66.0
 offset_top = 166.0
 offset_right = 295.0
 offset_bottom = 204.0
-theme = ExtResource("2_77ttm")
+theme = ExtResource("2_muxel")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "bla bls bla bla bka "
 horizontal_alignment = 1
 
-[node name="bControlesAtras" type="Button" parent="CanvasLayer/interfaces"]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 413.0
-offset_right = 116.0
-offset_bottom = 444.0
+[node name="bControlesContinuar" type="Button" parent="CanvasLayer/interfaces"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -76.0
+offset_right = -36.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(1.00766, 1)
-theme = ExtResource("2_77ttm")
-text = "Atrás"
-metadata/_edit_use_anchors_ = true
+theme = ExtResource("2_muxel")
+text = "Continuar"
 
-[connection signal="pressed" from="CanvasLayer/interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]
+[connection signal="pressed" from="CanvasLayer/interfaces/bControlesContinuar" to="." method="_on_b_controles_continuar_pressed"]
