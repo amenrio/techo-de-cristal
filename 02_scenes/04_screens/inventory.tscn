@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://brkplwxswskhb"]
-
-[ext_resource type="PackedScene" uid="uid://o774ei3kln1l" path="res://02_scenes/04_screens/inventory_ingredient.tscn" id="1_mw3dw"]
+[gd_scene load_steps=2 format=3 uid="uid://brkplwxswskhb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_73cgw"]
 
@@ -26,13 +24,4 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="comanda ingredient" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_mw3dw")]
-layout_mode = 2
-
-[node name="comanda ingredient2" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_mw3dw")]
-layout_mode = 2
-
-[node name="comanda ingredient3" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_mw3dw")]
 layout_mode = 2

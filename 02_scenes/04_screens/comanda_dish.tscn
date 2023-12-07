@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy2bcmeaqdkyw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_260gq"]
+
+[node name="dish" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+
+[node name="sprite" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 36.0
+offset_right = 48.0
+offset_bottom = 79.0
+scale = Vector2(1, 1.03824)
+texture = SubResource("ViewportTexture_260gq")

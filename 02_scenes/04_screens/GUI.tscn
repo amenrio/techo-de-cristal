@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgylo5vnl51"]
+[gd_scene load_steps=3 format=3 uid="uid://bgylo5vnl51"]
 
 [ext_resource type="PackedScene" uid="uid://brkplwxswskhb" path="res://02_scenes/04_screens/inventory.tscn" id="1_8c1m7"]
-[ext_resource type="PackedScene" uid="uid://cw5bufylc4nfb" path="res://02_scenes/04_screens/comanda.tscn" id="1_vpitl"]
 [ext_resource type="PackedScene" uid="uid://x66lrxm7vvm7" path="res://02_scenes/04_screens/timer.tscn" id="3_k4uon"]
 
 [node name="GUI" type="CanvasLayer"]
@@ -31,20 +30,8 @@ layout_mode = 2
 [node name="comandas" type="HBoxContainer" parent="interfaces"]
 layout_mode = 2
 offset_left = 20.0
-offset_right = 232.0
-offset_bottom = 100.0
-size_flags_horizontal = 3
-
-[node name="comanda" parent="interfaces/comandas" instance=ExtResource("1_vpitl")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="comanda2" parent="interfaces/comandas" instance=ExtResource("1_vpitl")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="comanda3" parent="interfaces/comandas" instance=ExtResource("1_vpitl")]
-layout_mode = 2
+offset_right = 283.0
+offset_bottom = 115.0
 size_flags_horizontal = 3
 
 [node name="cronometro" parent="." instance=ExtResource("3_k4uon")]
