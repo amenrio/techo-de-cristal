@@ -3,16 +3,29 @@
 [ext_resource type="Script" path="res://02_scenes/04_screens/menuScreen.gd" id="1_friwq"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_4r0wl"]
 
-[node name="menuScreen" type="Control"]
+[node name="menuScreen" type="Node2D"]
+script = ExtResource("1_friwq")
+
+[node name="level" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_friwq")
 
-[node name="bgIMAGE" type="TextureRect" parent="."]
+[node name="bgIMAGE" type="TextureRect" parent="level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="fondoPlaceholder" type="ColorRect" parent="level"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,16 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="fondoPlaceholder" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="nombreTitulo" type="Label" parent="."]
-layout_mode = 0
+[node name="nombreTitulo" type="Label" parent="level"]
 offset_left = 97.0
 offset_top = 91.0
 offset_right = 449.0
@@ -40,34 +44,33 @@ theme_override_font_sizes/font_size = 43
 text = "A fume de Carozo"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="level"]
 offset_left = 479.0
 offset_top = 256.0
 offset_right = 559.0
 offset_bottom = 396.0
 
-[node name="bXogar" type="Button" parent="VBoxContainer"]
+[node name="bXogar" type="Button" parent="level/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4r0wl")
 text = "Xogar"
 
-[node name="bControles" type="Button" parent="VBoxContainer"]
+[node name="bControles" type="Button" parent="level/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4r0wl")
 text = "Controles"
 
-[node name="bCreditos" type="Button" parent="VBoxContainer"]
+[node name="bCreditos" type="Button" parent="level/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4r0wl")
 text = "Créditos"
 
-[node name="bSair" type="Button" parent="VBoxContainer"]
+[node name="bSair" type="Button" parent="level/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_4r0wl")
 text = "Saír"
 
-[connection signal="pressed" from="VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
-[connection signal="pressed" from="VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
-[connection signal="pressed" from="VBoxContainer/bCreditos" to="." method="_on_b_creditos_pressed"]
-[connection signal="pressed" from="VBoxContainer/bSair" to="." method="_on_b_sair_pressed"]
+[connection signal="pressed" from="level/VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
+[connection signal="pressed" from="level/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
+[connection signal="pressed" from="level/VBoxContainer/bCreditos" to="." method="_on_b_creditos_pressed"]
+[connection signal="pressed" from="level/VBoxContainer/bSair" to="." method="_on_b_sair_pressed"]

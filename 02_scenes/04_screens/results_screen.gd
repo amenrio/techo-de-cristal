@@ -10,5 +10,5 @@ func _on_b_reintentar_pressed():
 
 
 func _on_b_continuar_pressed():
-	$feedbackLayer.get_child(0).hide()
-	$detailsLayer.get_child(0).show()
+	$feedbackLayer.visible = false
+	$detailsLayer.visible = true
