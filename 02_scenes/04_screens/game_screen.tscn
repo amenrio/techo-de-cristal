@@ -8,44 +8,25 @@ script = ExtResource("1_fhcjr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="interfaces" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="fondoPLACEHOLDER" type="ColorRect" parent="CanvasLayer/interfaces"]
-layout_mode = 0
+[node name="background" type="ColorRect" parent="CanvasLayer"]
 offset_right = 640.0
 offset_bottom = 480.0
 
-[node name="bgIMG" type="TextureRect" parent="CanvasLayer/interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("2_kfwvj")]
 
-[node name="GUI" parent="CanvasLayer/interfaces" instance=ExtResource("2_kfwvj")]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/interfaces"]
-layout_mode = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 250.0
 offset_top = 350.0
 offset_right = 402.0
 offset_bottom = 390.0
 
-[node name="bResultados" type="Button" parent="CanvasLayer/interfaces/HBoxContainer"]
+[node name="bResultados" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 text = "Resultados"
 
-[node name="bPausa" type="Button" parent="CanvasLayer/interfaces/HBoxContainer"]
+[node name="bPausa" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 text = "Pausa"
 
-[connection signal="pressed" from="CanvasLayer/interfaces/HBoxContainer/bResultados" to="." method="_on_b_resultados_pressed"]
-[connection signal="pressed" from="CanvasLayer/interfaces/HBoxContainer/bPausa" to="." method="_on_b_pausa_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/bResultados" to="." method="_on_b_resultados_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/bPausa" to="." method="_on_b_pausa_pressed"]

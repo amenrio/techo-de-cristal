@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://o774ei3kln1l"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_suos3"]
+
+[node name="comanda ingredient" type="MarginContainer"]
+offset_right = 42.0
+offset_bottom = 41.0
+rotation = -0.000766327
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="sprite" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("ViewportTexture_suos3")
+
+[node name="count" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 2
