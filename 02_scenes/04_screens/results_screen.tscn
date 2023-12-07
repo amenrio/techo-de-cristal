@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0r7455aj0tpr"]
+[gd_scene load_steps=7 format=3 uid="uid://c0r7455aj0tpr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/results_screen.gd" id="1_70ytu"]
+[ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_58q14"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_bvoy4"]
 
 [sub_resource type="Theme" id="Theme_811cl"]
+default_font = ExtResource("2_58q14")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_av8kj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v5gnb"]
 
 [node name="resultsScreen" type="Node2D"]
 script = ExtResource("1_70ytu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="detailsLayer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="interfaces" type="Control" parent="CanvasLayer"]
+[node name="interfaces" type="Control" parent="detailsLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,17 +26,15 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="fondoPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 480.0
+[node name="background" type="TextureRect" parent="detailsLayer/interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="bgIMG" type="TextureRect" parent="CanvasLayer/interfaces"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="tResultados" type="Label" parent="CanvasLayer/interfaces"]
+[node name="resultsTitle" type="Label" parent="detailsLayer/interfaces"]
 layout_mode = 0
 offset_left = 204.0
 offset_top = 98.0
@@ -40,20 +46,175 @@ theme_override_font_sizes/font_size = 43
 text = "Resultados"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/interfaces"]
+[node name="VBoxContainer" type="VBoxContainer" parent="detailsLayer/interfaces"]
 layout_mode = 0
 offset_left = 270.0
-offset_top = 300.0
+offset_top = 350.0
 offset_right = 361.0
-offset_bottom = 366.0
+offset_bottom = 418.0
 
-[node name="bMenu" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+[node name="bMenu" type="Button" parent="detailsLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_bvoy4")
 text = "Menu"
 
-[node name="bReintentar" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+[node name="bReintentar" type="Button" parent="detailsLayer/interfaces/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_bvoy4")
 text = "Reintentar"
 
-[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bReintentar" to="." method="_on_b_reintentar_pressed"]
+[node name="statsboxs" type="HBoxContainer" parent="detailsLayer/interfaces"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+theme_override_constants/separation = 37
+
+[node name="Points" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+
+[node name="Diñeiro ganado" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_811cl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Diñeiro ganado
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Diñeiro ganado2" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
+layout_mode = 2
+theme = SubResource("Theme_811cl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "353445345"
+horizontal_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+theme_override_constants/separation = 37
+
+[node name="Alimentos Recollidos" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+
+[node name="Alimentos Recollidos" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = SubResource("Theme_811cl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Alimentos Recollidos"
+horizontal_alignment = 1
+
+[node name="Alimentos Recollidos2" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
+layout_mode = 2
+theme = SubResource("Theme_811cl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "43543453"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+theme_override_constants/separation = 37
+
+[node name="Alimentos Recollidos2" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+
+[node name="Pratos Entregados" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
+layout_mode = 2
+theme = SubResource("Theme_811cl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Pratos 
+Entregados"
+horizontal_alignment = 1
+
+[node name="Diñeiro ganado3" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
+layout_mode = 2
+theme = SubResource("Theme_811cl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "3443534534534"
+horizontal_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
+layout_mode = 2
+theme_override_constants/separation = 37
+
+[node name="feedbackLayer" type="CanvasLayer" parent="."]
+
+[node name="interfaces" type="Control" parent="feedbackLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="TextureRect" parent="feedbackLayer/interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background2" type="TextureRect" parent="feedbackLayer/interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_right = -45.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_av8kj")
+
+[node name="feedbackBox" type="TextureRect" parent="feedbackLayer/interfaces"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_top = 315.0
+offset_right = -87.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_v5gnb")
+
+[node name="feedbackText" type="Label" parent="feedbackLayer/interfaces/feedbackBox"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 473.0
+offset_bottom = 58.0
+theme = ExtResource("3_bvoy4")
+text = "\"Non diches nin un só pau á auga. Faralo mellor á próxima?\""
+
+[node name="bContinuar" type="Button" parent="feedbackLayer/interfaces"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 413.0
+offset_right = 606.0
+offset_bottom = 444.0
+theme = ExtResource("3_bvoy4")
+text = "Continuar"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="detailsLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
+[connection signal="pressed" from="detailsLayer/interfaces/VBoxContainer/bReintentar" to="." method="_on_b_reintentar_pressed"]
+[connection signal="pressed" from="feedbackLayer/interfaces/bContinuar" to="." method="_on_b_continuar_pressed"]
