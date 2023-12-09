@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x3abgiciceps"
-path="res://.godot/imported/citrico.png-6ab975d35e645fd0b3e42292b8281987.ctex"
+uid="uid://c0l12vwa2uaus"
+path="res://.godot/imported/chocolate.png-529e9a5821447390691f2ebb73c54556.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/citrico.png"
-dest_files=["res://.godot/imported/citrico.png-6ab975d35e645fd0b3e42292b8281987.ctex"]
+source_file="res://01_assets/01_sprites/ingredientes/chocolate.png"
+dest_files=["res://.godot/imported/chocolate.png-529e9a5821447390691f2ebb73c54556.ctex"]
 
 [params]
 

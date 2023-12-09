@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://csgvbo4n46gvx"]
+[gd_scene load_steps=41 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="3_jo3xj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dii4cl2qyual5" path="res://01_assets/01_sprites/player/player_spritesheet.png" id="4_t20f2"]
 [ext_resource type="PackedScene" uid="uid://dpx4iglkyvp0s" path="res://02_scenes/02_objects/weapon.tscn" id="5_hgwwk"]
 [ext_resource type="Texture2D" uid="uid://dkn3dkg8u4nsp" path="res://01_assets/01_sprites/weapon01.png" id="6_exgfl"]
+[ext_resource type="PackedScene" uid="uid://bgylo5vnl51" path="res://02_scenes/04_screens/GUI.tscn" id="8_gk4yn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]
 
@@ -518,18 +519,11 @@ parameters/conditions/is_moving = false
 parameters/Idle/blend_position = Vector2(-0.00196081, -0.0131004)
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="HUD_canvas_layer" type="CanvasLayer" parent="."]
-
-[node name="hud_comandas" type="VBoxContainer" parent="HUD_canvas_layer"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 130.0
-offset_bottom = 50.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="GUI" parent="." instance=ExtResource("8_gk4yn")]
 
 [connection signal="area_entered" from="interaction_zone" to="." method="_on_interaction_zone_area_entered"]
 [connection signal="area_exited" from="interaction_zone" to="." method="_on_interaction_zone_area_exited"]
 
 [editable path="HealthComponent"]
 [editable path="HitboxComponent"]
+[editable path="GUI"]

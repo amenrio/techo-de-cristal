@@ -13,9 +13,13 @@ extends CharacterBody2D
 @onready var health_component = $HealthComponent
 @onready var weapon = $weapon
 
-@onready var hud_comanda = $HUD_canvas_layer/hud_comandas
+@onready var hud_comanda = $GUI/interfaces/comandas
+
+var inventoryIngredient_instance = preload('res://02_scenes/04_screens/inventory_ingredient.tscn')
+@onready var inventory_gui = $GUI/interfaces/inventoryMargin/inventory
+var inventory_gui_count: Dictionary
 var direction:Vector2
-var comanda_instance = preload("res://02_scenes/02_objects/comanda.tscn")
+var comanda_instance = preload("res://02_scenes/04_screens/comanda.tscn")
 var completed_comandas: Array
 var canDash=true
 var isDashing=false
@@ -70,8 +74,16 @@ func _physics_process(_delta: float) ->  void:
 	check_completed_comandas()
 			
 func _process(delta):
-	print(direction)
 	update_animation_tree()
+	update_inv_count()
+
+func update_inv_count():
+	for ing in inventory["ingredients"]:
+		if not inventory_gui_count[ing]:
+			continue
+		else:
+			inventory_gui_count[ing].ing_count = inventory["ingredients"][ing]
+		
 	
 func update_animation_tree():
 	if (desired_velocity == Vector2.ZERO):
@@ -122,7 +134,12 @@ func add_to_inventory(pickup_object):
 		var pickup_name = pickup_object[pickup_class]
 		if not pickup_name in inventory[pickup_class]:
 			inventory[pickup_class].merge({pickup_name:0})
+			var inventory_ingredient = inventoryIngredient_instance.instantiate()
+			inventory_ingredient.sprite_img = pickup_name
+			inventory_gui_count[pickup_name] = inventory_ingredient
+			inventory_gui.ingredient_slots.add_child(inventory_ingredient)
 		inventory[pickup_class][pickup_name]+=1
+		inventory_gui_count[pickup_name].ing_count = inventory[pickup_class][pickup_name]
 
 	
 func _on_interaction_zone_area_entered(area):
@@ -144,7 +161,7 @@ func talk_to_girlfriend():
 				objetivos.append(comanda_activa)
 				print("Añadida comanda")
 #		check_completed_comandas()
-	
+				print(comanda_activa.ingredients)
 func _on_interaction_zone_area_exited(area):
 	if area.is_in_group('girlfriend'):
 		can_talk_to_girlfriend = false # Replace with function body.

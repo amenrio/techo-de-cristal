@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://brkplwxswskhb"]
+[gd_scene load_steps=3 format=3 uid="uid://brkplwxswskhb"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/inventory.gd" id="1_jxqra"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_73cgw"]
 
@@ -8,6 +10,7 @@ anchor_right = 0.082
 anchor_bottom = 0.335
 offset_right = -52.48
 offset_bottom = -160.8
+script = ExtResource("1_jxqra")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 2

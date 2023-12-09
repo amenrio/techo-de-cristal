@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://o774ei3kln1l"]
+[gd_scene load_steps=3 format=3 uid="uid://o774ei3kln1l"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/inventory_ingredient.gd" id="1_iy482"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_suos3"]
 
@@ -9,6 +11,7 @@ rotation = -0.000766327
 size_flags_vertical = 3
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_right = 3
+script = ExtResource("1_iy482")
 
 [node name="sprite" type="TextureRect" parent="."]
 layout_mode = 2
@@ -17,6 +20,8 @@ texture = SubResource("ViewportTexture_suos3")
 [node name="count" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
-text = "1"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0
+"
 horizontal_alignment = 2
 vertical_alignment = 2

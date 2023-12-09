@@ -7,9 +7,9 @@ var _name:String
 
 
 var textures = {
-	'chocolate': 'res://01_assets/01_sprites/chocolate.png',
-	'citrico': 'res://01_assets/01_sprites/citrico.png',
-	'masa': 'res://01_assets/01_sprites/masa.png',
+	'chocolate': 'res://01_assets/01_sprites/ingredientes/chocolate-Sheet.png',
+	'naranja': 'res://01_assets/01_sprites/ingredientes/naranja-Sheet.png',
+	'masa': 'res://01_assets/01_sprites/ingredientes/masa-Sheet.png',
 	'health':'res://01_assets/01_sprites/health.png',
 	'2shot':'res://01_assets/01_sprites/2shot.png',
 	'3shot':'res://01_assets/01_sprites/3shot.png'
