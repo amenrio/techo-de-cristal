@@ -1,9 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://i2udqkqkksy4"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/pause_screen.gd" id="1_nh62t"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_dm7q6"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_l8hfc"]
-
-[sub_resource type="Theme" id="Theme_r84ws"]
 
 [sub_resource type="Theme" id="Theme_k2p25"]
 
@@ -32,7 +31,7 @@ offset_left = 235.0
 offset_top = 103.0
 offset_right = 402.0
 offset_bottom = 227.0
-theme = SubResource("Theme_r84ws")
+theme = ExtResource("2_dm7q6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 43
 text = "Pausa"

@@ -1,75 +1,40 @@
-[gd_scene format=3 uid="uid://cw5bufylc4nfb"]
+[gd_scene load_steps=3 format=3 uid="uid://cw5bufylc4nfb"]
 
-[node name="comanda" type="MarginContainer"]
+[ext_resource type="PackedScene" uid="uid://cy2bcmeaqdkyw" path="res://02_scenes/04_screens/comanda_dish.tscn" id="1_vuaft"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5unb"]
+
+[node name="comanda" type="Control"]
+layout_mode = 3
+anchor_right = 0.133
+anchor_bottom = 0.24
+offset_right = -0.120003
+offset_bottom = -0.200005
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 2
 offset_right = 85.0
 offset_bottom = 115.0
-
-[node name="colorplaceholcer" type="ColorRect" parent="."]
-layout_mode = 2
-color = Color(0.294118, 0.741176, 0, 1)
-
-[node name="bgIMG" type="TextureRect" parent="."]
-layout_mode = 2
+texture = SubResource("CanvasTexture_c5unb")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+offset_right = 85.0
+offset_bottom = 115.0
 
-[node name="plate" type="MarginContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 36
-
-[node name="colorplaceholder" type="ColorRect" parent="HBoxContainer/plate"]
+[node name="dish" parent="HBoxContainer" instance=ExtResource("1_vuaft")]
 layout_mode = 2
 
-[node name="plateIMG" type="TextureRect" parent="HBoxContainer/plate"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/margin_top = 6
 
-[node name="ingredients" type="VBoxContainer" parent="HBoxContainer"]
+[node name="ingredients" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme_override_constants/separation = 11
 
-[node name="ing1" type="MarginContainer" parent="HBoxContainer/ingredients"]
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 5
-
-[node name="colPlaceHolder" type="ColorRect" parent="HBoxContainer/ingredients/ing1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="foodIMG" type="TextureRect" parent="HBoxContainer/ingredients/ing1"]
-layout_mode = 2
-
-[node name="ing2" type="MarginContainer" parent="HBoxContainer/ingredients"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 4
-
-[node name="colPlcHolder" type="ColorRect" parent="HBoxContainer/ingredients/ing2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="foodIMG" type="TextureRect" parent="HBoxContainer/ingredients/ing2"]
-layout_mode = 2
-
-[node name="ing3" type="MarginContainer" parent="HBoxContainer/ingredients"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 8
-
-[node name="colPlcHolder" type="ColorRect" parent="HBoxContainer/ingredients/ing3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="foodIMG" type="TextureRect" parent="HBoxContainer/ingredients/ing3"]
-layout_mode = 2
+theme_override_constants/separation = 6
