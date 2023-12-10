@@ -82,7 +82,6 @@ func update_animation_tree():
 	else:
 		animation_tree["parameters/conditions/idle"] = false	
 		animation_tree["parameters/conditions/is_moving"] = true
-		$walkingAudio.seek()
 	if (desired_velocity != Vector2.ZERO):
 		animation_tree["parameters/Idle/blend_position"] = direction
 		animation_tree["parameters/Walk/blend_position"] = direction
