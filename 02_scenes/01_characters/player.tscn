@@ -1,13 +1,17 @@
-[gd_scene load_steps=41 format=3 uid="uid://csgvbo4n46gvx"]
+[gd_scene load_steps=45 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="3_jo3xj"]
 [ext_resource type="PackedScene" uid="uid://djsscuerlbs64" path="res://02_scenes/05_components/bullet_component.tscn" id="4_8e3dc"]
+[ext_resource type="AudioStream" uid="uid://ij4b4kou8piq" path="res://01_assets/03_sound/01_sfx/01_player/playerHit.wav" id="4_n5f5i"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_p68kg"]
 [ext_resource type="Texture2D" uid="uid://dii4cl2qyual5" path="res://01_assets/01_sprites/player/player_spritesheet.png" id="4_t20f2"]
 [ext_resource type="PackedScene" uid="uid://dpx4iglkyvp0s" path="res://02_scenes/02_objects/weapon.tscn" id="5_hgwwk"]
 [ext_resource type="Texture2D" uid="uid://dkn3dkg8u4nsp" path="res://01_assets/01_sprites/weapon01.png" id="6_exgfl"]
 [ext_resource type="AudioStream" uid="uid://0giwqoufl8fe" path="res://01_assets/03_sound/01_sfx/01_player/walking.mp3" id="8_f1lo3"]
+[ext_resource type="AudioStream" uid="uid://h4jq7j1gccge" path="res://01_assets/03_sound/01_sfx/01_player/pickup.mp3" id="10_gpeem"]
+[ext_resource type="AudioStream" uid="uid://d2hldqmq1v8i3" path="res://01_assets/03_sound/01_sfx/01_player/Dash.mp3" id="11_6ncxp"]
+[ext_resource type="AudioStream" uid="uid://bdghginayeyot" path="res://01_assets/03_sound/01_sfx/01_player/playerDeath.mp3" id="11_7503b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]
 
@@ -530,6 +534,18 @@ size_flags_vertical = 4
 
 [node name="walkingAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_f1lo3")
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_n5f5i")
+
+[node name="pickUpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_gpeem")
+
+[node name="DashAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_6ncxp")
+
+[node name="deathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_7503b")
 
 [connection signal="area_entered" from="interaction_zone" to="." method="_on_interaction_zone_area_entered"]
 [connection signal="area_exited" from="interaction_zone" to="." method="_on_interaction_zone_area_exited"]

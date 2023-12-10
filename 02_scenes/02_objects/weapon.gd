@@ -41,7 +41,7 @@ func _process(_delta):
 		for bullet_idx in bullet_number:
 			var bulletInstance = _create_bullet(bullet_idx)
 			level.add_child(bulletInstance)
-
+			$ShotAudio.play()
 
 
 func _on_show_delay_timeout():

@@ -37,6 +37,7 @@ func _ready():
 	animation_tree.active = true
 	
 func player_death(_args):
+	$deathAudio.play()
 	get_tree().paused = true
 	
 var ongoing_comanda:bool = false
@@ -46,6 +47,7 @@ func dash():
 		velocity = velocity.normalized() * dash_velocity
 		canDash=false
 		isDashing=true
+		$DashAudio.play()
 		await get_tree().create_timer(dash_timeout).timeout
 		isDashing=false
 		canDash=true
@@ -80,6 +82,7 @@ func update_animation_tree():
 	else:
 		animation_tree["parameters/conditions/idle"] = false	
 		animation_tree["parameters/conditions/is_moving"] = true
+		$walkingAudio.seek()
 	if (desired_velocity != Vector2.ZERO):
 		animation_tree["parameters/Idle/blend_position"] = direction
 		animation_tree["parameters/Walk/blend_position"] = direction
@@ -123,6 +126,7 @@ func add_to_inventory(pickup_object):
 		if not pickup_name in inventory[pickup_class]:
 			inventory[pickup_class].merge({pickup_name:0})
 		inventory[pickup_class][pickup_name]+=1
+	$pickUpAudio.play()
 
 	
 func _on_interaction_zone_area_entered(area):
