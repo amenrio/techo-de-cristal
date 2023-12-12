@@ -23,6 +23,7 @@ var comanda_instance = preload("res://02_scenes/04_screens/comanda.tscn")
 var completed_comandas: Array
 var canDash=true
 var isDashing=false
+var isWalking=false
 
 var can_talk_to_girlfriend=false
 
@@ -91,9 +92,15 @@ func update_animation_tree():
 	if (desired_velocity == Vector2.ZERO):
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/is_moving"] = false
+		if (isWalking == true):
+			$walkingAudio.stop()
+			isWalking = false
 	else:
 		animation_tree["parameters/conditions/idle"] = false	
 		animation_tree["parameters/conditions/is_moving"] = true
+		if (isWalking == false):
+			$walkingAudio.play()
+			isWalking = true
 	if (desired_velocity != Vector2.ZERO):
 		animation_tree["parameters/Idle/blend_position"] = direction
 		animation_tree["parameters/Walk/blend_position"] = direction
@@ -103,6 +110,7 @@ func check_completed_comandas():
 		if comanda.timed_out:
 			objetivos.erase(comanda)
 			hud_comanda.remove_child(comanda)
+			$comandaTimeOut.play()
 			continue
 			
 		if not comanda.is_completed:
@@ -122,6 +130,7 @@ func check_completed_comandas():
 			objetivos.erase(comanda)
 			hud_comanda.remove_child(comanda)
 			completed_comandas.append(comanda)
+			$comandaCompletada.play()
 			continue
 
 

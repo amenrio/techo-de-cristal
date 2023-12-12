@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1vcsu1a0lffa"]
+[gd_scene load_steps=5 format=3 uid="uid://d1vcsu1a0lffa"]
 
 [ext_resource type="PackedScene" uid="uid://wveguagwuor2" path="res://02_scenes/01_characters/enemy01.tscn" id="1_the54"]
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy03.gd" id="2_gnx8y"]
+[ext_resource type="AudioStream" uid="uid://cuwyg3l76k6ow" path="res://01_assets/03_sound/01_sfx/02_enemies/OrangeAttack.wav" id="3_p6lki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhaam"]
 radius = 166.048
@@ -19,6 +20,9 @@ target_position = Vector2(0, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shootRange" index="0"]
 shape = SubResource("CircleShape2D_hhaam")
+
+[node name="attack" parent="." index="10"]
+stream = ExtResource("3_p6lki")
 
 [connection signal="timeout" from="shootDelay" to="." method="_on_shoot_delay_timeout"]
 [connection signal="area_entered" from="shootRange" to="." method="_on_shoot_rage_area_entered"]

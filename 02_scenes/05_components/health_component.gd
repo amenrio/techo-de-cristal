@@ -22,4 +22,5 @@ func _physics_process(delta):
 func take_damage(damage):
 	health -= damage
 	health_bar.value = health
+	
 

@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bn5gcw7g71dpx" path="res://01_assets/04_resources/Tileset.tres" id="3_dmdj1"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
 [ext_resource type="PackedScene" uid="uid://de4yexnjnfet" path="res://02_scenes/01_characters/enemy02.tscn" id="4_qef1p"]
-[ext_resource type="AudioStream" uid="uid://gk7mv1ctba6x" path="res://01_assets/03_sound/02_music/mainSong_v01.mp3" id="6_sub0h"]
+[ext_resource type="AudioStream" uid="uid://bjbvpw3pe6ixq" path="res://01_assets/03_sound/02_music/mainSong_v01.wav" id="6_gyuh8"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v27qv"]
 
@@ -69,7 +69,6 @@ enemy_names = Array[String](["chocolate", "naranja", "masa"])
 
 [node name="timer" parent="spawner" index="1"]
 wait_time = 4.0
-autostart = false
 
 [node name="girlfriend" parent="." index="4" instance=ExtResource("4_8kabd")]
 position = Vector2(980, 695)
@@ -107,9 +106,12 @@ parameters/Idle/blend_position = Vector2(0.00392163, 0.973799)
 texture = SubResource("ViewportTexture_o70pc")
 
 [node name="mainSong" type="AudioStreamPlayer" parent="." index="6"]
-stream = ExtResource("6_sub0h")
-volume_db = -8.0
+stream = ExtResource("6_gyuh8")
+volume_db = -10.0
 autoplay = true
+
+[node name="level_timer" parent="." index="7"]
+autostart = true
 
 [editable path="spawner"]
 [editable path="player"]

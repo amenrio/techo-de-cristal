@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkb53h0ivrhpm"]
+[gd_scene load_steps=5 format=3 uid="uid://bkb53h0ivrhpm"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/menuScreen.gd" id="1_friwq"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_4r0wl"]
+[ext_resource type="AudioStream" uid="uid://rc6a70ux6ie7" path="res://01_assets/03_sound/02_music/intro.wav" id="3_mbe6s"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5umnr"]
 
@@ -66,6 +67,11 @@ text = "Créditos"
 layout_mode = 2
 theme = ExtResource("2_4r0wl")
 text = "Saír"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mbe6s")
+volume_db = -18.0
+autoplay = true
 
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]

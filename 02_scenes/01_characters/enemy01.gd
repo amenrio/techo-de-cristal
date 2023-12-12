@@ -10,6 +10,7 @@ extends CharacterBody2D
 var max_speed = 300
 var following_player = true
 var damage = 10.0
+signal enemyDeath
 
 var sprite_string = "res://01_assets/01_sprites/enemy_%s.png"
 
@@ -38,6 +39,7 @@ func _on_hitbox_component_area_entered( area):
 		area.damage(damage)
 		following_player = false
 		velocity = Vector2.ZERO
+		$attack.play()
 		await get_tree().create_timer(hit_lag).timeout
 		following_player = true
 

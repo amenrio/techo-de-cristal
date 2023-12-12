@@ -33,6 +33,7 @@ func _process(delta):
 				if loaded == true:
 					print("SHOOT")
 					loaded = false
+					$attack.play()
 					shootDelay.set_wait_time(initialTime)
 					
 

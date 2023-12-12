@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpx4iglkyvp0s"]
 
 [ext_resource type="Script" path="res://02_scenes/02_objects/weapon.gd" id="1_a5dbu"]
-[ext_resource type="AudioStream" uid="uid://cx8w6pe6wyxxu" path="res://01_assets/03_sound/01_sfx/01_player/shoot.mp3" id="2_m4w5m"]
+[ext_resource type="AudioStream" uid="uid://cvkh6kr1a3wqk" path="res://01_assets/03_sound/01_sfx/01_player/shoot.wav" id="2_ciqte"]
 
 [node name="weapon" type="Node2D"]
 script = ExtResource("1_a5dbu")
@@ -17,7 +17,7 @@ wait_time = 0.4
 autostart = true
 
 [node name="ShotAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_m4w5m")
+stream = ExtResource("2_ciqte")
 volume_db = -10.0
 
 [connection signal="timeout" from="show_delay" to="." method="_on_show_delay_timeout"]
