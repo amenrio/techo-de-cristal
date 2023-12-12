@@ -1,71 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlrtjsiufgmbb"]
+[gd_scene load_steps=4 format=3 uid="uid://dlrtjsiufgmbb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/creditsScreen.gd" id="1_ohgdq"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_uevps"]
 
-[sub_resource type="Theme" id="Theme_60m0t"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_qtijf"]
 
 [node name="creditsScreen" type="Node2D"]
 script = ExtResource("1_ohgdq")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="interfaces" type="Control" parent="CanvasLayer"]
+[node name="interfaces" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="bgIMG" type="TextureRect" parent="CanvasLayer/interfaces"]
+[node name="background" type="TextureRect" parent="interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("CanvasTexture_qtijf")
 
-[node name="fondoplaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 480.0
-
-[node name="nombreCreditos" type="Label" parent="CanvasLayer/interfaces"]
+[node name="nombreCreditos" type="Label" parent="interfaces"]
 layout_mode = 0
 offset_left = 241.0
 offset_top = 38.0
 offset_right = 415.0
 offset_bottom = 162.0
-theme = SubResource("Theme_60m0t")
+theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 43
 text = "Creditos"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="textoCreditos" type="Label" parent="CanvasLayer/interfaces"]
+[node name="textoCreditos" type="Label" parent="interfaces"]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 126.0
 offset_right = 503.0
 offset_bottom = 345.0
-theme = SubResource("Theme_60m0t")
+theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Ana	                 Luis Carlos
+
 Sara                       Amaya
+
 Pablo                     Andrés"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="bCreditosAtras" type="Button" parent="CanvasLayer/interfaces"]
+[node name="bCreditosAtras" type="Button" parent="interfaces"]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 413.0
 offset_right = 116.0
 offset_bottom = 444.0
+theme = ExtResource("2_uevps")
 text = "Atrás"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/interfaces/bCreditosAtras" to="." method="_on_b_creditos_atras_pressed"]
+[connection signal="pressed" from="interfaces/bCreditosAtras" to="." method="_on_b_creditos_atras_pressed"]

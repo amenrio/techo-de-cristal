@@ -7,18 +7,18 @@ var _ingredients
 var completed_ingredients:Dictionary
 var sorted_completed_ingredients:Dictionary
 var total_time: float
-@onready var timer = $timer
 var is_completed:bool
 var timed_out:bool=false
-@onready var completed_hud = $comanda_hbox/completed_ingredients
-@onready var name_hud = $comanda_hbox/name
-@onready var ingredients_hud = $comanda_hbox/ingredients
-@onready var timer_hud = $comanda_hbox/timer
+var _recipe_path:String
+@onready var recipe_sprite = $sprite
+@onready var timer = $timer
+@onready var ingredient_vb = $HBoxContainer/MarginContainer/ingredients
+var ingredient_instance = preload("res://02_scenes/04_screens/comanda_ingredient.tscn")
 
 func init(args):
 	recipe_name = args["name"]
 	ingredients = sort(args["ingredients"])
-#	total_time = args["timer"]
+	_recipe_path = args["sprite"]
 	total_time = int(args["timer"])
 
 # Called when the node enters the scene tree for the first time.
@@ -29,16 +29,25 @@ func _ready():
 	timer.start() # Replace with function body.
 	
 func init_hud():
-	name_hud.text = recipe_name
-	ingredients_hud.text = str(ingredients)
-	timer_hud.text = str(total_time)
+	recipe_sprite.texture = load(_recipe_path)
+	for ingredient in ingredients:
+		if ingredients[ingredient] > 1:
+			for ing in ingredients[ingredient]:
+				append_ingredient(ingredient)
+				continue
+		else:
+			append_ingredient(ingredient)
+
+func append_ingredient(ingredient):
+	var ingredient_inst = ingredient_instance.instantiate()
+	ingredient_inst.ing_sprite = ingredient
+	ingredient_vb.add_child(ingredient_inst)
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	sorted_completed_ingredients = sort(completed_ingredients)
-	ingredients_hud.text = str(ingredients)
-	timer_hud.text = str(int(timer.time_left))
-	completed_hud.text = str(sorted_completed_ingredients)
+
 	if equal(ingredients, completed_ingredients):
 		is_completed=true
 		timer.stop()

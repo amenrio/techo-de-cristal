@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://kc21pye1pm6r"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/comanda_ingredient.gd" id="1_wg8wb"]
+
+[node name="ing1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 2
+script = ExtResource("1_wg8wb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.19, 0.19)
+
+[node name="sprite" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 3

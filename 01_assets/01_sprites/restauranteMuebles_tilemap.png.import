@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x3abgiciceps"
-path="res://.godot/imported/citrico.png-6ab975d35e645fd0b3e42292b8281987.ctex"
+uid="uid://x84soslgjl8l"
+path="res://.godot/imported/restauranteMuebles_tilemap.png-e03fd91fdc7a614198eab28d3bd163a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/citrico.png"
-dest_files=["res://.godot/imported/citrico.png-6ab975d35e645fd0b3e42292b8281987.ctex"]
+source_file="res://01_assets/01_sprites/restauranteMuebles_tilemap.png"
+dest_files=["res://.godot/imported/restauranteMuebles_tilemap.png-e03fd91fdc7a614198eab28d3bd163a3.ctex"]
 
 [params]
 

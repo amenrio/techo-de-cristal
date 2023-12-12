@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://csgvbo4n46gvx"]
+[gd_scene load_steps=41 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="3_jo3xj"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://h4jq7j1gccge" path="res://01_assets/03_sound/01_sfx/01_player/pickup.mp3" id="10_gpeem"]
 [ext_resource type="AudioStream" uid="uid://d2hldqmq1v8i3" path="res://01_assets/03_sound/01_sfx/01_player/Dash.mp3" id="11_6ncxp"]
 [ext_resource type="AudioStream" uid="uid://bdghginayeyot" path="res://01_assets/03_sound/01_sfx/01_player/playerDeath.mp3" id="11_7503b"]
+[ext_resource type="PackedScene" uid="uid://bgylo5vnl51" path="res://02_scenes/04_screens/GUI.tscn" id="8_gk4yn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]
 
@@ -503,6 +504,7 @@ libraries = {
 }
 
 [node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, -8)
 texture = ExtResource("4_t20f2")
 hframes = 8
@@ -522,15 +524,7 @@ parameters/conditions/is_moving = false
 parameters/Idle/blend_position = Vector2(-0.00196081, -0.0131004)
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="HUD_canvas_layer" type="CanvasLayer" parent="."]
-
-[node name="hud_comandas" type="VBoxContainer" parent="HUD_canvas_layer"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 130.0
-offset_bottom = 50.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="GUI" parent="." instance=ExtResource("8_gk4yn")]
 
 [node name="walkingAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_f1lo3")
@@ -552,3 +546,4 @@ stream = ExtResource("11_7503b")
 
 [editable path="HealthComponent"]
 [editable path="HitboxComponent"]
+[editable path="GUI"]

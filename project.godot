@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
-window/stretch/aspect="ignore"
+window/stretch/mode="canvas_items"
 mouse_cursor/size/viewport_height=1080
 mouse_cursor/size/viewport_width=1920
 mouse_cursor/stretch/aspect="keep"

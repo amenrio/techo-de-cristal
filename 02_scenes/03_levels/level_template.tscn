@@ -10,16 +10,16 @@
 [node name="levelTemplate" type="Node2D"]
 script = ExtResource("1_pt6n6")
 
+[node name="player_start" type="Marker2D" parent="."]
+
+[node name="spawner" parent="." instance=ExtResource("2_wjpsb")]
+
 [node name="player" parent="." instance=ExtResource("1_e7f8m")]
 
 [node name="PauseMenu" parent="player/Camera2D" index="0" instance=ExtResource("4_gx3hq")]
 
 [node name="AnimationTree" parent="player" index="8"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hpwq3")
-
-[node name="player_start" type="Marker2D" parent="."]
-
-[node name="spawner" parent="." instance=ExtResource("2_wjpsb")]
 
 [node name="level_timer" type="Timer" parent="."]
 wait_time = 120.0
@@ -29,3 +29,4 @@ wait_time = 120.0
 [editable path="player"]
 [editable path="player/HealthComponent"]
 [editable path="player/HitboxComponent"]
+[editable path="player/GUI"]
