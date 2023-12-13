@@ -131,19 +131,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="bCreditosAtras" type="Button" parent="interfaces"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0328125
-anchor_right = -0.0328125
-anchor_bottom = 0.00625
-offset_left = 43.0
-offset_top = 413.0
-offset_right = 116.0
-offset_bottom = 444.0
+offset_left = 34.0
+offset_top = 382.0
+offset_right = 104.0
+offset_bottom = 452.0
 theme = ExtResource("2_uevps")
 text = "
 "
 icon = ExtResource("4_qfv5t")
-metadata/_edit_use_anchors_ = true
+icon_alignment = 1
 
 [node name="title" type="TextureRect" parent="interfaces"]
 layout_mode = 0

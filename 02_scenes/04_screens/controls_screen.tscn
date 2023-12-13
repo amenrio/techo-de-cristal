@@ -1,79 +1,105 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuk24j5wdg104"]
+[gd_scene load_steps=8 format=3 uid="uid://cuk24j5wdg104"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_iwvct"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_77ttm"]
+[ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_wwh5h"]
+[ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_0k6ts"]
+[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_ymfwe"]
+[ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_jmtwj"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kx6my"]
 
 [node name="controlsScreen" type="Node2D"]
 script = ExtResource("1_iwvct")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="interfaces" type="Control" parent="CanvasLayer"]
+[node name="interfaces" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
-[node name="background" type="TextureRect" parent="CanvasLayer/interfaces"]
+[node name="background" type="TextureRect" parent="interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 637.0
+offset_bottom = 478.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_kx6my")
 
-[node name="controlsTitle" type="Label" parent="CanvasLayer/interfaces"]
+[node name="controlesSprite" type="TextureRect" parent="interfaces"]
 layout_mode = 0
-offset_left = 241.0
-offset_top = 38.0
-offset_right = 441.0
-offset_bottom = 162.0
-scale = Vector2(1.0026, 1.04762)
-theme = ExtResource("2_77ttm")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 43
-text = "Controles"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+offset_left = 62.0
+offset_right = 637.0
+offset_bottom = 480.0
+texture = ExtResource("2_wwh5h")
 
-[node name="story" type="Label" parent="CanvasLayer/interfaces"]
-offset_left = 357.0
-offset_top = 163.0
-offset_right = 586.0
-offset_bottom = 201.0
-theme = ExtResource("2_77ttm")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "historia noseke"
-horizontal_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="interfaces"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 139.0
+offset_right = 398.0
+offset_bottom = 360.0
+texture = ExtResource("3_0k6ts")
 
-[node name="controls" type="Label" parent="CanvasLayer/interfaces"]
+[node name="bControlesAtras" type="Button" parent="interfaces"]
 layout_mode = 1
-offset_left = 66.0
-offset_top = 166.0
-offset_right = 295.0
-offset_bottom = 204.0
-theme = ExtResource("2_77ttm")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "bla bls bla bla bka "
-horizontal_alignment = 1
-
-[node name="bControlesAtras" type="Button" parent="CanvasLayer/interfaces"]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 413.0
-offset_right = 116.0
-offset_bottom = 444.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 389.0
+offset_right = 89.0
+offset_bottom = 459.0
+grow_vertical = 0
 scale = Vector2(1.00766, 1)
 theme = ExtResource("2_77ttm")
-text = "Atrás"
-metadata/_edit_use_anchors_ = true
+icon = ExtResource("5_ymfwe")
+icon_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]
+[node name="story" type="Label" parent="interfaces"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 36.0
+offset_right = 622.0
+offset_bottom = 435.0
+theme = ExtResource("2_77ttm")
+theme_override_font_sizes/font_size = 12
+text = "A túa moza acaba de abrir o seu restaurante en pleno centro. Aínda non comprendedes a sorte que tivestes para atopar un alugueiro tan barato! Todo vai a pedir de boca: comida exquisita, clientela abraiada... cando de súpeto os ingredientes cobran vida. O restaurante está encantado! Seica por iso non duraban os negocios.
+Aí é onde entras ti, de profesión caza demos debes dispararlle aos ingredientes que atopes para levarllos de volta a túa moza. Pero vai rápido, antes de que os clientes marchen e ela se enfade. Ningunha pantasma nin ningunha moza torpe van impedir a súa estrela Michelin!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="title" type="TextureRect" parent="interfaces"]
+offset_left = 100.0
+offset_top = 52.0
+offset_right = 340.0
+offset_bottom = 122.0
+rotation = -0.0314159
+texture = ExtResource("6_jmtwj")
+expand_mode = 1
+
+[node name="controles" type="Label" parent="interfaces/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.9058
+offset_top = -33.9985
+offset_right = 80.0942
+offset_bottom = 28.0015
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_77ttm")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Controles"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]

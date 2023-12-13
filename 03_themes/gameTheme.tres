@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://pd8stp4u7wqj"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://pd8stp4u7wqj"]
 
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="1_2bqb1"]
 [ext_resource type="Texture2D" uid="uid://bji88v4ssadqy" path="res://01_assets/01_sprites/01_interfaces/hoverButton.png" id="1_35b16"]
@@ -16,26 +16,10 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5k8y"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aetwt"]
+texture = ExtResource("1_35b16")
+texture_margin_top = 5.0
+texture_margin_bottom = 15.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1sh2j"]
 texture = ExtResource("1_35b16")
@@ -47,9 +31,6 @@ texture = ExtResource("2_bdjgn")
 texture_margin_bottom = 10.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aetwt"]
-texture = ExtResource("1_35b16")
 
 [resource]
 default_font = ExtResource("1_2bqb1")
@@ -70,7 +51,7 @@ Button/constants/h_separation = 2
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/styles/disabled = SubResource("StyleBoxFlat_0nm1n")
-Button/styles/focus = SubResource("StyleBoxFlat_j5k8y")
+Button/styles/focus = SubResource("StyleBoxTexture_aetwt")
 Button/styles/hover = SubResource("StyleBoxTexture_1sh2j")
 Button/styles/normal = SubResource("StyleBoxTexture_282ia")
 Button/styles/pressed = SubResource("StyleBoxTexture_aetwt")
