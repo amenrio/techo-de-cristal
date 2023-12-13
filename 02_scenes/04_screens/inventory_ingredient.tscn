@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://o774ei3kln1l"]
+[gd_scene load_steps=4 format=3 uid="uid://o774ei3kln1l"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/inventory_ingredient.gd" id="1_iy482"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_hjey4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_suos3"]
 
@@ -20,6 +21,7 @@ texture = SubResource("ViewportTexture_suos3")
 [node name="count" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
+theme = ExtResource("2_hjey4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0
 "

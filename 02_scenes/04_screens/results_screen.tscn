@@ -1,15 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0r7455aj0tpr"]
+[gd_scene load_steps=9 format=3 uid="uid://c0r7455aj0tpr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/results_screen.gd" id="1_70ytu"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_58q14"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_bvoy4"]
+[ext_resource type="Texture2D" uid="uid://dq0ehhh3ng0ts" path="res://01_assets/01_sprites/01_interfaces/illustrationFrame.png" id="4_dwvia"]
+[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="4_r3pcd"]
+[ext_resource type="Texture2D" uid="uid://dropr4gmnu3lr" path="res://01_assets/01_sprites/01_interfaces/feedbackText.png" id="5_ba4lo"]
+[ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="7_ucpke"]
 
 [sub_resource type="Theme" id="Theme_811cl"]
 default_font = ExtResource("2_58q14")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_av8kj"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_v5gnb"]
 
 [node name="resultsScreen" type="Node2D"]
 script = ExtResource("1_70ytu")
@@ -170,6 +170,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_r3pcd")
 
 [node name="illustration" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
@@ -181,27 +182,27 @@ offset_right = -45.0
 offset_bottom = -196.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_av8kj")
+texture = ExtResource("4_dwvia")
 
 [node name="feedbackBox" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 67.0
-offset_top = 315.0
-offset_right = -87.0
-offset_bottom = -106.0
+offset_left = 45.0
+offset_top = 215.0
+offset_right = -65.0
+offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_v5gnb")
+texture = ExtResource("5_ba4lo")
 
 [node name="feedbackText" type="Label" parent="feedbackLayer/interfaces/feedbackBox"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 15.0
-offset_right = 473.0
-offset_bottom = 58.0
+offset_left = 32.0
+offset_top = 84.0
+offset_right = 504.0
+offset_bottom = 127.0
 theme = ExtResource("3_bvoy4")
 text = "\"Non diches nin un só pau á auga. Faralo mellor á próxima?\""
 
@@ -217,6 +218,8 @@ offset_top = 413.0
 offset_right = 590.0
 offset_bottom = 479.0
 theme = ExtResource("3_bvoy4")
+icon = ExtResource("7_ucpke")
+icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="detailsLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
