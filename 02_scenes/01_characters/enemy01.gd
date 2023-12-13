@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var health_component = $HealthComponent
 @onready var nav_agent = $NavigationAgent2D
 
-var max_speed = 300
+var max_speed = 200
 var following_player = true
 var damage = 10.0
 signal enemyDeath

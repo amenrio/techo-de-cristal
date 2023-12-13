@@ -1,14 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1vcsu1a0lffa"]
+[gd_scene load_steps=16 format=3 uid="uid://d1vcsu1a0lffa"]
 
 [ext_resource type="PackedScene" uid="uid://wveguagwuor2" path="res://02_scenes/01_characters/enemy01.tscn" id="1_the54"]
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy03.gd" id="2_gnx8y"]
+[ext_resource type="Texture2D" uid="uid://cbqufpl346va7" path="res://01_assets/01_sprites/EnemySprites/orange_run.png" id="3_4mdt2"]
+[ext_resource type="Texture2D" uid="uid://cr3bmi00hkq6q" path="res://01_assets/01_sprites/EnemySprites/orange_ataque.png" id="3_eh5am"]
 [ext_resource type="AudioStream" uid="uid://cuwyg3l76k6ow" path="res://01_assets/03_sound/01_sfx/02_enemies/OrangeAttack.wav" id="3_p6lki"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs0sf"]
+atlas = ExtResource("3_eh5am")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2754j"]
+atlas = ExtResource("3_eh5am")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkys0"]
+atlas = ExtResource("3_eh5am")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx0sd"]
+atlas = ExtResource("3_eh5am")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kadqm"]
+atlas = ExtResource("3_4mdt2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3cel"]
+atlas = ExtResource("3_4mdt2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmepl"]
+atlas = ExtResource("3_4mdt2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78e7p"]
+atlas = ExtResource("3_4mdt2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1reuj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs0sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2754j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkys0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx0sd")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kadqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3cel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmepl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78e7p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhaam"]
 radius = 166.048
 
 [node name="enemy03" instance=ExtResource("1_the54")]
 script = ExtResource("2_gnx8y")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_1reuj")
+frame_progress = 0.310499
 
 [node name="shootDelay" type="Timer" parent="." index="7"]
 wait_time = 0.8
@@ -21,7 +96,7 @@ target_position = Vector2(0, 200)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shootRange" index="0"]
 shape = SubResource("CircleShape2D_hhaam")
 
-[node name="attack" parent="." index="10"]
+[node name="attack" parent="." index="11"]
 stream = ExtResource("3_p6lki")
 
 [connection signal="timeout" from="shootDelay" to="." method="_on_shoot_delay_timeout"]

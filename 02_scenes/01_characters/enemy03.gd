@@ -29,6 +29,7 @@ func _process(delta):
 	if playerIsTarget:
 		castCheck.look_at(player_instance.global_position - self.global_position)
 		if castCheck.is_colliding():
+			print("CAST TRUE")
 			if castCheck.get_collider() == player_instance:
 				if loaded == true:
 					print("SHOOT")

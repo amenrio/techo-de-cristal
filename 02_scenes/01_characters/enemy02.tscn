@@ -1,10 +1,130 @@
-[gd_scene load_steps=10 format=3 uid="uid://de4yexnjnfet"]
+[gd_scene load_steps=28 format=3 uid="uid://de4yexnjnfet"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy02.gd" id="1_sr8wj"]
 [ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="2_tmdi8"]
 [ext_resource type="Texture2D" uid="uid://bqu7avl5bhxpc" path="res://01_assets/01_sprites/enemy.png" id="3_5wxqv"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_51mka"]
+[ext_resource type="Texture2D" uid="uid://bijixlluuc04o" path="res://01_assets/01_sprites/EnemySprites/chocolate_run.png" id="4_lqgnm"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="5_3qyqs"]
+[ext_resource type="Texture2D" uid="uid://bcbrtjcku23br" path="res://01_assets/01_sprites/EnemySprites/chocolate_ataque.png" id="5_8ec8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcnqx"]
+atlas = ExtResource("4_lqgnm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ka8m"]
+atlas = ExtResource("4_lqgnm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bchpp"]
+atlas = ExtResource("4_lqgnm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hsce"]
+atlas = ExtResource("4_lqgnm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfp3e"]
+atlas = ExtResource("4_lqgnm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co5bt"]
+atlas = ExtResource("4_lqgnm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tohe2"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qsqn"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ofs4"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urupj"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blvrr"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkoy7"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5seno"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eqr4"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggaeo"]
+atlas = ExtResource("5_8ec8y")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e546c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcnqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ka8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bchpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hsce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfp3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co5bt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tohe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qsqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ofs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urupj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blvrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkoy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5seno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eqr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggaeo")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 18.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gn6rt"]
 radius = 15.0
@@ -13,7 +133,7 @@ radius = 15.0
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7ip4"]
-radius = 80.0
+radius = 57.0351
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3nn7d"]
 radius = 96.2549
@@ -26,9 +146,18 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_sr8wj")
 loot = ExtResource("2_tmdi8")
 _name = "chocolate"
+max_speed = 180
 
 [node name="sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_5wxqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_e546c")
+animation = &"explode"
+autoplay = "default"
+frame_progress = 0.551887
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_51mka")]
 collision_layer = 2
@@ -64,12 +193,12 @@ shape = SubResource("CircleShape2D_3nn7d")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 3
-debug_enabled = true
 
 [node name="navTimer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
 
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
 [connection signal="body_entered" from="activationRange" to="." method="_on_activation_range_body_entered"]
 [connection signal="body_exited" from="activationRange" to="." method="_on_activation_range_body_exited"]

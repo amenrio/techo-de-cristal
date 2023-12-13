@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dderw5xslumkm" path="res://02_scenes/03_levels/level_template.tscn" id="1_tm6rn"]
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_alpha.gd" id="2_v0fk0"]
 [ext_resource type="TileSet" uid="uid://bn5gcw7g71dpx" path="res://01_assets/04_resources/Tileset.tres" id="3_dmdj1"]
+[ext_resource type="PackedScene" uid="uid://d1vcsu1a0lffa" path="res://02_scenes/01_characters/enemy03.tscn" id="4_4xnrs"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
-[ext_resource type="PackedScene" uid="uid://de4yexnjnfet" path="res://02_scenes/01_characters/enemy02.tscn" id="4_qef1p"]
 [ext_resource type="AudioStream" uid="uid://bjbvpw3pe6ixq" path="res://01_assets/03_sound/02_music/mainSong_v01.wav" id="6_gyuh8"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v27qv"]
@@ -64,7 +64,7 @@ position = Vector2(980, 760)
 [node name="spawner" parent="." index="3"]
 position = Vector2(930, 1366)
 scale = Vector2(0.760002, 0.76)
-enemies = ExtResource("4_qef1p")
+enemies = ExtResource("4_4xnrs")
 enemy_names = Array[String](["chocolate", "naranja", "masa"])
 
 [node name="timer" parent="spawner" index="1"]

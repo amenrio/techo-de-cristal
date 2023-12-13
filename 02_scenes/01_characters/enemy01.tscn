@@ -1,12 +1,56 @@
-[gd_scene load_steps=10 format=3 uid="uid://wveguagwuor2"]
+[gd_scene load_steps=17 format=3 uid="uid://wveguagwuor2"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy01.gd" id="1_kn3i3"]
 [ext_resource type="Texture2D" uid="uid://bqu7avl5bhxpc" path="res://01_assets/01_sprites/enemy.png" id="1_w3yix"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="2_g7oyf"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="3_76ssk"]
+[ext_resource type="Texture2D" uid="uid://d1g0mk56sdo1m" path="res://01_assets/01_sprites/EnemySprites/masa_run.png" id="4_dma4d"]
 [ext_resource type="PackedScene" uid="uid://2vhbmtcyircw" path="res://02_scenes/05_components/followplayer_behaviour.tscn" id="6_cu011"]
 [ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="6_n5ho7"]
 [ext_resource type="AudioStream" uid="uid://d2qp6f0xwt7sj" path="res://01_assets/03_sound/01_sfx/02_enemies/masaAttack.wav" id="7_6cwc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p01ev"]
+atlas = ExtResource("4_dma4d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t84s"]
+atlas = ExtResource("4_dma4d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlpjg"]
+atlas = ExtResource("4_dma4d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nik4w"]
+atlas = ExtResource("4_dma4d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji6mf"]
+atlas = ExtResource("4_dma4d")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fe7li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p01ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t84s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlpjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nik4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji6mf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_igar0"]
 radius = 16.0
@@ -22,7 +66,14 @@ loot = ExtResource("6_n5ho7")
 _name = "chocolate"
 
 [node name="sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_w3yix")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fe7li")
+autoplay = "default"
+frame_progress = 0.557611
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_76ssk")]
 collision_layer = 2
@@ -45,6 +96,7 @@ offset_bottom = -22.0
 shape = SubResource("CircleShape2D_fjop8")
 
 [node name="followplayer_behaviour" parent="." instance=ExtResource("6_cu011")]
+max_speed = 50.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
@@ -54,6 +106,8 @@ autostart = true
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_6cwc3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
 [connection signal="timeout" from="navTimer" to="." method="_on_nav_timer_timeout"]
