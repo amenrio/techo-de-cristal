@@ -43,7 +43,7 @@ func _ready():
 	
 func player_death(_args):
 	$deathAudio.play()
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://02_scenes/04_screens/results_screen.tscn")
 	
 var ongoing_comanda:bool = false
 

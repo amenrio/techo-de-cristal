@@ -100,3 +100,7 @@ complete_comanda={
 2d_physics/layer_4="environment"
 2d_physics/layer_5="collectibles"
 2d_physics/layer_6="girlfriend"
+
+[physics]
+
+2d/solver/solver_iterations=32

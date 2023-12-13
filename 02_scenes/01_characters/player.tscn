@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://csgvbo4n46gvx"]
+[gd_scene load_steps=49 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="3_jo3xj"]
 [ext_resource type="PackedScene" uid="uid://djsscuerlbs64" path="res://02_scenes/05_components/bullet_component.tscn" id="4_8e3dc"]
+[ext_resource type="Texture2D" uid="uid://bvpqsl3brjt5c" path="res://01_assets/01_sprites/shadow.png" id="4_34asu"]
 [ext_resource type="AudioStream" uid="uid://ij4b4kou8piq" path="res://01_assets/03_sound/01_sfx/01_player/playerHit.wav" id="4_n5f5i"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="4_p68kg"]
 [ext_resource type="Texture2D" uid="uid://dii4cl2qyual5" path="res://01_assets/01_sprites/player/player_spritesheet.png" id="4_t20f2"]
@@ -472,13 +473,14 @@ position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_js4q1")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_jo3xj")]
+position = Vector2(0, -36)
 MAX_HEALTH = 100.0
 
 [node name="health_bar" parent="HealthComponent" index="0"]
 offset_left = -24.0
-offset_top = 20.0
+offset_top = 0.0
 offset_right = 24.0
-offset_bottom = 36.0
+offset_bottom = 6.0
 theme_override_styles/background = SubResource("StyleBoxFlat_j3l8r")
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_p68kg")]
@@ -504,6 +506,12 @@ shape = SubResource("CircleShape2D_xn3tx")
 libraries = {
 "": SubResource("AnimationLibrary_g1u55")
 }
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 24)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_34asu")
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture_filter = 1

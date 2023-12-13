@@ -81,7 +81,10 @@ radius = 166.048
 [node name="enemy03" instance=ExtResource("1_the54")]
 script = ExtResource("2_gnx8y")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="Shadow" parent="." index="0"]
+scale = Vector2(1.2, 1.2)
+
+[node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_1reuj")
 frame_progress = 0.310499
 
@@ -96,7 +99,7 @@ target_position = Vector2(0, 200)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shootRange" index="0"]
 shape = SubResource("CircleShape2D_hhaam")
 
-[node name="attack" parent="." index="11"]
+[node name="attack" parent="." index="12"]
 stream = ExtResource("3_p6lki")
 
 [connection signal="timeout" from="shootDelay" to="." method="_on_shoot_delay_timeout"]
