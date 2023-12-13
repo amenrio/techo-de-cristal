@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Techo De Cristal"
-run/main_scene="res://02_scenes/03_levels/level_alpha.tscn"
+run/main_scene="res://02_scenes/04_screens/menu_screen.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Autoload="*res://02_scenes/00_autoload/autoload.gd"
 
 [display]
 

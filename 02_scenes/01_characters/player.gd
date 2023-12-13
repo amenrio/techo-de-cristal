@@ -130,6 +130,8 @@ func check_completed_comandas():
 			objetivos.erase(comanda)
 			hud_comanda.remove_child(comanda)
 			completed_comandas.append(comanda)
+			Autoload.totalComandas = completed_comandas.size()
+			Autoload.globalScore += (100 + get_parent().get_node("level_timer").time_left as int)
 			$comandaCompletada.play()
 			continue
 
@@ -152,6 +154,7 @@ func add_to_inventory(pickup_object):
 		inventory[pickup_class][pickup_name]+=1
 		inventory_gui_count[pickup_name].ing_count = inventory[pickup_class][pickup_name]
 	$pickUpAudio.play()
+	Autoload.totalIngredients += 1
 
 	
 func _on_interaction_zone_area_entered(area):

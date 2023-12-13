@@ -14,7 +14,7 @@
 [node name="levelAlpha" instance=ExtResource("1_tm6rn")]
 position = Vector2(7, 0)
 script = ExtResource("2_v0fk0")
-time_limit = 120
+time_limit = 60
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 texture_filter = 1
@@ -111,6 +111,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="level_timer" parent="." index="7"]
+wait_time = 5.0
 autostart = true
 
 [editable path="spawner"]
