@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3c2h2uu4a5m4"
-path="res://.godot/imported/chocolate-Sheet.png-d2ec7bec6af1b9682836bc730fa6e3df.ctex"
+uid="uid://b8qaby4l5h7g2"
+path="res://.godot/imported/masa.png-a227bfa831903116891bb59831d55a99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/01_interfaces/chocolate-Sheet.png"
-dest_files=["res://.godot/imported/chocolate-Sheet.png-d2ec7bec6af1b9682836bc730fa6e3df.ctex"]
+source_file="res://01_assets/01_sprites/01_interfaces/masa.png"
+dest_files=["res://.godot/imported/masa.png-a227bfa831903116891bb59831d55a99.ctex"]
 
 [params]
 

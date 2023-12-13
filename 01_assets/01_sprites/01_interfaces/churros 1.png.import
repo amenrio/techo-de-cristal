@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8om7bq5plni4"
-path="res://.godot/imported/churros.png-ae9bdb2934e3202c21686d5bee237c00.ctex"
+uid="uid://dywqwfsnwo7ks"
+path="res://.godot/imported/churros 1.png-ad60a62f72396fcbdbbb0790f53099e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/01_interfaces/churros.png"
-dest_files=["res://.godot/imported/churros.png-ae9bdb2934e3202c21686d5bee237c00.ctex"]
+source_file="res://01_assets/01_sprites/01_interfaces/churros 1.png"
+dest_files=["res://.godot/imported/churros 1.png-ad60a62f72396fcbdbbb0790f53099e4.ctex"]
 
 [params]
 

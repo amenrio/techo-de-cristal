@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckytpfmi22hwr"]
+[gd_scene load_steps=11 format=3 uid="uid://ckytpfmi22hwr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/recipe_pregameScreen.gd" id="1_cijfa"]
+[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_bs5a8"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_kk0lc"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_qdwom"]
+[ext_resource type="Texture2D" uid="uid://c7bw6d1sdx4wc" path="res://01_assets/01_sprites/01_interfaces/recetaSprite.png" id="3_rb36f"]
+[ext_resource type="Texture2D" uid="uid://dp0abjy7627d3" path="res://01_assets/01_sprites/01_interfaces/dialogueBox.png" id="4_mppqo"]
+[ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="4_vr04a"]
+[ext_resource type="Texture2D" uid="uid://dywqwfsnwo7ks" path="res://01_assets/01_sprites/01_interfaces/churros 1.png" id="7_pir06"]
+[ext_resource type="Texture2D" uid="uid://b8qaby4l5h7g2" path="res://01_assets/01_sprites/01_interfaces/masa.png" id="8_77soy"]
+[ext_resource type="Texture2D" uid="uid://c72smlr03a4ct" path="res://01_assets/01_sprites/01_interfaces/chocolate.png" id="9_ci858"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ci6q3"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_1272s"]
 
 [node name="pregameScreen" type="Node2D"]
 script = ExtResource("1_cijfa")
@@ -17,7 +20,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
-metadata/_edit_use_anchors_ = true
 
 [node name="background" type="TextureRect" parent="interfaces"]
 layout_mode = 1
@@ -26,30 +28,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_qdwom")
+texture = ExtResource("2_bs5a8")
 
 [node name="recipe" type="TextureRect" parent="interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 244.0
-offset_top = 31.0
-offset_right = -23.0
-offset_bottom = -111.0
+offset_left = 19.5
+offset_top = 16.5
+offset_right = -180.5
+offset_bottom = -10.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_ci6q3")
+texture = ExtResource("3_rb36f")
 
 [node name="moza1" type="TextureRect" parent="interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 43.0
-offset_top = 297.0
-offset_right = -543.0
-offset_bottom = -48.0
+offset_left = 477.0
+offset_top = 181.0
+offset_right = -109.0
+offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_ci6q3")
@@ -59,10 +61,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 112.0
-offset_top = 253.0
-offset_right = -473.0
-offset_bottom = -93.0
+offset_left = 549.0
+offset_top = 218.0
+offset_right = -36.0
+offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_ci6q3")
@@ -72,37 +74,113 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = 199.0
-offset_right = -314.0
-offset_bottom = -244.0
+offset_left = 334.0
+offset_top = 122.0
+offset_right = -28.0
+offset_bottom = -231.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_1272s")
+texture = ExtResource("4_mppqo")
 
 [node name="dialogue" type="Label" parent="interfaces/dialogueBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -2.0
-offset_right = 5.0
-offset_bottom = -2.0
+offset_left = -4.0
+offset_top = 12.626
+offset_right = 6.03299
+offset_bottom = 12.626
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_kk0lc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "\"Lembra, este plato faise así\""
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="bContinuar" type="Button" parent="interfaces"]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 413.0
-offset_right = 606.0
-offset_bottom = 444.0
-text = "Continuar"
+offset_left = 528.0
+offset_top = 391.0
+offset_right = 598.0
+offset_bottom = 461.0
+theme = ExtResource("2_kk0lc")
+icon = ExtResource("4_vr04a")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="interfaces"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 182.0
+offset_right = 352.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="number" type="Label" parent="interfaces/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_kk0lc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 1
+
+[node name="pasos" type="Label" parent="interfaces/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_kk0lc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Poñer a ferver nun cazo a auga e a sal. En canto ferva, retirar do lume e botar a fariña de golpe. Remexer con forza ata que a masa se despegue. Formar os churros cunha manga e fritir. Deixar escorrer en papel de cociña. Esparexer con azucre.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+visible_ratio = -0.00411523
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="interfaces"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 309.0
+offset_right = 352.0
+offset_bottom = 424.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="number" type="Label" parent="interfaces/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_kk0lc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="interfaces/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_kk0lc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Quentar leite nun cazo, engadir azucre a gusto. Picar o chocolate e engadir xunto coa sal. Remover cunha culler de madeira ata que o chocolate se funda. Apartar do lume cando ferva. Servir xunto cos churros.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Churros1" type="Sprite2D" parent="."]
+position = Vector2(241, 104)
+scale = Vector2(1.15605, 1.16492)
+texture = ExtResource("7_pir06")
+
+[node name="Masa" type="Sprite2D" parent="."]
+position = Vector2(407, 233)
+scale = Vector2(0.234099, 0.238701)
+texture = ExtResource("8_77soy")
+
+[node name="Chocolate" type="Sprite2D" parent="."]
+position = Vector2(404, 363)
+scale = Vector2(0.271739, 0.278169)
+texture = ExtResource("9_ci858")
 
 [connection signal="pressed" from="interfaces/bContinuar" to="." method="_on_b_continuar_pressed"]
