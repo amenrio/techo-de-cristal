@@ -206,13 +206,17 @@ theme = ExtResource("3_bvoy4")
 text = "\"Non diches nin un só pau á auga. Faralo mellor á próxima?\""
 
 [node name="bContinuar" type="Button" parent="feedbackLayer/interfaces"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021875
+anchor_top = -0.0416667
+anchor_right = 0.021875
+anchor_bottom = -0.0416667
 offset_left = 520.0
 offset_top = 413.0
-offset_right = 606.0
-offset_bottom = 444.0
+offset_right = 590.0
+offset_bottom = 479.0
 theme = ExtResource("3_bvoy4")
-text = "Continuar"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="detailsLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
