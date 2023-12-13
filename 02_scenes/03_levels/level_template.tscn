@@ -18,7 +18,7 @@ script = ExtResource("1_pt6n6")
 
 [node name="PauseMenu" parent="player/Camera2D" index="0" instance=ExtResource("4_gx3hq")]
 
-[node name="AnimationTree" parent="player" index="8"]
+[node name="AnimationTree" parent="player" index="9"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hpwq3")
 
 [node name="level_timer" type="Timer" parent="."]

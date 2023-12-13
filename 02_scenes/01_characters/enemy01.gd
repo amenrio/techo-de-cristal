@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var loot: PackedScene
-@export var hit_lag: float = 1.5
+@export var hit_lag: float = 0.4
 @export var _name:String
 @onready var player_instance = get_tree().get_first_node_in_group("player")
 @onready var health_component = $HealthComponent
@@ -45,4 +45,5 @@ func _on_hitbox_component_area_entered( area):
 
 
 func _on_nav_timer_timeout():
-	makepath()
+	if following_player == true:
+		makepath()

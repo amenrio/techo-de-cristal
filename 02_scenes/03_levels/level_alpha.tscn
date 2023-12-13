@@ -92,13 +92,13 @@ offset_top = -111.0
 offset_right = -416.0
 offset_bottom = -88.0
 
-[node name="sprite" parent="player" index="6"]
+[node name="sprite" parent="player" index="7"]
 frame = 31
 
-[node name="weapon" parent="player" index="7"]
+[node name="weapon" parent="player" index="8"]
 visible = false
 
-[node name="AnimationTree" parent="player" index="8"]
+[node name="AnimationTree" parent="player" index="9"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_v27qv")
 parameters/Idle/blend_position = Vector2(0.00392163, 0.973799)
 

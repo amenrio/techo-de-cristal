@@ -76,7 +76,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhaam"]
-radius = 166.048
+radius = 144.014
 
 [node name="enemy03" instance=ExtResource("1_the54")]
 script = ExtResource("2_gnx8y")
@@ -89,7 +89,7 @@ sprite_frames = SubResource("SpriteFrames_1reuj")
 frame_progress = 0.310499
 
 [node name="shootDelay" type="Timer" parent="." index="7"]
-wait_time = 0.8
+wait_time = 0.4
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="8"]
 target_position = Vector2(0, 200)
