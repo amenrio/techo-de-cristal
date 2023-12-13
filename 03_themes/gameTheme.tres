@@ -39,9 +39,15 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1sh2j"]
 texture = ExtResource("1_35b16")
+texture_margin_top = 5.0
+texture_margin_bottom = 15.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_282ia"]
 texture = ExtResource("2_bdjgn")
+texture_margin_bottom = 10.0
+expand_margin_left = 25.0
+expand_margin_top = 18.0
+expand_margin_bottom = 25.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 

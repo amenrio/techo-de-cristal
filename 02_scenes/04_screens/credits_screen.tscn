@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlrtjsiufgmbb"]
+[gd_scene load_steps=7 format=3 uid="uid://dlrtjsiufgmbb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/creditsScreen.gd" id="1_ohgdq"]
+[ext_resource type="Texture2D" uid="uid://4gqqx1b5ra3d" path="res://01_assets/01_sprites/01_interfaces/creditsSprite.png" id="2_gkany"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_uevps"]
+[ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="4_gqjwo"]
+[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="4_qfv5t"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_qtijf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebenj"]
 
 [node name="creditsScreen" type="Node2D"]
 script = ExtResource("1_ohgdq")
@@ -24,48 +27,149 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 136.0
+offset_right = -131.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_qtijf")
+texture = ExtResource("2_gkany")
 
-[node name="nombreCreditos" type="Label" parent="interfaces"]
-layout_mode = 0
-offset_left = 241.0
-offset_top = 38.0
-offset_right = 415.0
-offset_bottom = 162.0
+[node name="HBoxContainer" type="HBoxContainer" parent="interfaces"]
+layout_mode = 2
+offset_left = 193.0
+offset_top = 144.0
+offset_right = 473.0
+offset_bottom = 368.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="interfaces/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ana" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 43
-text = "Creditos"
+theme_override_font_sizes/font_size = 16
+text = "Ana María Senra Martínez   "
 horizontal_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="textoCreditos" type="Label" parent="interfaces"]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 126.0
-offset_right = 503.0
-offset_bottom = 345.0
+[node name="HSeparator" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
+
+[node name="sara" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "Ana	                 Luis Carlos
-
-Sara                       Amaya
-
-Pablo                     Andrés"
+theme_override_font_sizes/font_size = 16
+text = "Sara Luna Castillo Fernández 
+"
 horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator2" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
+
+[node name="pablo" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_uevps")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Pablo Rodríguez López  
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="interfaces/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="luis carlos" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_uevps")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Luis Carlos Pablo Salazar
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
+
+[node name="amaya" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_uevps")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Amaya Vicente Pérez
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator2" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
+
+[node name="andres" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_uevps")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Andrés Mendez del Río"
+horizontal_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="bCreditosAtras" type="Button" parent="interfaces"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = -0.0328125
+anchor_bottom = 0.00625
 offset_left = 43.0
 offset_top = 413.0
 offset_right = 116.0
 offset_bottom = 444.0
 theme = ExtResource("2_uevps")
-text = "Atrás"
+text = "
+"
+icon = ExtResource("4_qfv5t")
 metadata/_edit_use_anchors_ = true
+
+[node name="title" type="TextureRect" parent="interfaces"]
+offset_left = 100.0
+offset_top = 52.0
+offset_right = 340.0
+offset_bottom = 122.0
+rotation = -0.0314159
+texture = ExtResource("4_gqjwo")
+expand_mode = 1
+
+[node name="creditos" type="Label" parent="interfaces/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.9058
+offset_top = -33.9985
+offset_right = 80.0942
+offset_bottom = 28.0015
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uevps")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Créditos"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="interfaces/bCreditosAtras" to="." method="_on_b_creditos_atras_pressed"]
