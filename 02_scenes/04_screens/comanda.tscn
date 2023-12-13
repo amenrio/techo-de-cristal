@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw5bufylc4nfb"]
 
-[ext_resource type="PackedScene" uid="uid://cy2bcmeaqdkyw" path="res://02_scenes/04_screens/comanda_dish.tscn" id="1_vuaft"]
+[ext_resource type="Script" path="res://02_scenes/02_objects/comanda.gd" id="1_bmvw8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c5unb"]
 
@@ -10,6 +10,7 @@ anchor_right = 0.133
 anchor_bottom = 0.24
 offset_right = -0.120003
 offset_bottom = -0.200005
+script = ExtResource("1_bmvw8")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 2
@@ -18,12 +19,15 @@ offset_bottom = 115.0
 texture = SubResource("CanvasTexture_c5unb")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_right = 85.0
 offset_bottom = 115.0
 
-[node name="dish" parent="HBoxContainer" instance=ExtResource("1_vuaft")]
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -35,6 +39,11 @@ layout_mode = 2
 size_flags_stretch_ratio = 0.5
 theme_override_constants/separation = 11
 
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+[node name="timer" type="Timer" parent="."]
+
+[node name="sprite" type="TextureRect" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 6
+offset_left = 6.0
+offset_top = 36.0
+offset_right = 48.0
+offset_bottom = 78.0

@@ -1,6 +1,30 @@
 [gd_scene load_steps=2 format=3 uid="uid://ceg2ep56uvhy2"]
 
-[ext_resource type="Script" path="res://comanda.gd" id="1_clm8e"]
+[ext_resource type="Script" path="res://02_scenes/02_objects/comanda.gd" id="1_u6c6o"]
 
-[node name="comanda" type="Node2D"]
-script = ExtResource("1_clm8e")
+[node name="comanda" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u6c6o")
+
+[node name="timer" type="Timer" parent="."]
+
+[node name="comanda_hbox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="name" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+
+[node name="ingredients" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+
+[node name="completed_ingredients" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+
+[node name="timer" type="Label" parent="comanda_hbox"]
+layout_mode = 2
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

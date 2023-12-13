@@ -1,0 +1,36 @@
+{
+	"tarta_chocolate": {
+		"name": "Tarta Sacher",
+		"sprite":"res://01_assets/01_sprites/recetas/tarta.png",
+		"ingredients": {
+			"chocolate":3
+		},
+		"timer": 45
+	},
+	"churros_chocolate": {
+		"name": "Churros con Chocolate",
+		"sprite": "res://01_assets/01_sprites/recetas/churros.png",
+		"ingredients": {
+			"chocolate":1,
+			"masa":1
+		},
+		"timer": 30
+	},
+	"zumo_naranja": {
+		"name": "Zumo de Naranja",
+		"sprite": "res://01_assets/01_sprites/recetas/zumo.png",
+		"ingredients": {
+			"naranja":3
+		},
+		"timer": 30
+	},
+	"gofres_naranja_chocolate": {
+		"name": "Gofres con Naranja y Chocolate",
+		"sprite": "res://01_assets/01_sprites/recetas/gofre.png",
+		"ingredients": {
+			"masa":1,
+			"naranja":1
+		},
+		"timer": 45
+	}
+}

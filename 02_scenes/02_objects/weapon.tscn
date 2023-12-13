@@ -10,3 +10,9 @@ position = Vector2(16, 0)
 
 [node name="bullet_spawn_point" type="Marker2D" parent="."]
 position = Vector2(32, 0)
+
+[node name="show_delay" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="show_delay" to="." method="_on_show_delay_timeout"]

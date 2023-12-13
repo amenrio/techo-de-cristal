@@ -6,32 +6,44 @@ extends CharacterBody2D
 @export_range(0.100, 0.250) var drag:= 0.15
 
 @onready var girlfriend_instance = get_tree().get_first_node_in_group('girlfriend')
-
+@onready var animation_tree:AnimationTree = $AnimationTree
 @export var dash_velocity: float = 2000
 @export var dash_timeout: float = 1.5
-
+@onready var current_level = get_tree().current_scene
 @onready var health_component = $HealthComponent
 @onready var weapon = $weapon
 
+@onready var hud_comanda = $GUI/interfaces/comandas
+
+var inventoryIngredient_instance = preload('res://02_scenes/04_screens/inventory_ingredient.tscn')
+@onready var inventory_gui = $GUI/interfaces/inventoryMargin/inventory
+var inventory_gui_count: Dictionary
+var direction:Vector2
+var comanda_instance = preload("res://02_scenes/04_screens/comanda.tscn")
+var completed_comandas: Array
 var canDash=true
 var isDashing=false
 
-var chismecito=false
+var can_talk_to_girlfriend=false
 
 var desired_velocity := Vector2.ZERO
 var turn_velocity := Vector2.ZERO
 var objetivos:Array
+
 var inventory:Dictionary = {
 	"ingredients":{},
-	"modifiers":[],
-	"weapons":[]
+	"modifiers":{},
+	"weapons":{}
 	}
 	
-func talk_to_girlfriend():
-	if Input.is_action_just_pressed("interact") and chismecito:
-		objetivos = girlfriend_instance.comandas_nivel
-		print(objetivos)
-		
+func _ready():
+	health_component.connect('death',player_death)
+	animation_tree.active = true
+	
+func player_death(_args):
+	get_tree().paused = true
+	
+var ongoing_comanda:bool = false
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
@@ -44,7 +56,7 @@ func dash():
 		
 func _physics_process(_delta: float) ->  void:
 	# Obtenemos la direccion del personaje
-	var direction = Input.get_vector('move_left',"move_right",'move_up','move_down')
+	direction = Input.get_vector('move_left',"move_right",'move_up','move_down')
 	# Obtenemos la velocidad maxima del jugador en la direccion del input
 	desired_velocity = direction * max_speed
 	# Restamos a la velocidad y direccion deseada la velocidad actual del jugador.
@@ -55,10 +67,62 @@ func _physics_process(_delta: float) ->  void:
 	move_and_slide()
 	# Orientamos el arma hacia el raton
 	weapon.look_at(get_global_mouse_position())
-	
 	dash()
 	talk_to_girlfriend()
+	if Input.is_action_just_pressed('complete_comanda'):
+		check_completed_comandas()
+	check_completed_comandas()
+			
+func _process(delta):
+	update_animation_tree()
+	update_inv_count()
+
+func update_inv_count():
+	for ing in inventory["ingredients"]:
+		if not inventory_gui_count[ing]:
+			continue
+		else:
+			inventory_gui_count[ing].ing_count = inventory["ingredients"][ing]
+		
 	
+func update_animation_tree():
+	if (desired_velocity == Vector2.ZERO):
+		animation_tree["parameters/conditions/idle"] = true
+		animation_tree["parameters/conditions/is_moving"] = false
+	else:
+		animation_tree["parameters/conditions/idle"] = false	
+		animation_tree["parameters/conditions/is_moving"] = true
+	if (desired_velocity != Vector2.ZERO):
+		animation_tree["parameters/Idle/blend_position"] = direction
+		animation_tree["parameters/Walk/blend_position"] = direction
+	
+func check_completed_comandas():
+	for comanda in objetivos:
+		if comanda.timed_out:
+			objetivos.erase(comanda)
+			hud_comanda.remove_child(comanda)
+			continue
+			
+		if not comanda.is_completed:
+			for ingredient in inventory["ingredients"]:
+				if inventory["ingredients"][ingredient] < 1:
+					continue
+				if ingredient in comanda.ingredients:
+					if not comanda.completed_ingredients.has(ingredient):
+							comanda.completed_ingredients[ingredient]=0
+					if comanda.ingredients[ingredient] > comanda.completed_ingredients[ingredient]:
+						inventory["ingredients"][ingredient] -= 1
+						print(inventory["ingredients"][ingredient])
+						comanda.ingredients[ingredient]
+						comanda.completed_ingredients[ingredient] +=1
+						continue
+		if comanda.is_completed:
+			objetivos.erase(comanda)
+			hud_comanda.remove_child(comanda)
+			completed_comandas.append(comanda)
+			continue
+
+
 func add_to_inventory(pickup_object):
 	"""Function that recieves the object that is being picked up
 	It's structure is {pickup_class:pickup_name}, ej: {"ingredients":"manzana"}
@@ -70,9 +134,34 @@ func add_to_inventory(pickup_object):
 		var pickup_name = pickup_object[pickup_class]
 		if not pickup_name in inventory[pickup_class]:
 			inventory[pickup_class].merge({pickup_name:0})
+			var inventory_ingredient = inventoryIngredient_instance.instantiate()
+			inventory_ingredient.sprite_img = pickup_name
+			inventory_gui_count[pickup_name] = inventory_ingredient
+			inventory_gui.ingredient_slots.add_child(inventory_ingredient)
 		inventory[pickup_class][pickup_name]+=1
-	print(inventory)
+		inventory_gui_count[pickup_name].ing_count = inventory[pickup_class][pickup_name]
 
+	
 func _on_interaction_zone_area_entered(area):
 	if area.is_in_group('girlfriend'):
-		chismecito=true # Replace with function body.
+		can_talk_to_girlfriend = true
+		# Replace with function body.
+
+func talk_to_girlfriend():
+	if Input.is_action_just_pressed("interact") and can_talk_to_girlfriend:
+		if len(objetivos) == 0:
+			for child in hud_comanda.get_children():
+				hud_comanda.remove_child(child)
+			var _objectives = girlfriend_instance.get_new_comandas(3)
+			for comanda in _objectives:
+				var comanda_activa = comanda_instance.instantiate()
+				comanda_activa.init(comanda)
+				hud_comanda.add_child(comanda_activa)
+				hud_comanda.add_spacer(false)
+				objetivos.append(comanda_activa)
+				print("Añadida comanda")
+#		check_completed_comandas()
+				print(comanda_activa.ingredients)
+func _on_interaction_zone_area_exited(area):
+	if area.is_in_group('girlfriend'):
+		can_talk_to_girlfriend = false # Replace with function body.

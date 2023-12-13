@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2o31bpw1fbk"
-path="res://.godot/imported/enemy_citrico.png-133a9e15aee8e1a18d892b98aafcb2a1.ctex"
+uid="uid://bwrw00kg23vrs"
+path="res://.godot/imported/tarta.png-bf79d6855b068259454c70d217f7b48f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/enemy_citrico.png"
-dest_files=["res://.godot/imported/enemy_citrico.png-133a9e15aee8e1a18d892b98aafcb2a1.ctex"]
+source_file="res://01_assets/01_sprites/recetas/tarta.png"
+dest_files=["res://.godot/imported/tarta.png-bf79d6855b068259454c70d217f7b48f.ctex"]
 
 [params]
 
