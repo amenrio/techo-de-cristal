@@ -78,12 +78,15 @@ offset_right = 640.0
 offset_bottom = 483.0
 texture = ExtResource("3_noou1")
 
-[node name="bXogar" type="Button" parent="menuinterfaces"]
+[node name="VBoxContainer" type="VBoxContainer" parent="menuinterfaces"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 73.0
+offset_right = 573.0
+offset_bottom = 398.0
+
+[node name="bXogar" type="Button" parent="menuinterfaces/VBoxContainer"]
 layout_mode = 2
-offset_left = 360.0
-offset_top = 69.0
-offset_right = 582.0
-offset_bottom = 165.0
 size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
 theme_override_font_sizes/font_size = 45
@@ -92,13 +95,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_60ydu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_60ydu")
 theme_override_styles/focus = SubResource("StyleBoxTexture_60ydu")
 text = "Xogar"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="menuinterfaces"]
-layout_mode = 0
-offset_left = 374.0
-offset_top = 160.0
-offset_right = 565.0
-offset_bottom = 399.0
 
 [node name="HSeparator" type="HSeparator" parent="menuinterfaces/VBoxContainer"]
 layout_mode = 2
@@ -150,7 +146,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
 theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Saír"
 
-[connection signal="pressed" from="menuinterfaces/bXogar" to="." method="_on_b_xogar_pressed"]
+[connection signal="pressed" from="menuinterfaces/VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bCreditos" to="." method="_on_b_creditos_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bSair" to="." method="_on_b_sair_pressed"]
