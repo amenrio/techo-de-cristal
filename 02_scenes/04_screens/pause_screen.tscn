@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://i2udqkqkksy4"]
+[gd_scene load_steps=10 format=3 uid="uid://i2udqkqkksy4"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/pause_screen.gd" id="1_nh62t"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_dm7q6"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://clep2e2npjqqk" path="res://01_assets/01_sprites/01_interfaces/controlsIcon.png" id="5_vmsag"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="6_0104u"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="8_ju8tu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1jjys"]
 
 [node name="pauseScreen" type="CanvasLayer"]
 script = ExtResource("1_nh62t")
@@ -30,15 +32,15 @@ horizontal_alignment = 1
 
 [node name="pauseSprite" type="TextureRect" parent="."]
 offset_left = 180.0
-offset_right = 428.24
+offset_right = 425.0
 offset_bottom = 459.0
 texture = ExtResource("3_kjorr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 270.0
-offset_top = 150.0
+offset_left = 264.0
+offset_top = 131.0
 offset_right = 338.0
-offset_bottom = 358.0
+offset_bottom = 381.0
 
 [node name="bMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -50,6 +52,11 @@ text = "
 icon = ExtResource("4_bktbj")
 icon_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1jjys")
+
 [node name="bControles" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -59,6 +66,11 @@ text = "
 "
 icon = ExtResource("5_vmsag")
 icon_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1jjys")
 
 [node name="bVolver" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -71,19 +83,19 @@ icon = ExtResource("6_0104u")
 icon_alignment = 1
 
 [node name="title" type="TextureRect" parent="."]
-offset_left = 111.0
+offset_left = 137.0
 offset_top = 51.0
-offset_right = 270.0
+offset_right = 296.0
 offset_bottom = 121.0
 rotation = -0.0314159
 texture = ExtResource("8_ju8tu")
 expand_mode = 1
 
 [node name="pausa" type="Label" parent="title"]
-offset_left = 28.8915
-offset_top = 3.90943
-offset_right = 128.891
-offset_bottom = 65.9094
+offset_left = 29.0171
+offset_top = -0.0885925
+offset_right = 129.017
+offset_bottom = 61.9114
 theme = ExtResource("2_dm7q6")
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 40
