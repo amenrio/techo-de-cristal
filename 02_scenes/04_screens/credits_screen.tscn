@@ -132,6 +132,7 @@ metadata/_edit_use_anchors_ = true
 [node name="bCreditosAtras" type="Button" parent="interfaces"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = -0.0328125
 anchor_right = -0.0328125
 anchor_bottom = 0.00625
 offset_left = 43.0
@@ -145,6 +146,7 @@ icon = ExtResource("4_qfv5t")
 metadata/_edit_use_anchors_ = true
 
 [node name="title" type="TextureRect" parent="interfaces"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 52.0
 offset_right = 340.0

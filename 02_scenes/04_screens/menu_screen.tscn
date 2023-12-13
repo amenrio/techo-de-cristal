@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkb53h0ivrhpm"]
+[gd_scene load_steps=14 format=3 uid="uid://bkb53h0ivrhpm"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/menuScreen.gd" id="1_friwq"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_4r0wl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b814dka0fheo2" path="res://01_assets/01_sprites/01_interfaces/playButtonDefault.png" id="4_0eet0"]
 [ext_resource type="Texture2D" uid="uid://3idg6d6d4e0c" path="res://01_assets/01_sprites/01_interfaces/playButtonHover.png" id="5_dkone"]
 [ext_resource type="Texture2D" uid="uid://cpuh8dux2cqca" path="res://01_assets/01_sprites/01_interfaces/menuButtonDefault.png" id="6_lg8mb"]
+[ext_resource type="Texture2D" uid="uid://dhpd45daxebk7" path="res://01_assets/01_sprites/01_interfaces/menuButtonHover.png" id="7_m4vng"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5umnr"]
 
@@ -25,6 +26,11 @@ texture_margin_bottom = 25.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ot1un"]
 texture = ExtResource("6_lg8mb")
+texture_margin_top = 10.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x00xe"]
+texture = ExtResource("7_m4vng")
 texture_margin_top = 10.0
 texture_margin_bottom = 25.0
 
@@ -72,15 +78,12 @@ offset_right = 640.0
 offset_bottom = 483.0
 texture = ExtResource("3_noou1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="menuinterfaces"]
-layout_mode = 0
+[node name="bXogar" type="Button" parent="menuinterfaces"]
+layout_mode = 2
 offset_left = 360.0
 offset_top = 69.0
 offset_right = 582.0
-offset_bottom = 399.0
-
-[node name="bXogar" type="Button" parent="menuinterfaces/VBoxContainer"]
-layout_mode = 2
+offset_bottom = 165.0
 size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
 theme_override_font_sizes/font_size = 45
@@ -89,6 +92,13 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_60ydu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_60ydu")
 theme_override_styles/focus = SubResource("StyleBoxTexture_60ydu")
 text = "Xogar"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menuinterfaces"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 160.0
+offset_right = 565.0
+offset_bottom = 399.0
 
 [node name="HSeparator" type="HSeparator" parent="menuinterfaces/VBoxContainer"]
 layout_mode = 2
@@ -105,9 +115,9 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ot1un")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Controles"
 
 [node name="bCreditos" type="Button" parent="menuinterfaces/VBoxContainer"]
@@ -120,9 +130,9 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ot1un")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Créditos"
 
 [node name="bSair" type="Button" parent="menuinterfaces/VBoxContainer"]
@@ -135,12 +145,12 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ot1un")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ot1un")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Saír"
 
-[connection signal="pressed" from="menuinterfaces/VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
+[connection signal="pressed" from="menuinterfaces/bXogar" to="." method="_on_b_xogar_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bCreditos" to="." method="_on_b_creditos_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bSair" to="." method="_on_b_sair_pressed"]
