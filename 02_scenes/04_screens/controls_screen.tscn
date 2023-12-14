@@ -1,45 +1,43 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuk24j5wdg104"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_iwvct"]
+[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_2apdb"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_77ttm"]
 [ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_wwh5h"]
 [ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_0k6ts"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_ymfwe"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_jmtwj"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_kx6my"]
-
 [node name="controlsScreen" type="Node2D"]
 script = ExtResource("1_iwvct")
 
 [node name="interfaces" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="background" type="TextureRect" parent="interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 637.0
-offset_bottom = 478.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 639.0
+offset_bottom = 1199.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_kx6my")
+texture = ExtResource("2_2apdb")
 
 [node name="controlesSprite" type="TextureRect" parent="interfaces"]
-layout_mode = 0
-offset_left = 62.0
-offset_right = 637.0
+offset_left = 66.0
+offset_right = 641.0
 offset_bottom = 480.0
 texture = ExtResource("2_wwh5h")
 
 [node name="TextureRect" type="TextureRect" parent="interfaces"]
-layout_mode = 0
 offset_left = 135.0
 offset_top = 139.0
 offset_right = 398.0
@@ -51,9 +49,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 18.0
+offset_left = 34.0
 offset_top = 380.0
-offset_right = 98.0
+offset_right = 114.0
 offset_bottom = 460.0
 grow_vertical = 0
 scale = Vector2(1.00766, 1)
@@ -62,7 +60,6 @@ icon = ExtResource("5_ymfwe")
 icon_alignment = 1
 
 [node name="story" type="Label" parent="interfaces"]
-layout_mode = 0
 offset_left = 405.0
 offset_top = 36.0
 offset_right = 622.0
@@ -75,7 +72,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="title" type="TextureRect" parent="interfaces"]
-layout_mode = 0
 offset_left = 100.0
 offset_top = 52.0
 offset_right = 340.0

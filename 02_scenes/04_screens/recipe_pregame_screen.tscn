@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckytpfmi22hwr"]
+[gd_scene load_steps=12 format=3 uid="uid://ckytpfmi22hwr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/recipe_pregameScreen.gd" id="1_cijfa"]
 [ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_bs5a8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b8qaby4l5h7g2" path="res://01_assets/01_sprites/01_interfaces/masa.png" id="8_77soy"]
 [ext_resource type="Texture2D" uid="uid://dii4cl2qyual5" path="res://01_assets/01_sprites/player/player_spritesheet.png" id="9_b2eod"]
 [ext_resource type="Texture2D" uid="uid://c72smlr03a4ct" path="res://01_assets/01_sprites/01_interfaces/chocolate.png" id="9_ci858"]
+[ext_resource type="Texture2D" uid="uid://bbn1c44xuuyv5" path="res://01_assets/01_sprites/cocinera_6frames_spritesheet.png" id="10_fblc2"]
 
 [node name="pregameScreen" type="Node2D"]
 script = ExtResource("1_cijfa")
@@ -45,9 +46,9 @@ texture = ExtResource("3_rb36f")
 [node name="bContinuar" type="Button" parent="interfaces"]
 layout_mode = 0
 offset_left = 528.0
-offset_top = 391.0
-offset_right = 598.0
-offset_bottom = 461.0
+offset_top = 380.0
+offset_right = 608.0
+offset_bottom = 460.0
 theme = ExtResource("2_kk0lc")
 icon = ExtResource("4_vr04a")
 icon_alignment = 1
@@ -130,20 +131,28 @@ texture = ExtResource("9_ci858")
 
 [node name="PlayerSpritesheet" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(505, 274)
+position = Vector2(503, 272)
 scale = Vector2(2.771, 2.768)
 texture = ExtResource("9_b2eod")
 hframes = 8
 vframes = 6
-frame = 25
+frame = 40
+
+[node name="Cocinera6FramesSpritesheet" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(586, 271)
+scale = Vector2(2.771, 2.771)
+texture = ExtResource("10_fblc2")
+flip_h = true
+hframes = 6
 
 [node name="dialogueBox" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 334.0
+offset_left = 353.0
 offset_top = 122.0
-offset_right = 613.0
+offset_right = 605.0
 offset_bottom = 249.0
 grow_horizontal = 2
 grow_vertical = 2

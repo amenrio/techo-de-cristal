@@ -3,67 +3,73 @@
 [ext_resource type="Script" path="res://02_scenes/04_screens/creditsScreen.gd" id="1_ohgdq"]
 [ext_resource type="Texture2D" uid="uid://4gqqx1b5ra3d" path="res://01_assets/01_sprites/01_interfaces/creditsSprite.png" id="2_gkany"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_uevps"]
+[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_w6skj"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="4_gqjwo"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="4_qfv5t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebenj"]
 
 [node name="creditsScreen" type="Node2D"]
 script = ExtResource("1_ohgdq")
 
 [node name="interfaces" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 640.0
-offset_bottom = 480.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="background" type="TextureRect" parent="interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 136.0
-offset_right = -131.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 639.0
+offset_bottom = 1199.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w6skj")
+
+[node name="creditsSprite" type="TextureRect" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = -1.0
+offset_right = 506.0
+offset_bottom = 444.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_gkany")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="interfaces"]
+[node name="VBoxContainer" type="VBoxContainer" parent="interfaces"]
 layout_mode = 2
 offset_left = 193.0
-offset_top = 144.0
+offset_top = 135.0
 offset_right = 473.0
 offset_bottom = 368.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="interfaces/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 9
 
-[node name="ana" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+[node name="ana" type="Label" parent="interfaces/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0.529412, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Ana María Senra Martínez   "
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HSeparator" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
-
-[node name="sara" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+[node name="sara" type="Label" parent="interfaces/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0.529412, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Sara Luna Castillo Fernández 
 "
@@ -71,32 +77,25 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HSeparator2" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
-
-[node name="pablo" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+[node name="pablo" type="Label" parent="interfaces/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0.529412, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Pablo Rodríguez López  
-
 "
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="interfaces/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="luis carlos" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+[node name="luis carlos" type="Label" parent="interfaces/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0.529412, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Luis Carlos Pablo Salazar
 "
@@ -104,15 +103,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HSeparator" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
-
-[node name="amaya" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+[node name="amaya" type="Label" parent="interfaces/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0.529412, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Amaya Vicente Pérez
 "
@@ -120,15 +116,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HSeparator2" type="HSeparator" parent="interfaces/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
-
-[node name="andres" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+[node name="andres" type="Label" parent="interfaces/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0.529412, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 16
 text = "Andrés Mendez del Río"
 horizontal_alignment = 1
@@ -138,9 +131,9 @@ metadata/_edit_use_anchors_ = true
 [node name="bCreditosAtras" type="Button" parent="interfaces"]
 layout_mode = 1
 offset_left = 34.0
-offset_top = 382.0
+offset_top = 380.0
 offset_right = 114.0
-offset_bottom = 462.0
+offset_bottom = 460.0
 theme = ExtResource("2_uevps")
 text = "
 "
