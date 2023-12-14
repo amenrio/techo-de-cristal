@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wveguagwuor2"]
+[gd_scene load_steps=19 format=3 uid="uid://wveguagwuor2"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy01.gd" id="1_kn3i3"]
 [ext_resource type="Texture2D" uid="uid://bqu7avl5bhxpc" path="res://01_assets/01_sprites/enemy.png" id="1_w3yix"]
@@ -59,6 +59,9 @@ radius = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjop8"]
 radius = 16.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndhcc"]
+radius = 319.039
+
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 10
@@ -103,6 +106,7 @@ offset_bottom = -22.0
 shape = SubResource("CircleShape2D_fjop8")
 
 [node name="followplayer_behaviour" parent="." instance=ExtResource("6_cu011")]
+visible = false
 max_speed = 50.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -116,8 +120,16 @@ stream = ExtResource("7_6cwc3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
+[node name="viewRange" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="viewRageCollision" type="CollisionShape2D" parent="viewRange"]
+shape = SubResource("CircleShape2D_ndhcc")
+
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
 [connection signal="timeout" from="navTimer" to="." method="_on_nav_timer_timeout"]
+[connection signal="body_entered" from="viewRange" to="." method="_on_view_range_body_entered"]
+[connection signal="body_exited" from="viewRange" to="." method="_on_view_range_body_exited"]
 
 [editable path="HitboxComponent"]
 [editable path="HealthComponent"]

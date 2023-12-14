@@ -6,9 +6,11 @@ extends CharacterBody2D
 @onready var player_instance = get_tree().get_first_node_in_group("player")
 @onready var health_component = $HealthComponent
 @onready var nav_agent = $NavigationAgent2D
+@onready var viewrage = $viewRange
 
 var max_speed = 200
 var following_player = true
+var isOnView = false
 var damage = 10.0
 signal enemyDeath
 
@@ -23,7 +25,7 @@ func death(_args):
 	queue_free()
 	
 func _physics_process(_delta):
-	if following_player == true:
+	if following_player == true and isOnView == true:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = dir * max_speed
 		move_and_slide()
@@ -45,5 +47,16 @@ func _on_hitbox_component_area_entered( area):
 
 
 func _on_nav_timer_timeout():
-	if following_player == true:
+	if following_player == true and isOnView == true:
 		makepath()
+
+
+func _on_view_range_body_entered(body):
+	if body.is_in_group("player"):
+		isOnView = true
+		print(isOnView)
+
+
+func _on_view_range_body_exited(body):
+	if body.is_in_group("player"):
+		isOnView = false
