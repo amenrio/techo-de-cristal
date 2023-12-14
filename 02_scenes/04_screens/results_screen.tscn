@@ -139,7 +139,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 97.0
 offset_top = -63.0
-offset_right = -72.0
+offset_right = -86.0
 offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -151,6 +151,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Points" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Diñeiro ganado" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
@@ -162,6 +163,7 @@ text = "Diñeiro
 Gañado
 "
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Diñeiro ganado2" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
@@ -178,6 +180,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Alimentos Recollidos" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
 layout_mode = 2
@@ -204,6 +207,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos2" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Pratos Entregados" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
@@ -213,6 +217,7 @@ theme_override_font_sizes/font_size = 20
 text = "Pratos 
 Entregados"
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="Diñeiro ganado3" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
@@ -221,6 +226,7 @@ theme = SubResource("Theme_811cl")
 theme_override_font_sizes/font_size = 20
 text = "344353453"
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="VSeparator4" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
