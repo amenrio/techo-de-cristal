@@ -26,6 +26,7 @@ offset_bottom = 115.0
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_constants/margin_left = 26
 theme_override_constants/margin_top = 6
 
 [node name="ingredients" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
