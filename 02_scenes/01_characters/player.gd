@@ -76,7 +76,7 @@ func _physics_process(_delta: float) ->  void:
 		check_completed_comandas()
 	check_completed_comandas()
 			
-func _process(delta):
+func _process(_delta):
 	update_animation_tree()
 	update_inv_count()
 
@@ -119,13 +119,12 @@ func check_completed_comandas():
 					continue
 				if ingredient in comanda.ingredients:
 					if not comanda.completed_ingredients.has(ingredient):
-							comanda.completed_ingredients[ingredient]=0
+							comanda.completed_ingredients[ingredient] = 0
 					if comanda.ingredients[ingredient] > comanda.completed_ingredients[ingredient]:
 						inventory["ingredients"][ingredient] -= 1
-						print(inventory["ingredients"][ingredient])
-						comanda.ingredients[ingredient]
-						comanda.completed_ingredients[ingredient] +=1
+						comanda.completed_ingredients[ingredient] += 1
 						continue
+
 		if comanda.is_completed:
 			objetivos.erase(comanda)
 			hud_comanda.remove_child(comanda)

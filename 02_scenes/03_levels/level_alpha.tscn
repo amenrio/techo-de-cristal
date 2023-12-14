@@ -12,7 +12,7 @@
 [node name="levelAlpha" instance=ExtResource("1_tm6rn")]
 position = Vector2(7, 0)
 script = ExtResource("2_v0fk0")
-time_limit = 60
+time_limit = 240
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 texture_filter = 1
@@ -90,13 +90,13 @@ offset_top = -111.0
 offset_right = -416.0
 offset_bottom = -88.0
 
-[node name="sprite" parent="player" index="6"]
+[node name="sprite" parent="player" index="7"]
 frame = 31
 
-[node name="weapon" parent="player" index="7"]
+[node name="weapon" parent="player" index="8"]
 visible = false
 
-[node name="AnimationTree" parent="player" index="8"]
+[node name="AnimationTree" parent="player" index="9"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_v27qv")
 parameters/Idle/blend_position = Vector2(0.00392163, 0.973799)
 

@@ -45,7 +45,7 @@ func append_ingredient(ingredient):
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	sorted_completed_ingredients = sort(completed_ingredients)
 
 	if equal(ingredients, completed_ingredients):

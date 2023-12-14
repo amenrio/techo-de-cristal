@@ -2,7 +2,6 @@ extends "res://02_scenes/01_characters/enemy01.gd"
 
 @onready var shootDelay = $shootDelay
 @onready var raycast = $RayCast2D
-@onready var range = $shootRange
 @onready var initialTime: float = shootDelay.wait_time
 
 var ammo = preload("res://02_scenes/05_components/bullet_component.tscn")
@@ -38,7 +37,7 @@ func _on_shoot_rage_area_exited(area):
 func _on_shoot_delay_timeout():
 	loaded = true
 
-func _process(delta):
+func _process(_delta):
 	_aim()
 	_check_player_collision()
 	
@@ -47,12 +46,6 @@ func _process(delta):
 		bullet.position = position
 		bullet.velocity = raycast.target_position.normalized()
 		get_tree().current_scene.add_child(bullet)
-	
-	
-	
-	
-	
-	
 	
 #	if playerIsTarget:
 #		var direction = (player_instance.global_position - global_position).normalized()
