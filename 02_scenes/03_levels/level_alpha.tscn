@@ -62,6 +62,11 @@ position = Vector2(980, 760)
 [node name="spawner" parent="." index="3"]
 position = Vector2(930, 1366)
 scale = Vector2(0.760002, 0.76)
+enemy_scene_dict = {
+"chocolate": "res://02_scenes/01_characters/enemy02.tscn",
+"masa": "res://02_scenes/01_characters/enemy01.tscn",
+"naranja": "res://02_scenes/01_characters/enemy03.tscn"
+}
 enemies = ExtResource("4_4xnrs")
 enemy_names = Array[String](["chocolate", "naranja", "masa"])
 

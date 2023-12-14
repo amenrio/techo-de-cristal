@@ -14,6 +14,7 @@ var _recipe_path:String
 @onready var timer = $timer
 @onready var ingredient_vb = $HBoxContainer/MarginContainer/ingredients
 var ingredient_instance = preload("res://02_scenes/04_screens/comanda_ingredient.tscn")
+@onready var player_instance = get_tree().get_first_node_in_group('player')
 
 func init(args):
 	recipe_name = args["name"]
@@ -42,7 +43,7 @@ func append_ingredient(ingredient):
 	var ingredient_inst = ingredient_instance.instantiate()
 	ingredient_inst.ing_sprite = ingredient
 	ingredient_vb.add_child(ingredient_inst)
-	
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
