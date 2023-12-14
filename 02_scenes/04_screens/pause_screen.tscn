@@ -1,32 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://i2udqkqkksy4"]
+[gd_scene load_steps=10 format=3 uid="uid://i2udqkqkksy4"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/pause_screen.gd" id="1_nh62t"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_dm7q6"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_l8hfc"]
+[ext_resource type="Texture2D" uid="uid://cu0ysk1hot2cl" path="res://01_assets/01_sprites/01_interfaces/pauseSprite.png" id="3_kjorr"]
+[ext_resource type="Texture2D" uid="uid://d0y3jlsgqxfpq" path="res://01_assets/01_sprites/01_interfaces/menuIcon.png" id="4_bktbj"]
+[ext_resource type="Texture2D" uid="uid://clep2e2npjqqk" path="res://01_assets/01_sprites/01_interfaces/controlsIcon.png" id="5_vmsag"]
+[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="6_0104u"]
+[ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="8_ju8tu"]
 
-[sub_resource type="Theme" id="Theme_k2p25"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1jjys"]
 
-[node name="pauseScreen" type="Node2D"]
-script = ExtResource("1_nh62t")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="interfaces" type="Control" parent="CanvasLayer"]
+[node name="pauseScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+script = ExtResource("1_nh62t")
 
-[node name="fondoPlaceholder" type="ColorRect" parent="CanvasLayer/interfaces"]
-layout_mode = 0
+[node name="background" type="ColorRect" parent="."]
 offset_right = 640.0
 offset_bottom = 480.0
+color = Color(0, 0, 0, 0.231373)
 
-[node name="textoPausa" type="Label" parent="CanvasLayer/interfaces"]
-layout_mode = 0
+[node name="textoPausa" type="Label" parent="."]
 offset_left = 235.0
 offset_top = 103.0
 offset_right = 402.0
@@ -37,30 +36,86 @@ theme_override_font_sizes/font_size = 43
 text = "Pausa"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/interfaces"]
-layout_mode = 0
-offset_left = 280.0
-offset_top = 300.0
-offset_right = 337.0
-offset_bottom = 366.0
+[node name="pauseSprite" type="TextureRect" parent="."]
+offset_left = 180.0
+offset_right = 425.0
+offset_bottom = 459.0
+texture = ExtResource("3_kjorr")
 
-[node name="bMenu" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 264.0
+offset_top = 131.0
+offset_right = 338.0
+offset_bottom = 381.0
+
+[node name="bMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_k2p25")
+size_flags_vertical = 3
+theme = ExtResource("2_dm7q6")
 theme_override_fonts/font = ExtResource("2_l8hfc")
-text = "Menu"
+text = "
+"
+icon = ExtResource("4_bktbj")
+icon_alignment = 1
 
-[node name="bControles" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_k2p25")
-theme_override_fonts/font = ExtResource("2_l8hfc")
-text = "Controles"
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1jjys")
 
-[node name="bVolver" type="Button" parent="CanvasLayer/interfaces/VBoxContainer"]
+[node name="bControles" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dm7q6")
 theme_override_fonts/font = ExtResource("2_l8hfc")
-text = "Volver"
+text = "
+"
+icon = ExtResource("5_vmsag")
+icon_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
-[connection signal="pressed" from="CanvasLayer/interfaces/VBoxContainer/bVolver" to="." method="_on_b_volver_pressed"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1jjys")
+
+[node name="bVolver" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dm7q6")
+theme_override_fonts/font = ExtResource("2_l8hfc")
+text = "
+"
+icon = ExtResource("6_0104u")
+icon_alignment = 1
+
+[node name="title" type="TextureRect" parent="."]
+offset_left = 137.0
+offset_top = 51.0
+offset_right = 296.0
+offset_bottom = 121.0
+rotation = -0.0314159
+texture = ExtResource("8_ju8tu")
+expand_mode = 1
+
+[node name="pausa" type="Label" parent="title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.8744
+offset_top = -34.998
+offset_right = 50.1256
+offset_bottom = 27.002
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dm7q6")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Pausa"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
+[connection signal="pressed" from="VBoxContainer/bVolver" to="." method="_on_b_volver_pressed"]

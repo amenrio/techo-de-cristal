@@ -1,10 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkb53h0ivrhpm"]
+[gd_scene load_steps=14 format=3 uid="uid://bkb53h0ivrhpm"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/menuScreen.gd" id="1_friwq"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_4r0wl"]
-[ext_resource type="AudioStream" uid="uid://rc6a70ux6ie7" path="res://01_assets/03_sound/02_music/intro.wav" id="3_mbe6s"]
+[ext_resource type="Texture2D" uid="uid://bmh82tilmvhy1" path="res://01_assets/01_sprites/01_interfaces/menuSprite.png" id="3_noou1"]
+[ext_resource type="Texture2D" uid="uid://b814dka0fheo2" path="res://01_assets/01_sprites/01_interfaces/playButtonDefault.png" id="4_0eet0"]
+[ext_resource type="Texture2D" uid="uid://3idg6d6d4e0c" path="res://01_assets/01_sprites/01_interfaces/playButtonHover.png" id="5_dkone"]
+[ext_resource type="Texture2D" uid="uid://cpuh8dux2cqca" path="res://01_assets/01_sprites/01_interfaces/menuButtonDefault.png" id="6_lg8mb"]
+[ext_resource type="Texture2D" uid="uid://dhpd45daxebk7" path="res://01_assets/01_sprites/01_interfaces/menuButtonHover.png" id="7_m4vng"]
+[ext_resource type="AudioStream" uid="uid://rc6a70ux6ie7" path="res://01_assets/03_sound/02_music/intro.wav" id="8_mbe6s"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5umnr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7fibt"]
+texture = ExtResource("4_0eet0")
+texture_margin_left = 7.0
+texture_margin_top = 5.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60ydu"]
+texture = ExtResource("5_dkone")
+texture_margin_left = 7.0
+texture_margin_top = 5.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_begvh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ot1un"]
+texture = ExtResource("6_lg8mb")
+texture_margin_top = 10.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x00xe"]
+texture = ExtResource("7_m4vng")
+texture_margin_top = 10.0
+texture_margin_bottom = 25.0
 
 [node name="menuScreen" type="Node2D"]
 script = ExtResource("1_friwq")
@@ -31,41 +60,98 @@ metadata/_edit_use_anchors_ = true
 
 [node name="titleText" type="Label" parent="menuinterfaces"]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 91.0
-offset_right = 449.0
-offset_bottom = 215.0
+offset_left = 26.0
+offset_top = 68.0
+offset_right = 378.0
+offset_bottom = 200.0
 theme = ExtResource("2_4r0wl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 43
-text = "A fume de Carozo"
+text = "A fume de
+ Carozo"
 horizontal_alignment = 1
+
+[node name="sprite" type="TextureRect" parent="menuinterfaces"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 42.0
+offset_right = 640.0
+offset_bottom = 483.0
+texture = ExtResource("3_noou1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menuinterfaces"]
 layout_mode = 0
-offset_left = 479.0
-offset_top = 256.0
-offset_right = 559.0
-offset_bottom = 396.0
+offset_left = 351.0
+offset_top = 73.0
+offset_right = 573.0
+offset_bottom = 398.0
 
 [node name="bXogar" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_7fibt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_60ydu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_60ydu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_60ydu")
 text = "Xogar"
 
-[node name="bControles" type="Button" parent="menuinterfaces/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="menuinterfaces/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_begvh")
+
+[node name="bControles" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
+theme_override_colors/font_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Controles"
 
 [node name="bCreditos" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
+theme_override_colors/font_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Créditos"
 
 [node name="bSair" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
+theme_override_colors/font_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x00xe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Saír"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

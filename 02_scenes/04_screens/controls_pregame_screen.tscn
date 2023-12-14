@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b44fpv0kedsrb"]
+[gd_scene load_steps=8 format=3 uid="uid://b44fpv0kedsrb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/controls_pregame_screen.gd" id="1_r7acm"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_muxel"]
+[ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_xmg83"]
+[ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_vpctr"]
+[ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="5_wgv3t"]
+[ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_m867f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kx6my"]
 
@@ -28,43 +32,35 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_kx6my")
 
-[node name="controlsTitle" type="Label" parent="CanvasLayer/interfaces"]
+[node name="controlesSprite" type="TextureRect" parent="CanvasLayer/interfaces"]
 layout_mode = 0
-offset_left = 241.0
-offset_top = 38.0
-offset_right = 441.0
-offset_bottom = 162.0
-scale = Vector2(1.0026, 1.04762)
-theme = ExtResource("2_muxel")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 43
-text = "Controles"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+offset_left = 1.0
+offset_right = 576.0
+offset_bottom = 480.0
+texture = ExtResource("2_xmg83")
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/interfaces"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 264.0
+offset_top = 137.0
+offset_right = 527.0
+offset_bottom = 358.0
+texture = ExtResource("3_vpctr")
 
 [node name="story" type="Label" parent="CanvasLayer/interfaces"]
 layout_mode = 0
-offset_left = 357.0
-offset_top = 163.0
-offset_right = 586.0
-offset_bottom = 201.0
+offset_left = 19.0
+offset_top = 33.0
+offset_right = 236.0
+offset_bottom = 432.0
 theme = ExtResource("2_muxel")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "historia noseke"
+theme_override_font_sizes/font_size = 12
+text = "A túa moza acaba de abrir o seu restaurante en pleno centro. Aínda non comprendedes a sorte que tivestes para atopar un alugueiro tan barato! Todo vai a pedir de boca: comida exquisita, clientela abraiada... cando de súpeto os ingredientes cobran vida. O restaurante está encantado! Seica por iso non duraban os negocios.
+Aí é onde entras ti, de profesión caza demos debes dispararlle aos ingredientes que atopes para levarllos de volta a túa moza. Pero vai rápido, antes de que os clientes marchen e ela se enfade. Ningunha pantasma nin ningunha moza torpe van impedir a súa estrela Michelin!"
 horizontal_alignment = 1
-
-[node name="controls" type="Label" parent="CanvasLayer/interfaces"]
-layout_mode = 1
-offset_left = 66.0
-offset_top = 166.0
-offset_right = 295.0
-offset_bottom = 204.0
-theme = ExtResource("2_muxel")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "bla bls bla bla bka "
-horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="bControlesContinuar" type="Button" parent="CanvasLayer/interfaces"]
 layout_mode = 1
@@ -73,14 +69,44 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -109.0
-offset_top = -76.0
-offset_right = -36.0
-offset_bottom = -44.0
+offset_left = -99.0
+offset_top = -110.0
+offset_right = -19.0
+offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.00766, 1)
 theme = ExtResource("2_muxel")
-text = "Continuar"
+icon = ExtResource("5_wgv3t")
+icon_alignment = 1
+
+[node name="title" type="TextureRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 36.0
+offset_right = 618.0
+offset_bottom = 106.0
+rotation = 0.0314159
+texture = ExtResource("6_m867f")
+expand_mode = 1
+
+[node name="controles" type="Label" parent="CanvasLayer/interfaces/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.9058
+offset_top = -33.9985
+offset_right = 80.0942
+offset_bottom = 28.0015
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_muxel")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Controles"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/interfaces/bControlesContinuar" to="." method="_on_b_controles_continuar_pressed"]
