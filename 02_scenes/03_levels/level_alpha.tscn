@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcuy2pc318fdc"]
+[gd_scene load_steps=9 format=3 uid="uid://bcuy2pc318fdc"]
 
 [ext_resource type="PackedScene" uid="uid://dderw5xslumkm" path="res://02_scenes/03_levels/level_template.tscn" id="1_tm6rn"]
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_alpha.gd" id="2_v0fk0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1vcsu1a0lffa" path="res://02_scenes/01_characters/enemy03.tscn" id="4_4xnrs"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
 [ext_resource type="AudioStream" uid="uid://bjbvpw3pe6ixq" path="res://01_assets/03_sound/02_music/mainSong_v01.wav" id="6_gyuh8"]
+[ext_resource type="PackedScene" uid="uid://do7t4aw2geyt5" path="res://02_scenes/02_objects/spawner.tscn" id="7_wmyyt"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v27qv"]
 
@@ -113,6 +114,24 @@ autoplay = true
 [node name="level_timer" parent="." index="7"]
 wait_time = 5.0
 autostart = true
+
+[node name="spawner2" parent="." index="8" instance=ExtResource("7_wmyyt")]
+position = Vector2(2050, -2.00001)
+scale = Vector2(0.68, 0.68)
+enemy_scene_dict = {
+"chocolate": "res://02_scenes/01_characters/enemy02.tscn",
+"masa": "res://02_scenes/01_characters/enemy01.tscn",
+"naranja": "res://02_scenes/01_characters/enemy03.tscn"
+}
+
+[node name="spawner3" parent="." index="9" instance=ExtResource("7_wmyyt")]
+position = Vector2(2038, 931)
+scale = Vector2(0.64, 0.72)
+enemy_scene_dict = {
+"chocolate": "res://02_scenes/01_characters/enemy02.tscn",
+"masa": "res://02_scenes/01_characters/enemy01.tscn",
+"naranja": "res://02_scenes/01_characters/enemy03.tscn"
+}
 
 [editable path="spawner"]
 [editable path="player"]
