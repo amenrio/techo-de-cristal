@@ -5,21 +5,29 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_suos3"]
 
-[node name="comanda ingredient" type="MarginContainer"]
-offset_right = 42.0
-offset_bottom = 41.0
+[node name="comanda ingredient" type="Control"]
+layout_mode = 3
+anchor_right = 0.066
+anchor_bottom = 0.085
+offset_right = -0.239998
+offset_bottom = 0.200001
 rotation = -0.000766327
 size_flags_vertical = 3
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_right = 3
 script = ExtResource("1_iy482")
 
 [node name="sprite" type="TextureRect" parent="."]
 layout_mode = 2
+offset_left = 3.0
+offset_right = 39.0
+offset_bottom = 41.0
 texture = SubResource("ViewportTexture_suos3")
 
 [node name="count" type="Label" parent="."]
 layout_mode = 2
+offset_left = 3.0
+offset_top = 14.0
+offset_right = 39.0
+offset_bottom = 41.0
 size_flags_vertical = 8
 theme = ExtResource("2_hjey4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)

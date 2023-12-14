@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 var sprite_img: String
 var ing_count:int
