@@ -1,33 +1,27 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw5bufylc4nfb"]
 
 [ext_resource type="Script" path="res://02_scenes/02_objects/comanda.gd" id="1_bmvw8"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_c5unb"]
+[ext_resource type="Texture2D" uid="uid://d1eg7jvmdxrpn" path="res://01_assets/01_sprites/01_interfaces/comanda.png" id="2_yyndh"]
 
 [node name="comanda" type="Control"]
 layout_mode = 3
 anchor_right = 0.133
 anchor_bottom = 0.24
 offset_right = -0.120003
-offset_bottom = -0.200005
+offset_bottom = -0.199997
 script = ExtResource("1_bmvw8")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 2
-offset_right = 85.0
-offset_bottom = 115.0
-texture = SubResource("CanvasTexture_c5unb")
+offset_left = -5.0
+offset_right = 89.0
+offset_bottom = 123.0
+texture = ExtResource("2_yyndh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 85.0
 offset_bottom = 115.0
-
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
-theme_override_constants/separation = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -47,3 +41,8 @@ offset_left = 6.0
 offset_top = 36.0
 offset_right = 48.0
 offset_bottom = 78.0
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
