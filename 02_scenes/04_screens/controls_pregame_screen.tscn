@@ -41,6 +41,7 @@ texture = ExtResource("2_xmg83")
 flip_h = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/interfaces"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 264.0
 offset_top = 137.0
@@ -68,10 +69,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -93.0
-offset_top = -90.0
-offset_right = -23.0
-offset_bottom = -20.0
+offset_left = -99.0
+offset_top = -110.0
+offset_right = -19.0
+offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.00766, 1)

@@ -86,6 +86,7 @@ offset_right = 573.0
 offset_bottom = 398.0
 
 [node name="bXogar" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
@@ -102,13 +103,15 @@ theme_override_constants/separation = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_begvh")
 
 [node name="bControles" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
@@ -117,13 +120,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Controles"
 
 [node name="bCreditos" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")
@@ -132,13 +137,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_x00xe")
 text = "Créditos"
 
 [node name="bSair" type="Button" parent="menuinterfaces/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_4r0wl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_hover_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.172549, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_ot1un")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x00xe")

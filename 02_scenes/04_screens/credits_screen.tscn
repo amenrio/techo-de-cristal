@@ -45,6 +45,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ana" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -59,6 +60,7 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
 
 [node name="sara" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -74,6 +76,7 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
 
 [node name="pablo" type="Label" parent="interfaces/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -90,6 +93,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="luis carlos" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -105,6 +109,7 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
 
 [node name="amaya" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -120,6 +125,7 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ebenj")
 
 [node name="andres" type="Label" parent="interfaces/HBoxContainer/VBoxContainer2"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -133,8 +139,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 offset_left = 34.0
 offset_top = 382.0
-offset_right = 104.0
-offset_bottom = 452.0
+offset_right = 114.0
+offset_bottom = 462.0
 theme = ExtResource("2_uevps")
 text = "
 "

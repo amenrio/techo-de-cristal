@@ -8,9 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="4_vr04a"]
 [ext_resource type="Texture2D" uid="uid://dywqwfsnwo7ks" path="res://01_assets/01_sprites/01_interfaces/churros 1.png" id="7_pir06"]
 [ext_resource type="Texture2D" uid="uid://b8qaby4l5h7g2" path="res://01_assets/01_sprites/01_interfaces/masa.png" id="8_77soy"]
+[ext_resource type="Texture2D" uid="uid://dii4cl2qyual5" path="res://01_assets/01_sprites/player/player_spritesheet.png" id="9_b2eod"]
 [ext_resource type="Texture2D" uid="uid://c72smlr03a4ct" path="res://01_assets/01_sprites/01_interfaces/chocolate.png" id="9_ci858"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_ci6q3"]
 
 [node name="pregameScreen" type="Node2D"]
 script = ExtResource("1_cijfa")
@@ -43,61 +42,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_rb36f")
 
-[node name="moza1" type="TextureRect" parent="interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 477.0
-offset_top = 181.0
-offset_right = -109.0
-offset_bottom = -164.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("ViewportTexture_ci6q3")
-
-[node name="moza2" type="TextureRect" parent="interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 549.0
-offset_top = 218.0
-offset_right = -36.0
-offset_bottom = -128.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("ViewportTexture_ci6q3")
-
-[node name="dialogueBox" type="TextureRect" parent="interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 334.0
-offset_top = 122.0
-offset_right = -28.0
-offset_bottom = -231.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_mppqo")
-
-[node name="dialogue" type="Label" parent="interfaces/dialogueBox"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 12.626
-offset_right = 6.03299
-offset_bottom = 12.626
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_kk0lc")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "\"Lembra, este plato faise así\""
-horizontal_alignment = 1
-
 [node name="bContinuar" type="Button" parent="interfaces"]
 layout_mode = 0
 offset_left = 528.0
@@ -127,6 +71,7 @@ text = "1"
 horizontal_alignment = 1
 
 [node name="pasos2" type="Label" parent="interfaces/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_kk0lc")
@@ -155,6 +100,7 @@ text = "2"
 horizontal_alignment = 1
 
 [node name="pasos" type="Label" parent="interfaces/HBoxContainer2"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_kk0lc")
@@ -167,6 +113,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Churros1" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(241, 104)
 scale = Vector2(1.15605, 1.16492)
 texture = ExtResource("7_pir06")
@@ -180,5 +127,43 @@ texture = ExtResource("8_77soy")
 position = Vector2(398, 363)
 scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("9_ci858")
+
+[node name="PlayerSpritesheet" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(505, 274)
+scale = Vector2(2.771, 2.768)
+texture = ExtResource("9_b2eod")
+hframes = 8
+vframes = 6
+frame = 25
+
+[node name="dialogueBox" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 334.0
+offset_top = 122.0
+offset_right = 613.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_mppqo")
+
+[node name="dialogue" type="Label" parent="dialogueBox"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 6.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_kk0lc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "\"Lembra, este plato faise así\""
+horizontal_alignment = 1
 
 [connection signal="pressed" from="interfaces/bContinuar" to="." method="_on_b_continuar_pressed"]
