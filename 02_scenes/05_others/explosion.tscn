@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjjyp30d1qe1"]
+[gd_scene load_steps=6 format=3 uid="uid://cjjyp30d1qe1"]
 
 [ext_resource type="Script" path="res://02_scenes/05_others/explosion.gd" id="1_8jb0j"]
+[ext_resource type="AudioStream" uid="uid://860idxjn11ao" path="res://01_assets/03_sound/01_sfx/02_enemies/enemyDeath_02.mp3" id="2_ydlkx"]
 
 [sub_resource type="Gradient" id="Gradient_gpu0k"]
 colors = PackedColorArray(1, 0.267638, 0.618748, 1, 1, 0.798927, 0.849594, 1)
@@ -32,5 +33,8 @@ script = ExtResource("1_8jb0j")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ydlkx")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
