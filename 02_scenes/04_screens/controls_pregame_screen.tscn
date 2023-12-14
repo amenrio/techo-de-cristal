@@ -43,6 +43,8 @@ offset_top = 33.0
 offset_right = 236.0
 offset_bottom = 432.0
 theme = ExtResource("2_muxel")
+theme_override_colors/font_outline_color = Color(0.494118, 0.298039, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 12
 text = "A túa moza acaba de abrir o seu restaurante en pleno centro. Aínda non comprendedes a sorte que tivestes para atopar un alugueiro tan barato! Todo vai a pedir de boca: comida exquisita, clientela abraiada... cando de súpeto os ingredientes cobran vida. O restaurante está encantado! Seica por iso non duraban os negocios.
 Aí é onde entras ti, de profesión caza demos debes dispararlle aos ingredientes que atopes para levarllos de volta a túa moza. Pero vai rápido, antes de que os clientes marchen e ela se enfade. Ningunha pantasma nin ningunha moza torpe van impedir a súa estrela Michelin!"

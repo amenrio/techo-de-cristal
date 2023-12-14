@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw5bufylc4nfb"]
+[gd_scene load_steps=5 format=3 uid="uid://cw5bufylc4nfb"]
 
 [ext_resource type="Script" path="res://02_scenes/02_objects/comanda.gd" id="1_bmvw8"]
 [ext_resource type="Texture2D" uid="uid://d1eg7jvmdxrpn" path="res://01_assets/01_sprites/01_interfaces/comanda.png" id="2_yyndh"]
+[ext_resource type="PackedScene" uid="uid://cy2bcmeaqdkyw" path="res://02_scenes/04_screens/comanda_dish.tscn" id="3_n527l"]
+[ext_resource type="PackedScene" uid="uid://kc21pye1pm6r" path="res://02_scenes/04_screens/comanda_ingredient.tscn" id="4_i1382"]
 
 [node name="comanda" type="Control"]
 layout_mode = 3
@@ -23,6 +25,9 @@ layout_mode = 0
 offset_right = 85.0
 offset_bottom = 115.0
 
+[node name="dish" parent="HBoxContainer" instance=ExtResource("3_n527l")]
+layout_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -32,6 +37,9 @@ theme_override_constants/margin_top = 6
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
 theme_override_constants/separation = 11
+
+[node name="ing1" parent="HBoxContainer/MarginContainer/ingredients" instance=ExtResource("4_i1382")]
+layout_mode = 2
 
 [node name="timer" type="Timer" parent="."]
 

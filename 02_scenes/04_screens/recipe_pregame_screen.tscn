@@ -56,9 +56,9 @@ icon_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="interfaces"]
 layout_mode = 2
 offset_left = 50.0
-offset_top = 182.0
+offset_top = 187.0
 offset_right = 346.0
-offset_bottom = 308.0
+offset_bottom = 313.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 33
@@ -76,7 +76,9 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_kk0lc")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
 text = "Poñer a ferver nun cazo a auga e a sal. En canto ferva, retirar do lume e botar a fariña de golpe. Remexer con forza ata que a masa se despegue. Formar os churros cunha manga e fritir. Deixar escorrer en papel de cociña. Esparexer con azucre.
 "
@@ -87,9 +89,9 @@ autowrap_mode = 2
 [node name="HBoxContainer2" type="HBoxContainer" parent="interfaces"]
 layout_mode = 2
 offset_left = 50.0
-offset_top = 309.0
+offset_top = 314.0
 offset_right = 345.0
-offset_bottom = 424.0
+offset_bottom = 429.0
 theme_override_constants/separation = 33
 alignment = 1
 
@@ -105,7 +107,9 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_kk0lc")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
 text = "Quentar leite nun cazo, engadir azucre a gusto. Picar o chocolate e engadir xunto coa sal. Remover cunha culler de madeira ata que o chocolate se funda. Apartar do lume cando ferva. Servir xunto cos churros.
 "
@@ -125,7 +129,7 @@ scale = Vector2(0.234099, 0.238701)
 texture = ExtResource("8_77soy")
 
 [node name="Chocolate" type="Sprite2D" parent="."]
-position = Vector2(398, 363)
+position = Vector2(398, 366)
 scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("9_ci858")
 
@@ -150,9 +154,9 @@ hframes = 6
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 353.0
+offset_left = 338.0
 offset_top = 122.0
-offset_right = 605.0
+offset_right = 606.0
 offset_bottom = 249.0
 grow_horizontal = 2
 grow_vertical = 2
