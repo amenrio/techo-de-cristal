@@ -37,15 +37,14 @@ var inventory:Dictionary = {
 	"weapons":{}
 	}
 	
+var ongoing_comanda:bool = false
 func _ready():
 	health_component.connect('death',player_death)
 	animation_tree.active = true
 	
 func player_death(_args):
 	$deathAudio.play()
-	get_tree().change_scene_to_file("res://02_scenes/04_screens/results_screen.tscn")
-	
-var ongoing_comanda:bool = false
+	Autoload.load_result_screen(completed_comandas.size())
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
