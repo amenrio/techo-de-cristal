@@ -33,6 +33,7 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_kx6my")
 
 [node name="controlesSprite" type="TextureRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 1.0
 offset_right = 576.0
 offset_bottom = 480.0
@@ -40,6 +41,7 @@ texture = ExtResource("2_xmg83")
 flip_h = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 137.0
 offset_right = 527.0
@@ -47,6 +49,7 @@ offset_bottom = 358.0
 texture = ExtResource("3_vpctr")
 
 [node name="story" type="Label" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 33.0
 offset_right = 236.0
@@ -77,6 +80,7 @@ icon = ExtResource("5_wgv3t")
 icon_alignment = 1
 
 [node name="title" type="TextureRect" parent="CanvasLayer/interfaces"]
+layout_mode = 0
 offset_left = 378.0
 offset_top = 36.0
 offset_right = 618.0

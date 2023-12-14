@@ -22,6 +22,14 @@ default_font = ExtResource("2_58q14")
 [node name="resultsScreen" type="Node2D"]
 script = ExtResource("1_70ytu")
 
+[node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_r3pcd")
+
 [node name="detailsLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -126,9 +134,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 97.0
-offset_top = -92.0
+offset_top = -63.0
 offset_right = -72.0
-offset_bottom = 87.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -150,10 +158,10 @@ text = "Diñeiro
 Gañado
 "
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Diñeiro ganado2" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
+size_flags_vertical = 6
 theme = SubResource("Theme_811cl")
 theme_override_font_sizes/font_size = 20
 text = "353445345"
@@ -179,6 +187,7 @@ horizontal_alignment = 1
 
 [node name="Alimentos Recollidos2" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
 layout_mode = 2
+size_flags_vertical = 6
 theme = SubResource("Theme_811cl")
 theme_override_font_sizes/font_size = 20
 text = "43543453"
@@ -191,7 +200,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos2" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 32
 
 [node name="Pratos Entregados" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
@@ -201,10 +209,10 @@ theme_override_font_sizes/font_size = 20
 text = "Pratos 
 Entregados"
 horizontal_alignment = 1
-vertical_alignment = 2
 
 [node name="Diñeiro ganado3" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
+size_flags_vertical = 6
 theme = SubResource("Theme_811cl")
 theme_override_font_sizes/font_size = 20
 text = "344353453"
@@ -240,15 +248,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="background" type="TextureRect" parent="feedbackLayer/interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_r3pcd")
 
 [node name="illustration" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
@@ -287,14 +286,14 @@ text = "\"Non diches nin un só pau á auga. Faralo mellor á próxima?\""
 [node name="bContinuar" type="Button" parent="feedbackLayer/interfaces"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.021875
-anchor_top = -0.0416667
+anchor_left = 0.0140625
+anchor_top = -0.0854167
 anchor_right = 0.021875
-anchor_bottom = -0.0416667
+anchor_bottom = -0.0666667
 offset_left = 520.0
 offset_top = 413.0
-offset_right = 590.0
-offset_bottom = 479.0
+offset_right = 595.0
+offset_bottom = 484.0
 theme = ExtResource("3_bvoy4")
 icon = ExtResource("7_ucpke")
 icon_alignment = 1

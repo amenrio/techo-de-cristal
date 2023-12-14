@@ -41,8 +41,3 @@ offset_left = 6.0
 offset_top = 36.0
 offset_right = 48.0
 offset_bottom = 78.0
-
-[node name="Container" type="Container" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
