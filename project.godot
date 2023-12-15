@@ -23,6 +23,9 @@ Autoload="*res://02_scenes/00_autoload/autoload.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/resizable=false
+window/size/window_width_override=800
+window/size/window_height_override=600
 window/stretch/mode="canvas_items"
 mouse_cursor/size/viewport_height=1080
 mouse_cursor/size/viewport_width=1920
