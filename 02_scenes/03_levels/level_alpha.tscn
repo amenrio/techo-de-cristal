@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcuy2pc318fdc"]
+[gd_scene load_steps=9 format=3 uid="uid://bcuy2pc318fdc"]
 
 [ext_resource type="PackedScene" uid="uid://dderw5xslumkm" path="res://02_scenes/03_levels/level_template.tscn" id="1_tm6rn"]
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_alpha.gd" id="2_v0fk0"]
@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://d1vcsu1a0lffa" path="res://02_scenes/01_characters/enemy03.tscn" id="4_4xnrs"]
 [ext_resource type="PackedScene" uid="uid://b5cw65yv7hyj" path="res://02_scenes/01_characters/girlfriend.tscn" id="4_8kabd"]
 [ext_resource type="AudioStream" uid="uid://bjbvpw3pe6ixq" path="res://01_assets/03_sound/02_music/mainSong_v01.wav" id="6_gyuh8"]
+[ext_resource type="PackedScene" uid="uid://do7t4aw2geyt5" path="res://02_scenes/02_objects/spawner.tscn" id="7_wmyyt"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_v27qv"]
 
 [node name="levelAlpha" instance=ExtResource("1_tm6rn")]
 position = Vector2(7, 0)
 script = ExtResource("2_v0fk0")
-time_limit = 60
+time_limit = 240
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 texture_filter = 1
@@ -62,8 +63,14 @@ position = Vector2(980, 760)
 [node name="spawner" parent="." index="3"]
 position = Vector2(930, 1366)
 scale = Vector2(0.760002, 0.76)
+enemy_scene_dict = {
+"chocolate": "res://02_scenes/01_characters/enemy02.tscn",
+"masa": "res://02_scenes/01_characters/enemy01.tscn",
+"naranja": "res://02_scenes/01_characters/enemy03.tscn"
+}
 enemies = ExtResource("4_4xnrs")
-enemy_names = Array[String](["chocolate", "naranja", "masa"])
+enemy_names = Array[String](["masa", "naranja", "chocolate"])
+spawn_timer = 3.0
 
 [node name="timer" parent="spawner" index="1"]
 wait_time = 4.0
@@ -77,6 +84,9 @@ collision_mask = 62
 max_speed = 300
 drag = 0.1
 dash_velocity = 1000.0
+
+[node name="HealthComponent" parent="player" index="1"]
+MAX_HEALTH = 50000.0
 
 [node name="Camera2D" parent="player" index="3"]
 zoom = Vector2(1.65, 1.65)
@@ -109,6 +119,28 @@ autoplay = true
 wait_time = 5.0
 autostart = true
 
+[node name="spawner2" parent="." index="8" instance=ExtResource("7_wmyyt")]
+position = Vector2(2050, -2.00001)
+scale = Vector2(0.68, 0.68)
+enemy_scene_dict = {
+"chocolate": "res://02_scenes/01_characters/enemy02.tscn",
+"masa": "res://02_scenes/01_characters/enemy01.tscn",
+"naranja": "res://02_scenes/01_characters/enemy03.tscn"
+}
+enemy_names = Array[String](["chocolate", "masa", "naranja"])
+spawn_timer = 3.0
+
+[node name="spawner3" parent="." index="9" instance=ExtResource("7_wmyyt")]
+position = Vector2(2038, 931)
+scale = Vector2(0.64, 0.72)
+enemy_scene_dict = {
+"chocolate": "res://02_scenes/01_characters/enemy02.tscn",
+"masa": "res://02_scenes/01_characters/enemy01.tscn",
+"naranja": "res://02_scenes/01_characters/enemy03.tscn"
+}
+enemy_names = Array[String](["naranja", "masa", "chocolate"])
+spawn_timer = 3.0
+
 [editable path="spawner"]
 [editable path="player"]
 [editable path="player/HealthComponent"]
@@ -116,3 +148,5 @@ autostart = true
 [editable path="player/weapon"]
 [editable path="player/GUI"]
 [editable path="player/GUI/cronometro"]
+[editable path="spawner2"]
+[editable path="spawner3"]

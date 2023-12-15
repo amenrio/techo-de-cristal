@@ -286,12 +286,11 @@ texture = ExtResource("5_ba4lo")
 
 [node name="feedbackText" type="Label" parent="feedbackLayer/interfaces/feedbackBox"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 84.0
-offset_right = 504.0
-offset_bottom = 127.0
+offset_left = 26.0
+offset_top = 75.0
+offset_right = 570.0
+offset_bottom = 102.0
 theme = ExtResource("3_bvoy4")
-text = "\"Non diches nin un só pau á auga. Faralo mellor á próxima?\""
 
 [node name="bContinuar" type="Button" parent="feedbackLayer/interfaces"]
 layout_mode = 1

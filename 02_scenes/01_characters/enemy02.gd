@@ -20,6 +20,7 @@ var damage = 10.0
 var active = false
 var exploding = false
 var sprite_string = "res://01_assets/01_sprites/enemy_%s.png"
+var isOnView = false
 
 func _ready():
 	var actual_texture = sprite_string % _name
@@ -30,7 +31,7 @@ func _physics_process(_delta):
 	#	velocity = position.direction_to(player_instance.position) * max_speed
 	#else:
 	#	velocity = position.direction_to(player_instance.position)
-	if following_player == true:
+	if following_player and isOnView:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = dir * max_speed
 		if dir.x < 0:
@@ -81,10 +82,20 @@ func _on_timer_timeout():
 
 
 func _on_nav_timer_timeout():
-	if following_player == true:
+	if following_player and isOnView:
 		makepath()
 
 
 func _on_animated_sprite_2d_animation_looped():
 	if exploding == true:
 		queue_free()
+
+
+func _on_view_range_body_entered(body):
+	if body.is_in_group("player"):
+		isOnView = true
+
+
+func _on_view_range_body_exited(body):
+	if body.is_in_group("player"):
+		isOnView = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://de4yexnjnfet"]
+[gd_scene load_steps=30 format=3 uid="uid://de4yexnjnfet"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy02.gd" id="1_sr8wj"]
 [ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="2_tmdi8"]
@@ -139,7 +139,10 @@ radius = 57.0351
 [sub_resource type="CircleShape2D" id="CircleShape2D_3nn7d"]
 radius = 96.2549
 
-[node name="enemyExplode" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_oj4wm"]
+radius = 244.008
+
+[node name="enemyExplode" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 10
 motion_mode = 1
@@ -204,12 +207,19 @@ navigation_layers = 3
 wait_time = 0.1
 autostart = true
 
+[node name="viewRange" type="Area2D" parent="."]
+
+[node name="viewRageCollision" type="CollisionShape2D" parent="viewRange"]
+shape = SubResource("CircleShape2D_oj4wm")
+
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
 [connection signal="body_entered" from="activationRange" to="." method="_on_activation_range_body_entered"]
 [connection signal="body_exited" from="activationRange" to="." method="_on_activation_range_body_exited"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="navTimer" to="." method="_on_nav_timer_timeout"]
+[connection signal="body_entered" from="viewRange" to="." method="_on_view_range_body_entered"]
+[connection signal="body_exited" from="viewRange" to="." method="_on_view_range_body_exited"]
 
 [editable path="HitboxComponent"]
 [editable path="HealthComponent"]

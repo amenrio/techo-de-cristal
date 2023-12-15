@@ -14,7 +14,7 @@ func _ready():
 	health_bar.max_value = MAX_HEALTH
 	health_bar.value = MAX_HEALTH
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if health <=0:
 		emit_signal('death',parent)
 		parent.queue_free()

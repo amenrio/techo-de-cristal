@@ -37,15 +37,14 @@ var inventory:Dictionary = {
 	"weapons":{}
 	}
 	
+var ongoing_comanda:bool = false
 func _ready():
 	health_component.connect('death',player_death)
 	animation_tree.active = true
 	
 func player_death(_args):
 	$deathAudio.play()
-	get_tree().change_scene_to_file("res://02_scenes/04_screens/results_screen.tscn")
-	
-var ongoing_comanda:bool = false
+	Autoload.load_result_screen(completed_comandas.size())
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
@@ -76,16 +75,16 @@ func _physics_process(_delta: float) ->  void:
 		check_completed_comandas()
 	check_completed_comandas()
 			
-func _process(delta):
+func _process(_delta):
 	update_animation_tree()
-	update_inv_count()
-
-func update_inv_count():
-	for ing in inventory["ingredients"]:
-		if not inventory_gui_count[ing]:
-			continue
-		else:
-			inventory_gui_count[ing].ing_count = inventory["ingredients"][ing]
+#	update_inv_count()
+#
+#func update_inv_count():
+#	for ing in inventory["ingredients"]:
+#		if not inventory_gui_count[ing]:
+#			continue
+#		else:
+#			inventory_gui_count[ing].ing_count = inventory["ingredients"][ing]
 		
 	
 func update_animation_tree():
@@ -119,14 +118,14 @@ func check_completed_comandas():
 					continue
 				if ingredient in comanda.ingredients:
 					if not comanda.completed_ingredients.has(ingredient):
-							comanda.completed_ingredients[ingredient]=0
+							comanda.completed_ingredients[ingredient] = 0
 					if comanda.ingredients[ingredient] > comanda.completed_ingredients[ingredient]:
 						inventory["ingredients"][ingredient] -= 1
-						print(inventory["ingredients"][ingredient])
-						comanda.ingredients[ingredient]
-						comanda.completed_ingredients[ingredient] +=1
+#						inventory_gui_count[ingredient].ing_count += 1
+						comanda.completed_ingredients[ingredient] += 1
 						continue
 		if comanda.is_completed:
+			subtract_comanda_ingredients_from_gui_inventory(comanda)
 			objetivos.erase(comanda)
 			hud_comanda.remove_child(comanda)
 			completed_comandas.append(comanda)
@@ -134,7 +133,9 @@ func check_completed_comandas():
 			Autoload.globalScore += (100 + get_parent().get_node("level_timer").time_left as int)
 			$comandaCompletada.play()
 			continue
-
+func subtract_comanda_ingredients_from_gui_inventory(comanda):
+	for ing in comanda.ingredients:
+		inventory_gui_count[ing].ing_count -= comanda.ingredients[ing]
 
 func add_to_inventory(pickup_object):
 	"""Function that recieves the object that is being picked up
@@ -151,8 +152,8 @@ func add_to_inventory(pickup_object):
 			inventory_ingredient.sprite_img = pickup_name
 			inventory_gui_count[pickup_name] = inventory_ingredient
 			inventory_gui.ingredient_slots.add_child(inventory_ingredient)
-		inventory[pickup_class][pickup_name]+=1
-		inventory_gui_count[pickup_name].ing_count = inventory[pickup_class][pickup_name]
+		inventory[pickup_class][pickup_name] += 1
+		inventory_gui_count[pickup_name].ing_count += 1
 	$pickUpAudio.play()
 	Autoload.totalIngredients += 1
 

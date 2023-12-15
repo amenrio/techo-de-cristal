@@ -54,11 +54,6 @@ func extra_drop(enemy,new_position):
 
 func _on_level_timer_timeout():
 	var completed = get_node("player").completed_comandas.size()
-	if completed < comandas_min:
-		get_tree().change_scene_to_file("res://02_scenes/04_screens/results_screen.tscn")
-	elif completed < comandas_optimo:
-		get_tree().change_scene_to_file("res://02_scenes/04_screens/results_screen.tscn")
-	elif completed >= comandas_optimo:
-		get_tree().change_scene_to_file("res://02_scenes/04_screens/results_screen.tscn")
 	$spawner/timer.stop()
 	timer_node.stop()
+	Autoload.load_result_screen(completed)

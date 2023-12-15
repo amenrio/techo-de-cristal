@@ -3,8 +3,8 @@ extends Node2D
 @export var weapon_sprite: Texture2D
 @export var bullet_scene: PackedScene
 
-var bullet_number = 3
-var bullet_piercing = 2
+var bullet_number = 1
+var bullet_piercing = 0
 
 @onready var level = get_tree().current_scene
 @onready var bulletSpawn = $bullet_spawn_point

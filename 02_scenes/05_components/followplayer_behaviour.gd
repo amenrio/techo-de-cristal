@@ -15,3 +15,7 @@ var following_player = false
 #func _on_detection_area_body_entered(body):
 #	if body.is_in_group('player'):
 #		following_player=true
+
+
+func _on_detection_area_body_entered(_body):
+	pass # Replace with function body.

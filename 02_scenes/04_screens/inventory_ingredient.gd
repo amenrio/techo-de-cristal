@@ -15,5 +15,5 @@ func _ready():
 	$count.text = str(ing_count)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$count.text = str(ing_count)
