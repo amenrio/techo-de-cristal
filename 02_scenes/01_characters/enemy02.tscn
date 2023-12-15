@@ -142,7 +142,7 @@ radius = 96.2549
 [sub_resource type="CircleShape2D" id="CircleShape2D_oj4wm"]
 radius = 244.008
 
-[node name="enemyExplode" type="CharacterBody2D"]
+[node name="enemyExplode" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 10
 motion_mode = 1

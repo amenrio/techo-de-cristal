@@ -22,7 +22,7 @@ var special_list = ['2shot','3shot','health']
 
 func _ready():
 	$sprite.texture=load(textures[_name])
-func _process(delta):
+func _process(_delta):
 	if play_animation:
 		position += position.direction_to(player_instance.position).normalized() * 5
 func _on_body_entered(body):

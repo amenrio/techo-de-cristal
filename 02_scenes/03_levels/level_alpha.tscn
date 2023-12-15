@@ -69,7 +69,8 @@ enemy_scene_dict = {
 "naranja": "res://02_scenes/01_characters/enemy03.tscn"
 }
 enemies = ExtResource("4_4xnrs")
-enemy_names = Array[String](["chocolate", "naranja", "masa"])
+enemy_names = Array[String](["masa", "naranja", "chocolate"])
+spawn_timer = 3.0
 
 [node name="timer" parent="spawner" index="1"]
 wait_time = 4.0
@@ -83,6 +84,9 @@ collision_mask = 62
 max_speed = 300
 drag = 0.1
 dash_velocity = 1000.0
+
+[node name="HealthComponent" parent="player" index="1"]
+MAX_HEALTH = 50000.0
 
 [node name="Camera2D" parent="player" index="3"]
 zoom = Vector2(1.65, 1.65)
@@ -123,6 +127,8 @@ enemy_scene_dict = {
 "masa": "res://02_scenes/01_characters/enemy01.tscn",
 "naranja": "res://02_scenes/01_characters/enemy03.tscn"
 }
+enemy_names = Array[String](["chocolate", "masa", "naranja"])
+spawn_timer = 3.0
 
 [node name="spawner3" parent="." index="9" instance=ExtResource("7_wmyyt")]
 position = Vector2(2038, 931)
@@ -132,6 +138,8 @@ enemy_scene_dict = {
 "masa": "res://02_scenes/01_characters/enemy01.tscn",
 "naranja": "res://02_scenes/01_characters/enemy03.tscn"
 }
+enemy_names = Array[String](["naranja", "masa", "chocolate"])
+spawn_timer = 3.0
 
 [editable path="spawner"]
 [editable path="player"]
@@ -140,3 +148,5 @@ enemy_scene_dict = {
 [editable path="player/weapon"]
 [editable path="player/GUI"]
 [editable path="player/GUI/cronometro"]
+[editable path="spawner2"]
+[editable path="spawner3"]
