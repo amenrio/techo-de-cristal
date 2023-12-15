@@ -134,10 +134,10 @@ radius = 15.0
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7ip4"]
-radius = 57.0351
+radius = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3nn7d"]
-radius = 96.2549
+radius = 108.005
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oj4wm"]
 radius = 244.008
@@ -150,7 +150,8 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_sr8wj")
 loot = ExtResource("2_tmdi8")
 _name = "chocolate"
-max_speed = 180
+explosionDelay = 0.25
+max_speed = 200
 
 [node name="Shadow" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -199,6 +200,7 @@ shape = SubResource("CircleShape2D_f7ip4")
 shape = SubResource("CircleShape2D_3nn7d")
 
 [node name="timer" type="Timer" parent="."]
+wait_time = 0.25
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 3

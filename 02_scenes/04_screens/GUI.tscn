@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgylo5vnl51"]
+[gd_scene load_steps=4 format=3 uid="uid://bgylo5vnl51"]
 
 [ext_resource type="PackedScene" uid="uid://brkplwxswskhb" path="res://02_scenes/04_screens/inventory.tscn" id="1_8c1m7"]
+[ext_resource type="Script" path="res://02_scenes/04_screens/GUI.gd" id="1_ec6i4"]
 [ext_resource type="PackedScene" uid="uid://x66lrxm7vvm7" path="res://02_scenes/04_screens/timer.tscn" id="3_k4uon"]
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_ec6i4")
+
+[node name="cronometro" parent="." instance=ExtResource("3_k4uon")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = -70.0
+offset_right = 139.0
+offset_bottom = -9.0
+grow_vertical = 0
 
 [node name="interfaces" type="Control" parent="."]
 layout_mode = 3
@@ -19,7 +31,10 @@ anchors_preset = -1
 anchor_left = 0.919
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -15.16
+offset_left = -598.16
+offset_top = 149.0
+offset_right = -583.0
+offset_bottom = 149.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_top = 154
@@ -28,16 +43,9 @@ theme_override_constants/margin_top = 154
 layout_mode = 2
 
 [node name="comandas" type="HBoxContainer" parent="interfaces"]
+z_as_relative = false
 layout_mode = 2
-offset_left = 20.0
-offset_right = 283.0
-offset_bottom = 115.0
+offset_left = 5.0
+offset_right = 5.0
 size_flags_horizontal = 3
-
-[node name="cronometro" parent="." instance=ExtResource("3_k4uon")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -61.0
-offset_bottom = 0.0
-grow_vertical = 0
+theme_override_constants/separation = 100

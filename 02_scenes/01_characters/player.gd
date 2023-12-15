@@ -29,7 +29,7 @@ var can_talk_to_girlfriend=false
 
 var desired_velocity := Vector2.ZERO
 var turn_velocity := Vector2.ZERO
-var objetivos:Array
+var objetivos:Array = []
 
 var inventory:Dictionary = {
 	"ingredients":{},
@@ -77,6 +77,7 @@ func _physics_process(_delta: float) ->  void:
 			
 func _process(_delta):
 	update_animation_tree()
+
 #	update_inv_count()
 #
 #func update_inv_count():
@@ -108,6 +109,9 @@ func check_completed_comandas():
 	for comanda in objetivos:
 		if comanda.timed_out:
 			objetivos.erase(comanda)
+#			comanda.animation_player.play("exit")
+			comanda.animation_player.play("exit")
+			await get_tree().create_timer(0.4).timeout
 			hud_comanda.remove_child(comanda)
 			$comandaTimeOut.play()
 			continue
@@ -127,6 +131,8 @@ func check_completed_comandas():
 		if comanda.is_completed:
 			subtract_comanda_ingredients_from_gui_inventory(comanda)
 			objetivos.erase(comanda)
+			comanda.animation_player.play("exit")
+			await get_tree().create_timer(0.4).timeout
 			hud_comanda.remove_child(comanda)
 			completed_comandas.append(comanda)
 			Autoload.totalComandas = completed_comandas.size()
@@ -168,12 +174,15 @@ func talk_to_girlfriend():
 		if len(objetivos) == 0:
 			for child in hud_comanda.get_children():
 				hud_comanda.remove_child(child)
+				
 			var _objectives = girlfriend_instance.get_new_comandas(3)
 			for comanda in _objectives:
+				health_component.add_health(10)
+				await get_tree().create_timer(0.1).timeout
 				var comanda_activa = comanda_instance.instantiate()
 				comanda_activa.init(comanda)
 				hud_comanda.add_child(comanda_activa)
-				hud_comanda.add_spacer(false)
+#				comanda_activa.animation_player.play("init")
 				objetivos.append(comanda_activa)
 				print("Añadida comanda")
 #		check_completed_comandas()

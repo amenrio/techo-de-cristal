@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var loot: PackedScene
-@export var hit_lag: float = 1.5
+@export var hit_lag: float = 0.5
 @export var _name:String
 @export var explosionDelay: float = 0.5
 

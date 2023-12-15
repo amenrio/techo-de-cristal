@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5cw65yv7hyj"]
+[gd_scene load_steps=19 format=3 uid="uid://b5cw65yv7hyj"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/girlfriend.gd" id="1_cwfag"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="1_q40ly"]
 [ext_resource type="Texture2D" uid="uid://cf87snbh57h3p" path="res://01_assets/01_sprites/girlfriend.png" id="2_jpgmb"]
 [ext_resource type="Texture2D" uid="uid://bvpqsl3brjt5c" path="res://01_assets/01_sprites/shadow.png" id="4_dk44n"]
 [ext_resource type="Texture2D" uid="uid://bbn1c44xuuyv5" path="res://01_assets/01_sprites/cocinera_6frames_spritesheet.png" id="4_raptn"]
+[ext_resource type="Texture2D" uid="uid://b3xx0ic8fxdby" path="res://01_assets/01_sprites/tile_0087.png" id="6_0jfi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3twd"]
 size = Vector2(32, 32)
@@ -62,6 +63,45 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Animation" id="Animation_yevfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("interact_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -62)]
+}
+
+[sub_resource type="Animation" id="Animation_im8co"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("interact_sprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-0.5, -0.5),
+"update": 0,
+"values": [Vector2(1, -60), Vector2(1, -65)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lq0mj"]
+_data = {
+"RESET": SubResource("Animation_yevfx"),
+"idle": SubResource("Animation_im8co")
+}
+
 [node name="girlfriend" type="Area2D" groups=["girlfriend"]]
 collision_layer = 32
 script = ExtResource("1_cwfag")
@@ -91,5 +131,16 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ob22n")
 autoplay = "default"
 frame_progress = 0.0532015
+
+[node name="interact_sprite" type="Sprite2D" parent="."]
+modulate = Color(0.52549, 0.776471, 0.603922, 1)
+position = Vector2(1, -62)
+texture = ExtResource("6_0jfi7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_lq0mj")
+}
 
 [editable path="HitboxComponent"]

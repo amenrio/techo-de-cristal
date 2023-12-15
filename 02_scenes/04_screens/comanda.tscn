@@ -1,26 +1,159 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw5bufylc4nfb"]
+[gd_scene load_steps=7 format=3 uid="uid://cw5bufylc4nfb"]
 
 [ext_resource type="Script" path="res://02_scenes/02_objects/comanda.gd" id="1_bmvw8"]
 [ext_resource type="Texture2D" uid="uid://d1eg7jvmdxrpn" path="res://01_assets/01_sprites/01_interfaces/comanda.png" id="2_yyndh"]
+
+[sub_resource type="Animation" id="Animation_qnetb"]
+resource_name = "exit"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25),
+"transitions": PackedFloat32Array(0.225313, 4.14106, 0.25),
+"update": 0,
+"values": [Vector2(-5, -60), Vector2(-5, -20), Vector2(-5, -180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25),
+"transitions": PackedFloat32Array(0.225313, 4.14106, 0.25),
+"update": 0,
+"values": [Vector2(-5, 0), Vector2(-5, 15), Vector2(-5, -115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25),
+"transitions": PackedFloat32Array(0.225313, 4.14106, 0.25),
+"update": 0,
+"values": [Vector2(5, 36), Vector2(5, 51), Vector2(5, -79)]
+}
+
+[sub_resource type="Animation" id="Animation_x63yf"]
+resource_name = "init"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25),
+"transitions": PackedFloat32Array(0.25, 2.37841, 8),
+"update": 0,
+"values": [Vector2(-5, -180), Vector2(-5, -35), Vector2(-5, -60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25),
+"transitions": PackedFloat32Array(0.25, 2.37841, 8),
+"update": 0,
+"values": [Vector2(-5, -115), Vector2(-5, 15), Vector2(-5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25),
+"transitions": PackedFloat32Array(0.25, 2.37841, 8),
+"update": 0,
+"values": [Vector2(5, -79), Vector2(5, 51), Vector2(5, 36)]
+}
+
+[sub_resource type="Animation" id="Animation_151by"]
+resource_name = "init1"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.4),
+"transitions": PackedFloat32Array(1.8025, 0.170755, 2, 0.225313),
+"update": 0,
+"values": [Vector2(-5, -180), Vector2(-5, -20), Vector2(-5, -80), Vector2(-5, -60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.4),
+"transitions": PackedFloat32Array(1.8025, 0.170755, 2, 0.225313),
+"update": 0,
+"values": [Vector2(-5, -115), Vector2(-5, 15), Vector2(-5, -20), Vector2(-5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.4),
+"transitions": PackedFloat32Array(1.8025, 0.170755, 2, 0.225313),
+"update": 0,
+"values": [Vector2(5, -79), Vector2(5, 51), Vector2(5, 16), Vector2(5, 36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q38vr"]
+_data = {
+"exit": SubResource("Animation_qnetb"),
+"init": SubResource("Animation_x63yf"),
+"init1": SubResource("Animation_151by")
+}
 
 [node name="comanda" type="Control"]
 layout_mode = 3
 anchor_right = 0.133
 anchor_bottom = 0.24
-offset_right = -0.120003
-offset_bottom = -0.199997
+offset_right = 595.72
+offset_bottom = 806.2
 script = ExtResource("1_bmvw8")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = -5.0
+offset_top = -60.0
 offset_right = 89.0
-offset_bottom = 123.0
+offset_bottom = 120.0
 texture = ExtResource("2_yyndh")
+stretch_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 85.0
+layout_mode = 2
+offset_left = -5.0
+offset_right = 80.0
 offset_bottom = 115.0
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
@@ -38,7 +171,13 @@ theme_override_constants/separation = 11
 
 [node name="sprite" type="TextureRect" parent="."]
 layout_mode = 2
-offset_left = 6.0
+offset_left = 5.0
 offset_top = 36.0
-offset_right = 48.0
-offset_bottom = 78.0
+offset_right = 47.0
+offset_bottom = 77.9999
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "init"
+libraries = {
+"": SubResource("AnimationLibrary_q38vr")
+}

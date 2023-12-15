@@ -23,4 +23,9 @@ func take_damage(damage):
 	health -= damage
 	health_bar.value = health
 	
-
+func add_health(value):
+	if health + value > MAX_HEALTH:
+		health = MAX_HEALTH
+	else:
+		health += value
+	health_bar.value = health

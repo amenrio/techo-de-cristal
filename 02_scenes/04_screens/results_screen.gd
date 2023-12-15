@@ -7,11 +7,18 @@ var result_message: Dictionary = {
 	"EXCELENT" :"Non tiña expectativas en ti tonta,
 	pero fixéchelo ben hoxe...	Grazas."
 }
+var result_img: Dictionary = {
+	"BAD" : "res://01_assets/01_sprites/02_ilustraciones/placeholder_derrota_normalRes.png",
+	"NORMAL": "res://01_assets/01_sprites/02_ilustraciones/placeholder_normal_normalRes.png",
+	"EXCELENT" :"res://01_assets/01_sprites/02_ilustraciones/placeholder_victoria_normalRes.png"
+}
 func _ready():
 	var result_text = $feedbackLayer/interfaces/feedbackBox/feedbackText
 	var scoreboard = get_node("detailsLayer/interfaces/statsboxs/Points/Diñeiro ganado2")
 	var ingredients = get_node("detailsLayer/interfaces/statsboxs/Alimentos Recollidos/Alimentos Recollidos2")
 	var comandas = get_node("detailsLayer/interfaces/statsboxs/Alimentos Recollidos2/Diñeiro ganado3")
+	var img_result = $feedbackLayer/interfaces/illustration_top
+	img_result.texture = load(result_img[Autoload.result])
 	result_text.text = str(result_message[Autoload.result])
 	scoreboard.text = str(Autoload.globalScore)
 	comandas.text = str(Autoload.totalComandas)

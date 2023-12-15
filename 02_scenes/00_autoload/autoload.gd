@@ -7,8 +7,15 @@ var result:String
 
 var comandas_min : int = 3
 var comandas_optimo : int = 5
-
-
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+func _process(_delta):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	elif Input.is_action_just_pressed('fire'):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		
+		
 func load_result_screen(completed):
 	if completed < comandas_min:
 		Autoload.result = "BAD"

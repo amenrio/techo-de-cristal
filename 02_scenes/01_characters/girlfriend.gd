@@ -4,7 +4,7 @@ var recipes_file = "res://04_game/recipes_v02.json"
 var recipes_text:String
 var recipes_dict:Dictionary
 var total_recipes:int
-
+@onready var interact_sprite = $interact_sprite 
 var comandas_nivel: Array
 
 @onready var level_instance = get_tree().current_scene

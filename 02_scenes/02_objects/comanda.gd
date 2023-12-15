@@ -10,6 +10,7 @@ var total_time: float
 var is_completed:bool
 var timed_out:bool=false
 var _recipe_path:String
+@onready var animation_player = $AnimationPlayer
 @onready var recipe_sprite = $sprite
 @onready var timer = $timer
 @onready var ingredient_vb = $HBoxContainer/MarginContainer/ingredients
@@ -24,6 +25,7 @@ func init(args):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	animation_player.play("init1")
 	timer.wait_time = total_time
 	_ingredients = ingredients
 	init_hud()
@@ -79,5 +81,6 @@ func _on_timer_timeout():
 	timer.stop()
 	if not is_completed:
 		timed_out = true
-		print("%s comanda not done in time" % recipe_name)# Replace with function body.
+		print("%s comanda not done in time" % recipe_name)
+		animation_player.play("exit")# Replace with function body.
 		

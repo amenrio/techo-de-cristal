@@ -41,13 +41,14 @@ func _shoot():
 	var bullet = ammo.instantiate()
 	bullet.set_collision_mask_value(1, true)
 	bullet.set_collision_mask_value(2, false)
+	bullet.bullet_speed = 400
 	bullet.position = position
 	bullet.velocity = raycast.target_position.normalized()
 	get_tree().current_scene.add_child(bullet)
+	$attack.play()
 	loaded = false
 	shootDelay.wait_time = initialTime
 	shootDelay.start()
-	$attack.play()
 	
 
 func _process(_delta):
