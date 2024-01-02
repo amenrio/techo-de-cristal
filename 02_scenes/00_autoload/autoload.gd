@@ -7,8 +7,14 @@ var result:String
 
 var comandas_min : int = 3
 var comandas_optimo : int = 5
+
+func reset_score():
+	globalScore = 0
+	totalIngredients = 0
+	totalComandas = 0
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	
 func _process(_delta):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

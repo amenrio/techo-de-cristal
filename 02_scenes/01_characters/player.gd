@@ -44,7 +44,7 @@ func _ready():
 	
 func player_death(_args):
 	$deathAudio.play()
-	Autoload.load_result_screen(completed_comandas.size())
+	Autoload.load_result_screen(0)
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
@@ -151,15 +151,29 @@ func add_to_inventory(pickup_object):
 		instead of pickup_name, pass pickup_object_reference so we can use variables and more complex methods
 	"""
 	for pickup_class in pickup_object:
-		var pickup_name = pickup_object[pickup_class]
-		if not pickup_name in inventory[pickup_class]:
-			inventory[pickup_class].merge({pickup_name:0})
-			var inventory_ingredient = inventoryIngredient_instance.instantiate()
-			inventory_ingredient.sprite_img = pickup_name
-			inventory_gui_count[pickup_name] = inventory_ingredient
-			inventory_gui.ingredient_slots.add_child(inventory_ingredient)
-		inventory[pickup_class][pickup_name] += 1
-		inventory_gui_count[pickup_name].ing_count += 1
+		var pickup_name = pickup_object[pickup_class]			
+		if pickup_class == 'modifiers':
+			if pickup_name == 'health':
+				health_component.add_health(20)
+			elif pickup_name == 'piercing':
+				if weapon.bullet_piercing < 3:
+					weapon.bullet_piercing += 1
+				else:
+					health_component.add_health(20)
+			elif pickup_name == 'extra_shot':
+				if weapon.bullet_number < 3:
+					weapon.bullet_number += 1
+				else:
+					health_component.add_health(20)
+		else:
+			if not pickup_name in inventory[pickup_class]:
+				inventory[pickup_class].merge({pickup_name:0})
+				var inventory_ingredient = inventoryIngredient_instance.instantiate()
+				inventory_ingredient.sprite_img = pickup_name
+				inventory_gui_count[pickup_name] = inventory_ingredient
+				inventory_gui.ingredient_slots.add_child(inventory_ingredient)
+			inventory[pickup_class][pickup_name] += 1
+			inventory_gui_count[pickup_name].ing_count += 1
 	$pickUpAudio.play()
 	Autoload.totalIngredients += 1
 
@@ -177,7 +191,7 @@ func talk_to_girlfriend():
 				
 			var _objectives = girlfriend_instance.get_new_comandas(3)
 			for comanda in _objectives:
-				health_component.add_health(10)
+				health_component.add_health(20)
 				await get_tree().create_timer(0.1).timeout
 				var comanda_activa = comanda_instance.instantiate()
 				comanda_activa.init(comanda)
