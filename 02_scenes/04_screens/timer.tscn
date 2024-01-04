@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://x66lrxm7vvm7"]
 
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="1_qs6ev"]
-[ext_resource type="Texture2D" uid="uid://mg7t4l2qgv28" path="res://01_assets/01_sprites/01_interfaces/timer.png" id="2_328pn"]
+[ext_resource type="Texture2D" uid="uid://dsmuljah4hnr1" path="res://01_assets/01_sprites/01_interfaces/timer_v02.png" id="2_sqdnf"]
 
 [sub_resource type="Theme" id="Theme_k2ebx"]
 
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_328pn")
+texture = ExtResource("2_sqdnf")
 
 [node name="counter" type="Label" parent="."]
 layout_mode = 1
@@ -33,9 +33,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_k2ebx")
 theme_type_variation = &"HeaderSmall"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 21
 text = "151"
 horizontal_alignment = 1
