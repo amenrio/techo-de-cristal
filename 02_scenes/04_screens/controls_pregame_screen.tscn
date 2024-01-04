@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b44fpv0kedsrb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/controls_pregame_screen.gd" id="1_r7acm"]
-[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_62rev"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_f3107"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_muxel"]
 [ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_xmg83"]
 [ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_vpctr"]
@@ -11,17 +11,7 @@
 [node name="controlsPreameScreen" type="Node2D"]
 script = ExtResource("1_r7acm")
 
-[node name="background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 639.0
-offset_bottom = 1199.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_62rev")
+[node name="background" parent="." instance=ExtResource("2_f3107")]
 
 [node name="controlesSprite" type="TextureRect" parent="."]
 offset_right = 575.0

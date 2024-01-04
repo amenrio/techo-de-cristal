@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ckytpfmi22hwr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/recipe_pregameScreen.gd" id="1_cijfa"]
-[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_bs5a8"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_ccoy2"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_kk0lc"]
 [ext_resource type="Texture2D" uid="uid://c7bw6d1sdx4wc" path="res://01_assets/01_sprites/01_interfaces/recetaSprite.png" id="3_rb36f"]
 [ext_resource type="Texture2D" uid="uid://dp0abjy7627d3" path="res://01_assets/01_sprites/01_interfaces/dialogueBox.png" id="4_mppqo"]
@@ -21,15 +21,7 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
-[node name="background" type="TextureRect" parent="interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 720.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_bs5a8")
+[node name="background" parent="interfaces" instance=ExtResource("2_ccoy2")]
 
 [node name="recipe" type="TextureRect" parent="interfaces"]
 layout_mode = 1

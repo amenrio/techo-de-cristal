@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://02_scenes/04_screens/creditsScreen.gd" id="1_ohgdq"]
 [ext_resource type="Texture2D" uid="uid://4gqqx1b5ra3d" path="res://01_assets/01_sprites/01_interfaces/creditsSprite.png" id="2_gkany"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_uevps"]
-[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_w6skj"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_xhss3"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="4_gqjwo"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="4_qfv5t"]
 
@@ -12,21 +12,11 @@ script = ExtResource("1_ohgdq")
 
 [node name="interfaces" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="background" type="TextureRect" parent="interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 639.0
-offset_bottom = 1199.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_w6skj")
+[node name="background" parent="interfaces" instance=ExtResource("2_xhss3")]
 
 [node name="creditsSprite" type="TextureRect" parent="interfaces"]
 layout_mode = 1
