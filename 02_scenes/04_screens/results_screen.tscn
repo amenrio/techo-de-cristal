@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://c0r7455aj0tpr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/results_screen.gd" id="1_70ytu"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_8fn4k"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_58q14"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_bvoy4"]
 [ext_resource type="Texture2D" uid="uid://dc4fm2qnfg6gq" path="res://01_assets/01_sprites/01_interfaces/detailsSprite.png" id="3_d0lyj"]
 [ext_resource type="Texture2D" uid="uid://bq735mfy46iwj" path="res://01_assets/01_sprites/01_interfaces/dataSprite.png" id="4_7ltpw"]
 [ext_resource type="Texture2D" uid="uid://dq0ehhh3ng0ts" path="res://01_assets/01_sprites/01_interfaces/illustrationFrame.png" id="4_dwvia"]
-[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="4_r3pcd"]
 [ext_resource type="Texture2D" uid="uid://dropr4gmnu3lr" path="res://01_assets/01_sprites/01_interfaces/feedbackText.png" id="5_ba4lo"]
 [ext_resource type="Texture2D" uid="uid://bijkl2rtw6nsb" path="res://01_assets/01_sprites/01_interfaces/retryIcon.png" id="6_u6kcp"]
 [ext_resource type="Texture2D" uid="uid://d0y3jlsgqxfpq" path="res://01_assets/01_sprites/01_interfaces/menuIcon.png" id="7_tqi0d"]
@@ -22,17 +22,7 @@ default_font = ExtResource("2_58q14")
 [node name="resultsScreen" type="Node2D"]
 script = ExtResource("1_70ytu")
 
-[node name="background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 639.0
-offset_bottom = 1199.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_r3pcd")
+[node name="background" parent="." instance=ExtResource("2_8fn4k")]
 
 [node name="detailsLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -264,9 +254,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 68.0
-offset_right = -45.0
-offset_bottom = -196.0
+offset_left = 35.0
+offset_right = -1.0
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_dwvia")
@@ -276,9 +266,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 68.0
-offset_right = -45.0
-offset_bottom = -196.0
+offset_left = 35.0
+offset_right = -1.0
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_dwvia")
@@ -289,9 +279,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 45.0
-offset_top = 215.0
+offset_top = 254.0
 offset_right = -65.0
-offset_bottom = -118.0
+offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_ba4lo")
