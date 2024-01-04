@@ -90,7 +90,7 @@ modulate = Color(0.6596, 0.97, 0.757893, 1)
 [node name="player" parent="." index="5"]
 position = Vector2(1007, 665)
 collision_mask = 62
-max_speed = 300
+max_speed = 50000
 drag = 0.1
 dash_velocity = 1000.0
 
@@ -103,10 +103,7 @@ visible = false
 [node name="Camera2D" parent="player" index="3"]
 zoom = Vector2(1.65, 1.65)
 
-[node name="PauseMenu" parent="player/Camera2D" index="0"]
-visible = false
-
-[node name="level_timer_hud" type="Label" parent="player/Camera2D" index="1"]
+[node name="level_timer_hud" type="Label" parent="player/Camera2D" index="0"]
 offset_left = -417.0
 offset_top = -111.0
 offset_right = -416.0

@@ -71,22 +71,11 @@ func _physics_process(_delta: float) ->  void:
 	weapon.look_at(get_global_mouse_position())
 	dash()
 	talk_to_girlfriend()
-	if Input.is_action_just_pressed('complete_comanda'):
-		check_completed_comandas()
-	check_completed_comandas()
+	for comanda in objetivos:
+		check_completed_comandas(comanda)
 			
 func _process(_delta):
 	update_animation_tree()
-
-#	update_inv_count()
-#
-#func update_inv_count():
-#	for ing in inventory["ingredients"]:
-#		if not inventory_gui_count[ing]:
-#			continue
-#		else:
-#			inventory_gui_count[ing].ing_count = inventory["ingredients"][ing]
-		
 	
 func update_animation_tree():
 	if (desired_velocity == Vector2.ZERO):
@@ -105,43 +94,53 @@ func update_animation_tree():
 		animation_tree["parameters/Idle/blend_position"] = direction
 		animation_tree["parameters/Walk/blend_position"] = direction
 	
-func check_completed_comandas():
-	for comanda in objetivos:
-		if comanda.timed_out:
-			objetivos.erase(comanda)
+func check_completed_comandas(comanda):
+	if comanda.timed_out:
+		objetivos.erase(comanda)
 #			comanda.animation_player.play("exit")
-			comanda.animation_player.play("exit")
-			await get_tree().create_timer(0.4).timeout
-			hud_comanda.remove_child(comanda)
-			$comandaTimeOut.play()
-			continue
+		comanda.animation_player.play("exit")
+		await get_tree().create_timer(0.4).timeout
+		hud_comanda.remove_child(comanda)
+		$comandaTimeOut.play()
+		return
+		
+	for ingredient in comanda.ingredients:
+		if ingredient not in inventory["ingredients"]:
+			return
+		if inventory["ingredients"][ingredient] < 1:
+			return
+		if inventory["ingredients"][ingredient] >= comanda.ingredients[ingredient]:
+			comanda.completed_ingredients[ingredient] = comanda.ingredients[ingredient]
+	
+	if comanda.f_is_completed():
+		subtract_comanda_ingredients_from_gui_inventory(comanda)
+		objetivos.erase(comanda)
+		comanda.animation_player.play("exit")
+		await get_tree().create_timer(0.4).timeout
+		hud_comanda.remove_child(comanda)
+		completed_comandas.append(comanda)
+		Autoload.totalComandas = completed_comandas.size()
+		Autoload.globalScore += (100 + get_parent().get_node("level_timer").time_left as int)
+		$comandaCompletada.play()
+	else:
+		comanda.completed_ingredients = {}
+#	for ingredient in inventory["ingredients"]:
+#		if inventory["ingredients"][ingredient] < 1:
+#			continue
+#		if ingredient in comanda.ingredients:
+#			if not comanda.completed_ingredients.has(ingredient):
+#					comanda.completed_ingredients[ingredient] = 0
+#			if comanda.ingredients[ingredient] > comanda.completed_ingredients[ingredient]:
+#				inventory["ingredients"][ingredient] -= 1
+##						inventory_gui_count[ingredient].ing_count += 1
+#				comanda.completed_ingredients[ingredient] += 1
+#				continue
+
 			
-		if not comanda.is_completed:
-			for ingredient in inventory["ingredients"]:
-				if inventory["ingredients"][ingredient] < 1:
-					continue
-				if ingredient in comanda.ingredients:
-					if not comanda.completed_ingredients.has(ingredient):
-							comanda.completed_ingredients[ingredient] = 0
-					if comanda.ingredients[ingredient] > comanda.completed_ingredients[ingredient]:
-						inventory["ingredients"][ingredient] -= 1
-#						inventory_gui_count[ingredient].ing_count += 1
-						comanda.completed_ingredients[ingredient] += 1
-						continue
-		if comanda.is_completed:
-			subtract_comanda_ingredients_from_gui_inventory(comanda)
-			objetivos.erase(comanda)
-			comanda.animation_player.play("exit")
-			await get_tree().create_timer(0.4).timeout
-			hud_comanda.remove_child(comanda)
-			completed_comandas.append(comanda)
-			Autoload.totalComandas = completed_comandas.size()
-			Autoload.globalScore += (100 + get_parent().get_node("level_timer").time_left as int)
-			$comandaCompletada.play()
-			continue
 func subtract_comanda_ingredients_from_gui_inventory(comanda):
 	for ing in comanda.ingredients:
 		inventory_gui_count[ing].ing_count -= comanda.ingredients[ing]
+		inventory["ingredients"][ing]-=comanda.ingredients[ing]
 
 func add_to_inventory(pickup_object):
 	"""Function that recieves the object that is being picked up
@@ -198,9 +197,6 @@ func talk_to_girlfriend():
 				hud_comanda.add_child(comanda_activa)
 #				comanda_activa.animation_player.play("init")
 				objetivos.append(comanda_activa)
-				print("Añadida comanda")
-#		check_completed_comandas()
-				print(comanda_activa.ingredients)
 func _on_interaction_zone_area_exited(area):
 	if area.is_in_group('girlfriend'):
 		can_talk_to_girlfriend = false # Replace with function body.

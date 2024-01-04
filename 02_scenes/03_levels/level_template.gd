@@ -2,7 +2,6 @@ extends Node2D
 
 var special_drops = ['health','piercing','extra_shot']
 @export var time_limit = 180
-@onready var pause_menu = $player/Camera2D/PauseMenu
 
 var paused = false
 @onready var timer_node = $level_timer
@@ -21,19 +20,7 @@ func _ready():
 	timer_node.start()
 	
 func _process(_delta):
-	if Input.is_action_just_pressed('pause'):
-		pauseMenu()
 	gui_timer_gui.text = str(int(timer_node.time_left))
-		
-func pauseMenu():
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-		
-	paused = !paused
 		
 func pickup_system(enemy):
 	var new_position = enemy.position

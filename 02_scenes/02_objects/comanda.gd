@@ -72,10 +72,14 @@ func _process(_delta):
 		tint_red()
 		timing_out_red=true
 	sorted_completed_ingredients = sort(completed_ingredients)
-	print(timer.time_left)
 	if equal(ingredients, completed_ingredients):
 		is_completed=true
 		timer.stop()
+		
+func f_is_completed():
+	if equal(ingredients, completed_ingredients):
+		is_completed=true
+	return is_completed
 	
 func equal(lh:Dictionary, rh:Dictionary):
 	var ingredient_keys = lh.keys()
@@ -105,4 +109,3 @@ func _on_timer_timeout():
 	if not is_completed:
 		print("%s comanda not done in time" % recipe_name)
 		animation_player.play("exit")# Replace with function body.
-		

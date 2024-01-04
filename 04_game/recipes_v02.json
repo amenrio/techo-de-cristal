@@ -5,7 +5,7 @@
 		"ingredients": {
 			"chocolate":3
 		},
-		"timer": 45
+		"timer": 60
 	},
 	"churros_chocolate": {
 		"name": "Churros con Chocolate",
@@ -14,7 +14,7 @@
 			"chocolate":1,
 			"masa":1
 		},
-		"timer": 30
+		"timer": 45
 	},
 	"zumo_naranja": {
 		"name": "Zumo de Naranja",
@@ -22,7 +22,7 @@
 		"ingredients": {
 			"naranja":3
 		},
-		"timer": 30
+		"timer": 60
 	},
 	"gofres_naranja_chocolate": {
 		"name": "Gofres con Naranja y Chocolate",
