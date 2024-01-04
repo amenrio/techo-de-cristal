@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://brkplwxswskhb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/inventory.gd" id="1_jxqra"]
-[ext_resource type="Texture2D" uid="uid://djkehryccawuw" path="res://01_assets/01_sprites/01_interfaces/inventory.png" id="2_ck6fy"]
+[ext_resource type="Texture2D" uid="uid://c7ahqompk8p3h" path="res://01_assets/01_sprites/01_interfaces/inventory.png" id="2_ck6fy"]
 
 [node name="inventario" type="Control"]
 layout_mode = 3
