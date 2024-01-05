@@ -1,49 +1,57 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckytpfmi22hwr"]
+[gd_scene load_steps=16 format=3 uid="uid://ckytpfmi22hwr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/recipe_screen.gd" id="1_w8e4t"]
 [ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_xw80o"]
 [ext_resource type="Texture2D" uid="uid://c7bw6d1sdx4wc" path="res://01_assets/01_sprites/01_interfaces/recetaSprite.png" id="3_jod2d"]
+[ext_resource type="Texture2D" uid="uid://btkggqkrobevm" path="res://01_assets/01_sprites/01_interfaces/recipeBar.png" id="4_0aq4s"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="4_rs3ig"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_utrma"]
 [ext_resource type="Texture2D" uid="uid://dywqwfsnwo7ks" path="res://01_assets/01_sprites/01_interfaces/churros 1.png" id="6_qsdy3"]
 [ext_resource type="Texture2D" uid="uid://b8qaby4l5h7g2" path="res://01_assets/01_sprites/01_interfaces/masa.png" id="7_dpevt"]
 [ext_resource type="Texture2D" uid="uid://c72smlr03a4ct" path="res://01_assets/01_sprites/01_interfaces/chocolate.png" id="8_e7jld"]
+[ext_resource type="Texture2D" uid="uid://c76fbuex3lgme" path="res://01_assets/01_sprites/01_interfaces/recipeArrow.png" id="10_agfk1"]
+[ext_resource type="Texture2D" uid="uid://x7f7kj55ohri" path="res://01_assets/01_sprites/01_interfaces/recipeRArrow.png" id="10_xsp8y"]
+[ext_resource type="Texture2D" uid="uid://dre22kps8kaeb" path="res://01_assets/01_sprites/01_interfaces/recipeLArrow.png" id="12_5kx5j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fi7bd"]
+texture = ExtResource("10_xsp8y")
+modulate_color = Color(0.592157, 0.592157, 0.592157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_advor"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b0y0"]
 
 [node name="pregameScreen" type="Node2D"]
 script = ExtResource("1_w8e4t")
 
-[node name="interfaces" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 480.0
+[node name="background" parent="." instance=ExtResource("2_xw80o")]
 
-[node name="background" parent="interfaces" instance=ExtResource("2_xw80o")]
-
-[node name="recipe" type="TextureRect" parent="interfaces"]
-layout_mode = 1
+[node name="recipe" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 157.0
 offset_top = 17.0
-offset_right = -43.0
-offset_bottom = -10.0
+offset_right = 597.0
+offset_bottom = 470.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_jod2d")
 
-[node name="bContinuar" type="Button" parent="interfaces"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 389.0
-offset_right = 97.0
-offset_bottom = 469.0
-theme = ExtResource("4_rs3ig")
-icon = ExtResource("5_utrma")
-icon_alignment = 1
+[node name="recipeBar" type="TextureRect" parent="."]
+offset_left = 190.0
+offset_top = 70.0
+offset_right = 566.0
+offset_bottom = 146.0
+texture = ExtResource("4_0aq4s")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="interfaces"]
+[node name="recipeChurros" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Paso1" type="HBoxContainer" parent="recipeChurros"]
 layout_mode = 2
 offset_left = 182.0
 offset_top = 187.0
@@ -54,14 +62,14 @@ grow_vertical = 2
 theme_override_constants/separation = 33
 alignment = 1
 
-[node name="number" type="Label" parent="interfaces/HBoxContainer"]
+[node name="number" type="Label" parent="recipeChurros/Paso1"]
 layout_mode = 2
 theme = ExtResource("4_rs3ig")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1"
 horizontal_alignment = 1
 
-[node name="pasos2" type="Label" parent="interfaces/HBoxContainer"]
+[node name="text" type="Label" parent="recipeChurros/Paso1"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -76,7 +84,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="interfaces"]
+[node name="Paso2" type="HBoxContainer" parent="recipeChurros"]
 layout_mode = 2
 offset_left = 184.0
 offset_top = 314.0
@@ -85,14 +93,14 @@ offset_bottom = 429.0
 theme_override_constants/separation = 33
 alignment = 1
 
-[node name="number" type="Label" parent="interfaces/HBoxContainer2"]
+[node name="number" type="Label" parent="recipeChurros/Paso2"]
 layout_mode = 2
 theme = ExtResource("4_rs3ig")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "2"
 horizontal_alignment = 1
 
-[node name="pasos" type="Label" parent="interfaces/HBoxContainer2"]
+[node name="text" type="Label" parent="recipeChurros/Paso2"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -107,20 +115,54 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Churros1" type="Sprite2D" parent="interfaces"]
+[node name="dishSprite" type="Sprite2D" parent="recipeChurros"]
 texture_filter = 1
-position = Vector2(383, 103)
-scale = Vector2(1.15605, 1.16492)
+position = Vector2(382, 104)
+scale = Vector2(1.06169, 0.985821)
 texture = ExtResource("6_qsdy3")
 
-[node name="Masa" type="Sprite2D" parent="interfaces"]
+[node name="ingredient1" type="Sprite2D" parent="recipeChurros"]
 position = Vector2(532, 239)
 scale = Vector2(0.234099, 0.238701)
 texture = ExtResource("7_dpevt")
 
-[node name="Chocolate" type="Sprite2D" parent="interfaces"]
+[node name="ingredient2" type="Sprite2D" parent="recipeChurros"]
 position = Vector2(541, 366)
 scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("8_e7jld")
 
-[connection signal="pressed" from="interfaces/bContinuar" to="." method="_on_b_continuar_pressed"]
+[node name="bContinuar" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 389.0
+offset_right = 97.0
+offset_bottom = 469.0
+theme = ExtResource("4_rs3ig")
+icon = ExtResource("5_utrma")
+icon_alignment = 1
+
+[node name="bNext" type="Button" parent="."]
+offset_left = 478.0
+offset_top = 84.0
+offset_right = 551.0
+offset_bottom = 136.0
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_advor")
+icon = ExtResource("10_agfk1")
+flat = true
+
+[node name="bPrevious" type="Button" parent="."]
+offset_left = 209.0
+offset_top = 85.0
+offset_right = 282.0
+offset_bottom = 137.0
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8b0y0")
+icon = ExtResource("12_5kx5j")
+flat = true
+
+[connection signal="pressed" from="bContinuar" to="." method="_on_b_continuar_pressed"]
