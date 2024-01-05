@@ -11,3 +11,6 @@ func _on_b_controles_pressed():
 
 func _on_b_sair_pressed():
 	get_tree().quit()
+
+func _on_b_recetas_pressed():
+	get_tree().change_scene_to_file("res://02_scenes/04_screens/recipe_screen.tscn")
