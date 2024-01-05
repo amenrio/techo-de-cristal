@@ -50,6 +50,7 @@ offset_bottom = 146.0
 texture = ExtResource("4_0aq4s")
 
 [node name="recipeZume" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -310,7 +311,6 @@ scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("8_e7jld")
 
 [node name="recipeChurros" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -431,3 +431,5 @@ icon = ExtResource("12_5kx5j")
 flat = true
 
 [connection signal="pressed" from="bContinuar" to="." method="_on_b_continuar_pressed"]
+[connection signal="pressed" from="bNext" to="." method="_on_b_next_pressed"]
+[connection signal="pressed" from="bPrevious" to="." method="_on_b_previous_pressed"]
