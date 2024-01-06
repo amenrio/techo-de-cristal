@@ -6,11 +6,11 @@
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_bvoy4"]
 [ext_resource type="Texture2D" uid="uid://dc4fm2qnfg6gq" path="res://01_assets/01_sprites/01_interfaces/detailsSprite.png" id="3_d0lyj"]
 [ext_resource type="Texture2D" uid="uid://bq735mfy46iwj" path="res://01_assets/01_sprites/01_interfaces/dataSprite.png" id="4_7ltpw"]
-[ext_resource type="Texture2D" uid="uid://dq0ehhh3ng0ts" path="res://01_assets/01_sprites/01_interfaces/illustrationFrame.png" id="4_dwvia"]
 [ext_resource type="Texture2D" uid="uid://dropr4gmnu3lr" path="res://01_assets/01_sprites/01_interfaces/feedbackText.png" id="5_ba4lo"]
 [ext_resource type="Texture2D" uid="uid://bijkl2rtw6nsb" path="res://01_assets/01_sprites/01_interfaces/retryIcon.png" id="6_u6kcp"]
 [ext_resource type="Texture2D" uid="uid://d0y3jlsgqxfpq" path="res://01_assets/01_sprites/01_interfaces/menuIcon.png" id="7_tqi0d"]
 [ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="7_ucpke"]
+[ext_resource type="Texture2D" uid="uid://i502f2l1wcub" path="res://01_assets/01_sprites/01_interfaces/illustrationFrame_v02.png" id="9_ej81r"]
 
 [sub_resource type="Theme" id="Theme_811cl"]
 default_font = ExtResource("2_58q14")
@@ -149,8 +149,8 @@ size_flags_vertical = 3
 theme = SubResource("Theme_811cl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Diñeiro 
-Gañado
+text = "Cartos
+Gañados
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -254,24 +254,26 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 35.0
-offset_right = -1.0
-offset_bottom = -122.0
+offset_left = 34.5
+offset_top = 0.5
+offset_right = -0.5
+offset_bottom = -115.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_dwvia")
+texture = ExtResource("9_ej81r")
 
 [node name="illustration_top" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 35.0
-offset_right = -1.0
-offset_bottom = -122.0
+offset_left = 34.5
+offset_top = 0.5
+offset_right = -0.5
+offset_bottom = -115.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_dwvia")
+texture = ExtResource("9_ej81r")
 
 [node name="feedbackBox" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
