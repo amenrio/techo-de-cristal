@@ -6,13 +6,13 @@ var dialog_dict:Dictionary
 var recipes_text:String
 var recipes_dict:Dictionary
 var total_recipes:int
-var _new_recipes_dialog_db: Array
 @onready var interact_sprite = $interact_sprite 
+@onready var dialog_label = $dialog_label
 var comandas_nivel: Array
 
 @onready var level_instance = get_tree().current_scene
 
-func _get_dialog(context):
+func _get_dialog():
 	dialog_file = FileAccess.get_file_as_string(dialog_file)
 	dialog_dict = JSON.parse_string(dialog_file)
 	
@@ -23,7 +23,9 @@ func _get_recipes():
 #	print(total_recipes)
 func get_random_dialog_from_context(context):
 	var _index = randi_range(0,len(dialog_dict[context])-1)
+	var dialog = dialog_dict[context][_index]
 	return dialog
+	
 func get_random_recipe():
 	var _recipe_index = randi_range(0,total_recipes-1)
 	var _recipe_key = recipes_dict.keys()[_recipe_index]
@@ -42,12 +44,16 @@ func get_new_comandas(number_of_comandas:int):
 	var _recipes:Array = []
 	for i in range(number_of_comandas):
 		_recipes.append(get_random_recipe())
+	var dialog_phrase = get_random_dialog_from_context("new_recipes")
+	var dialog_tween = get_tree().create_tween()
+	dialog_label.text = dialog_phrase
+	dialog_label.show()
 	return _recipes
 		
 # DAR NUEVAS COMANDAS
 func _ready():
 	var _recipes_databse = _get_recipes()
-	_new_recipes_dialog_db = _get_dialog("new_recipes")
+	_get_dialog()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
