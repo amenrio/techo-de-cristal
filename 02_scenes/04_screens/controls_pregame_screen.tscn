@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b44fpv0kedsrb"]
+[gd_scene load_steps=9 format=3 uid="uid://b44fpv0kedsrb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/controls_pregame_screen.gd" id="1_r7acm"]
 [ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_f3107"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_muxel"]
 [ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_xmg83"]
-[ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_vpctr"]
 [ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="5_wgv3t"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_m867f"]
+[ext_resource type="Texture2D" uid="uid://mt2l2i6iet00" path="res://01_assets/01_sprites/01_interfaces/rightIcon.png" id="7_l7qsn"]
+[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="8_dmapi"]
 
 [node name="controlsPreameScreen" type="Node2D"]
 script = ExtResource("1_r7acm")
@@ -18,14 +19,6 @@ offset_right = 575.0
 offset_bottom = 480.0
 texture = ExtResource("2_xmg83")
 flip_h = true
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-offset_left = 264.0
-offset_top = 137.0
-offset_right = 527.0
-offset_bottom = 358.0
-texture = ExtResource("3_vpctr")
 
 [node name="story" type="Label" parent="."]
 offset_left = 19.0
@@ -40,6 +33,66 @@ text = "A túa moza acaba de abrir o seu restaurante en pleno centro. Aínda non
 Aí é onde entras ti, de profesión caza demos debes dispararlle aos ingredientes que atopes para levarllos de volta a túa moza. Pero vai rápido, antes de que os clientes marchen e ela se enfade. Ningunha pantasma nin ningunha moza torpe van impedir a súa estrela Michelin!"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="controlestexto2" type="Label" parent="."]
+offset_left = 199.0
+offset_top = 166.0
+offset_right = 354.0
+offset_bottom = 390.0
+theme = ExtResource("2_muxel")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/line_spacing = 4
+text = ":
+:
+:
+:
+Disparar:
+Dash:
+Interactuar:
+Aceptar:"
+horizontal_alignment = 2
+
+[node name="controlestexto" type="Label" parent="."]
+offset_left = 362.0
+offset_top = 165.0
+offset_right = 513.0
+offset_bottom = 389.0
+theme = ExtResource("2_muxel")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/line_spacing = 4
+text = "\"W\" / ARRIBA 
+\"S\" / ABAIXO
+\"A\" / ESQUERDA
+ \"D\" / DEREITA
+ESPAZO/ Click Esq.
+SHIFT
+\"E\"
+ENTER"
+
+[node name="RightIcon" type="Sprite2D" parent="."]
+position = Vector2(327, 264)
+scale = Vector2(0.8, 1)
+texture = ExtResource("7_l7qsn")
+
+[node name="LeftIcon" type="Sprite2D" parent="RightIcon"]
+position = Vector2(-2, -29)
+texture = ExtResource("8_dmapi")
+
+[node name="LeftIcon" type="Sprite2D" parent="RightIcon/LeftIcon"]
+position = Vector2(2, -53.625)
+rotation = 1.5708
+scale = Vector2(0.664631, 1)
+texture = ExtResource("8_dmapi")
+
+[node name="LeftIcon" type="Sprite2D" parent="RightIcon/LeftIcon/LeftIcon"]
+position = Vector2(38.193, -0.00610394)
+rotation = 3.14159
+scale = Vector2(1.00187, 1)
+texture = ExtResource("8_dmapi")
 
 [node name="bControlesContinuar" type="Button" parent="."]
 anchors_preset = 3

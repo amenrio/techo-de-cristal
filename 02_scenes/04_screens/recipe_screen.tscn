@@ -392,8 +392,8 @@ scale = Vector2(0.234099, 0.238701)
 texture = ExtResource("7_dpevt")
 
 [node name="ingredient2" type="Sprite2D" parent="recipeChurros"]
-position = Vector2(541, 366)
-scale = Vector2(0.271739, 0.278169)
+position = Vector2(540, 357)
+scale = Vector2(0.270531, 0.29108)
 texture = ExtResource("8_e7jld")
 
 [node name="bContinuar" type="Button" parent="."]

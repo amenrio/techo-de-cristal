@@ -4,9 +4,9 @@
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_77ttm"]
 [ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_q8mp1"]
 [ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_wwh5h"]
-[ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_0k6ts"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_ymfwe"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_jmtwj"]
+[ext_resource type="Texture2D" uid="uid://mt2l2i6iet00" path="res://01_assets/01_sprites/01_interfaces/rightIcon.png" id="7_7kgr5"]
 
 [node name="controlsScreen" type="Node2D"]
 script = ExtResource("1_iwvct")
@@ -26,14 +26,6 @@ offset_left = 66.0
 offset_right = 641.0
 offset_bottom = 480.0
 texture = ExtResource("2_wwh5h")
-
-[node name="TextureRect" type="TextureRect" parent="interfaces"]
-layout_mode = 0
-offset_left = 135.0
-offset_top = 139.0
-offset_right = 398.0
-offset_bottom = 360.0
-texture = ExtResource("3_0k6ts")
 
 [node name="bControlesAtras" type="Button" parent="interfaces"]
 layout_mode = 1
@@ -93,5 +85,65 @@ theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 40
 text = "Controles"
 horizontal_alignment = 1
+
+[node name="controlestexto2" type="Label" parent="interfaces"]
+offset_left = 89.0
+offset_top = 163.0
+offset_right = 244.0
+offset_bottom = 387.0
+theme = ExtResource("2_77ttm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/line_spacing = 4
+text = ":
+:
+:
+:
+Disparar:
+Dash:
+Interactuar:
+Aceptar:"
+horizontal_alignment = 2
+
+[node name="controlestexto" type="Label" parent="interfaces"]
+offset_left = 252.0
+offset_top = 162.0
+offset_right = 403.0
+offset_bottom = 386.0
+theme = ExtResource("2_77ttm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/line_spacing = 4
+text = "\"W\" / ARRIBA 
+\"S\" / ABAIXO
+\"A\" / ESQUERDA
+ \"D\" / DEREITA
+ESPAZO/ Click Esq.
+SHIFT
+\"E\"
+ENTER"
+
+[node name="RightIcon" type="Sprite2D" parent="interfaces"]
+position = Vector2(217, 261)
+scale = Vector2(0.8, 1)
+texture = ExtResource("7_7kgr5")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon"]
+position = Vector2(-2, -29)
+texture = ExtResource("5_ymfwe")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon"]
+position = Vector2(2, -53.625)
+rotation = 1.5708
+scale = Vector2(0.664631, 1)
+texture = ExtResource("5_ymfwe")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon/LeftIcon"]
+position = Vector2(38.193, -0.00610394)
+rotation = 3.14159
+scale = Vector2(1.00187, 1)
+texture = ExtResource("5_ymfwe")
 
 [connection signal="pressed" from="interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]
