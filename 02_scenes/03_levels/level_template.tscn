@@ -31,4 +31,5 @@ wait_time = 120.0
 [editable path="player"]
 [editable path="player/HealthComponent"]
 [editable path="player/HitboxComponent"]
+[editable path="player/weapon"]
 [editable path="player/GUI"]

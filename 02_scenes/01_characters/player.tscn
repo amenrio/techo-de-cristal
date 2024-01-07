@@ -519,11 +519,14 @@ position = Vector2(0, -8)
 texture = ExtResource("4_t20f2")
 hframes = 8
 vframes = 6
-frame = 32
+frame = 40
 
 [node name="weapon" parent="." instance=ExtResource("5_hgwwk")]
 weapon_sprite = ExtResource("6_exgfl")
 bullet_scene = ExtResource("4_8e3dc")
+
+[node name="bullet_spawn_point" parent="weapon" index="1"]
+position = Vector2(11, 0)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_anwmk")
@@ -563,4 +566,5 @@ stream = ExtResource("15_5yhbr")
 
 [editable path="HealthComponent"]
 [editable path="HitboxComponent"]
+[editable path="weapon"]
 [editable path="GUI"]

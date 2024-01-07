@@ -90,12 +90,11 @@ modulate = Color(0.6596, 0.97, 0.757893, 1)
 [node name="player" parent="." index="5"]
 position = Vector2(1007, 665)
 collision_mask = 62
-max_speed = 50000
 drag = 0.1
 dash_velocity = 1000.0
 
 [node name="HealthComponent" parent="player" index="1"]
-MAX_HEALTH = 125.0
+MAX_HEALTH = 5000.0
 
 [node name="HitboxComponent" parent="player" index="2"]
 visible = false
