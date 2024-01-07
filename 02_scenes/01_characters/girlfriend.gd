@@ -44,12 +44,14 @@ func get_new_comandas(number_of_comandas:int):
 	var _recipes:Array = []
 	for i in range(number_of_comandas):
 		_recipes.append(get_random_recipe())
+	return _recipes
+	
+func show_dialog():
 	var dialog_phrase = get_random_dialog_from_context("new_recipes")
-	var dialog_tween = get_tree().create_tween()
 	dialog_label.text = dialog_phrase
 	dialog_label.show()
-	return _recipes
-		
+	await get_tree().create_timer(5).timeout
+	dialog_label.hide()
 # DAR NUEVAS COMANDAS
 func _ready():
 	var _recipes_databse = _get_recipes()

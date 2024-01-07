@@ -197,6 +197,7 @@ func talk_to_girlfriend():
 				hud_comanda.add_child(comanda_activa)
 #				comanda_activa.animation_player.play("init")
 				objetivos.append(comanda_activa)
+			await girlfriend_instance.show_dialog()
 func _on_interaction_zone_area_exited(area):
 	if area.is_in_group('girlfriend'):
 		can_talk_to_girlfriend = false # Replace with function body.
