@@ -100,7 +100,7 @@ MAX_HEALTH = 5000.0
 visible = false
 
 [node name="Camera2D" parent="player" index="3"]
-zoom = Vector2(1.65, 1.65)
+zoom = Vector2(1.25, 1.25)
 
 [node name="level_timer_hud" type="Label" parent="player/Camera2D" index="0"]
 offset_left = -417.0
