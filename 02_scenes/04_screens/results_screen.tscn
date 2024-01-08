@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0r7455aj0tpr"]
+[gd_scene load_steps=16 format=3 uid="uid://c0r7455aj0tpr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/results_screen.gd" id="1_70ytu"]
 [ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_8fn4k"]
@@ -16,6 +16,8 @@
 default_font = ExtResource("2_58q14")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oueon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsirw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwaoi"]
 
@@ -127,16 +129,16 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 97.0
+offset_left = 94.0
 offset_top = -63.0
-offset_right = -86.0
+offset_right = -78.0
 offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VSeparator" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 37
+theme_override_constants/separation = 29
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Points" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
@@ -146,7 +148,7 @@ size_flags_horizontal = 3
 [node name="Diñeiro ganado" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Cartos
@@ -158,14 +160,14 @@ vertical_alignment = 1
 [node name="Diñeiro ganado2" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_font_sizes/font_size = 20
 text = "353445345"
 horizontal_alignment = 1
 
 [node name="VSeparator3" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 39
+theme_override_constants/separation = 26
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
@@ -175,7 +177,7 @@ size_flags_horizontal = 3
 [node name="Alimentos Recollidos" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Alimentos 
@@ -185,34 +187,43 @@ horizontal_alignment = 1
 [node name="Alimentos Recollidos2" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_font_sizes/font_size = 20
 text = "43543453"
 horizontal_alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 14
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos2" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="HSeparator" type="HSeparator" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lsirw")
+
 [node name="Pratos Entregados" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Pratos 
 Entregados"
 horizontal_alignment = 1
-vertical_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lsirw")
 
 [node name="Diñeiro ganado3" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_font_sizes/font_size = 20
 text = "344353453"
 horizontal_alignment = 1
@@ -289,10 +300,11 @@ grow_vertical = 2
 texture = ExtResource("5_ba4lo")
 
 [node name="feedbackText" type="Label" parent="feedbackLayer/interfaces/feedbackBox"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 26.0
 offset_top = 75.0
-offset_right = 570.0
+offset_right = 506.0
 offset_bottom = 102.0
 theme = ExtResource("3_bvoy4")
 
