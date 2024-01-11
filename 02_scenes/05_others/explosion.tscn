@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjjyp30d1qe1"]
+[gd_scene load_steps=7 format=3 uid="uid://cjjyp30d1qe1"]
 
 [ext_resource type="Script" path="res://02_scenes/05_others/explosion.gd" id="1_8jb0j"]
 [ext_resource type="AudioStream" uid="uid://860idxjn11ao" path="res://01_assets/03_sound/01_sfx/02_enemies/enemyDeath_02.mp3" id="2_ydlkx"]
+[ext_resource type="Texture2D" uid="uid://cd87a38eqtkb8" path="res://01_assets/01_sprites/explosion.png" id="3_06guy"]
 
 [sub_resource type="Gradient" id="Gradient_gpu0k"]
-colors = PackedColorArray(1, 0.267638, 0.618748, 1, 1, 0.798927, 0.849594, 1)
+colors = PackedColorArray(0.172059, 0.0499987, 0.00522749, 1, 0.44555, 0.21775, 0.0409021, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_t8n0u"]
 gradient = SubResource("Gradient_gpu0k")
@@ -17,7 +18,8 @@ particle_flag_disable_z = true
 direction = Vector3(0, 0, 0)
 spread = 180.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_max = 80.0
+initial_velocity_min = 10.0
+initial_velocity_max = 120.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 2.0
@@ -28,13 +30,24 @@ color_ramp = SubResource("GradientTexture1D_t8n0u")
 scale = Vector2(2, 2)
 amount = 400
 process_material = SubResource("ParticleProcessMaterial_fif1k")
-explosiveness = 1.0
+explosiveness = 0.95
 script = ExtResource("1_8jb0j")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="feedbackTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ydlkx")
 
+[node name="explosionSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.372549)
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_06guy")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="feedbackTimer" to="." method="_on_feedback_timer_timeout"]

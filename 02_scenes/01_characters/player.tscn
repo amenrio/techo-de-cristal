@@ -475,7 +475,7 @@ shape = SubResource("CircleShape2D_js4q1")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_jo3xj")]
 position = Vector2(0, -36)
-MAX_HEALTH = 100.0
+MAX_HEALTH = 150.0
 
 [node name="health_bar" parent="HealthComponent" index="0"]
 offset_left = -24.0
