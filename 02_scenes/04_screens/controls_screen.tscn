@@ -42,28 +42,12 @@ theme = ExtResource("2_77ttm")
 icon = ExtResource("5_ymfwe")
 icon_alignment = 1
 
-[node name="story" type="Label" parent="interfaces"]
-layout_mode = 0
-offset_left = 405.0
-offset_top = 36.0
-offset_right = 622.0
-offset_bottom = 435.0
-theme = ExtResource("2_77ttm")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 12
-text = "A túa moza acaba de abrir o seu restaurante en pleno centro. Aínda non comprendedes a sorte que tivestes para atopar un alugueiro tan barato! Todo vai a pedir de boca: comida exquisita, clientela abraiada... cando de súpeto os ingredientes cobran vida. O restaurante está encantado! Seica por iso non duraban os negocios.
-Aí é onde entras ti, de profesión caza demos debes dispararlle aos ingredientes que atopes para levarllos de volta a túa moza. Pero vai rápido, antes de que os clientes marchen e ela se enfade. Ningunha pantasma nin ningunha moza torpe van impedir a súa estrela Michelin!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="title" type="TextureRect" parent="interfaces"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 52.0
-offset_right = 340.0
-offset_bottom = 122.0
+offset_left = 146.0
+offset_top = 51.0
+offset_right = 383.0
+offset_bottom = 121.0
 rotation = -0.0314159
 texture = ExtResource("6_jmtwj")
 expand_mode = 1
@@ -89,15 +73,16 @@ horizontal_alignment = 1
 
 [node name="controlestexto2" type="Label" parent="interfaces"]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 146.0
-offset_right = 247.0
-offset_bottom = 370.0
+offset_left = 224.0
+offset_top = 164.0
+offset_right = 379.0
+offset_bottom = 388.0
 theme = ExtResource("2_77ttm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 18
 text = ":
 :
 :
@@ -110,15 +95,16 @@ horizontal_alignment = 2
 
 [node name="controlestexto" type="Label" parent="interfaces"]
 layout_mode = 0
-offset_left = 255.0
-offset_top = 145.0
-offset_right = 406.0
-offset_bottom = 369.0
+offset_left = 396.0
+offset_top = 164.0
+offset_right = 550.0
+offset_bottom = 388.0
 theme = ExtResource("2_77ttm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 18
 text = "\"W\" / ARRIBA 
 \"S\" / ABAIXO
 \"A\" / ESQUERDA
@@ -129,8 +115,8 @@ SHIFT
 ENTER"
 
 [node name="RightIcon" type="Sprite2D" parent="interfaces"]
-position = Vector2(221, 229)
-scale = Vector2(0.8, 1)
+position = Vector2(348.5, 259)
+scale = Vector2(1.03333, 1.125)
 texture = ExtResource("7_7kgr5")
 
 [node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon"]
@@ -138,9 +124,9 @@ position = Vector2(-1.25, -23)
 texture = ExtResource("5_ymfwe")
 
 [node name="LeftIcon2" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon"]
-position = Vector2(2.10068, -24.5212)
+position = Vector2(2.5024, -23.4277)
 rotation = -1.5708
-scale = Vector2(0.631456, 1.29175)
+scale = Vector2(0.679897, 1.04043)
 texture = ExtResource("5_ymfwe")
 
 [node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon/LeftIcon2"]

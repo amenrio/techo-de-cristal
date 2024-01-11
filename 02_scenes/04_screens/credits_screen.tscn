@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlrtjsiufgmbb"]
+[gd_scene load_steps=8 format=3 uid="uid://dlrtjsiufgmbb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/creditsScreen.gd" id="1_ohgdq"]
 [ext_resource type="Texture2D" uid="uid://4gqqx1b5ra3d" path="res://01_assets/01_sprites/01_interfaces/creditsSprite.png" id="2_gkany"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_xhss3"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="4_gqjwo"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="4_qfv5t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkpkt"]
 
 [node name="creditsScreen" type="Node2D"]
 script = ExtResource("1_ohgdq")
@@ -48,7 +50,8 @@ layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "Ana María Senra Martínez   "
@@ -62,7 +65,8 @@ layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "Sara Luna Castillo Fernández 
@@ -77,7 +81,8 @@ layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "Pablo Rodríguez López  
@@ -92,7 +97,8 @@ layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "Luis Carlos Pablo Salazar
@@ -107,7 +113,8 @@ layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "Amaya Vicente Pérez
@@ -122,11 +129,30 @@ layout_mode = 2
 theme = ExtResource("2_uevps")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 16
 text = "Andrés Mendez del Río"
 horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator" type="HSeparator" parent="interfaces/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dkpkt")
+
+[node name="sara2" type="Label" parent="interfaces/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_uevps")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+text = "Agradecementos a Xela pola tradución!"
+horizontal_alignment = 2
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -159,10 +185,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.9058
-offset_top = -33.9985
-offset_right = 80.0942
-offset_bottom = 28.0015
+offset_left = -86.0
+offset_top = -27.0
+offset_right = 86.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_uevps")
