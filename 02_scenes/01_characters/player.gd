@@ -66,14 +66,15 @@ func _physics_process(_delta: float) ->  void:
 #	print(turn_velocity)
 	velocity += turn_velocity * drag
 	
-	move_and_slide()
 	# Orientamos el arma hacia el raton
 	weapon.look_at(get_global_mouse_position())
 	dash()
 	talk_to_girlfriend()
 	for comanda in objetivos:
 		check_completed_comandas(comanda)
-			
+	
+	move_and_slide()
+
 func _process(_delta):
 	update_animation_tree()
 	
