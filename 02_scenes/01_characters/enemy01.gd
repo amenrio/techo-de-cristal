@@ -11,7 +11,7 @@ extends CharacterBody2D
 var max_speed = 200
 var following_player = true
 var isOnView = false
-var damage = 10.0
+var damage = 15.0
 signal enemyDeath
 
 var sprite_string = "res://01_assets/01_sprites/enemy_%s.png"

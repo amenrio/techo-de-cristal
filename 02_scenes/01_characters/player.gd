@@ -16,6 +16,7 @@ extends CharacterBody2D
 @onready var hud_comanda = $GUI/interfaces/comandas
 
 var inventoryIngredient_instance = preload('res://02_scenes/04_screens/inventory_ingredient.tscn')
+var dashparticles = preload("res://02_scenes/05_others/dashParticles.tscn")
 @onready var inventory_gui = $GUI/interfaces/inventoryMargin/inventory
 var inventory_gui_count: Dictionary
 var direction:Vector2
@@ -48,6 +49,8 @@ func player_death(_args):
 
 func dash():
 	if Input.is_action_just_pressed('dash') and canDash:
+		var dashParticles = dashparticles.instantiate()
+		add_child(dashParticles)
 		velocity = velocity.normalized() * dash_velocity
 		canDash=false
 		isDashing=true
@@ -154,17 +157,17 @@ func add_to_inventory(pickup_object):
 		var pickup_name = pickup_object[pickup_class]			
 		if pickup_class == 'modifiers':
 			if pickup_name == 'health':
-				health_component.add_health(20)
+				health_component.add_health(30)
 			elif pickup_name == 'piercing':
 				if weapon.bullet_piercing < 3:
 					weapon.bullet_piercing += 1
 				else:
-					health_component.add_health(20)
+					health_component.add_health(30)
 			elif pickup_name == 'extra_shot':
 				if weapon.bullet_number < 3:
 					weapon.bullet_number += 1
 				else:
-					health_component.add_health(20)
+					health_component.add_health(30)
 		else:
 			if not pickup_name in inventory[pickup_class]:
 				inventory[pickup_class].merge({pickup_name:0})
@@ -191,7 +194,7 @@ func talk_to_girlfriend():
 				
 			var _objectives = girlfriend_instance.get_new_comandas(3)
 			for comanda in _objectives:
-				health_component.add_health(20)
+				health_component.add_health(40)
 				await get_tree().create_timer(0.1).timeout
 				var comanda_activa = comanda_instance.instantiate()
 				comanda_activa.init(comanda)

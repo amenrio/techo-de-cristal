@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://btsqqqf0yq5s7"]
+
+[ext_resource type="Script" path="res://02_scenes/05_others/dashParticles.gd" id="1_r1ylu"]
+
+[sub_resource type="Gradient" id="Gradient_qbwp3"]
+colors = PackedColorArray(1, 1, 1, 1, 0.666336, 0.631958, 0.597295, 0.580392)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_so2mm"]
+gradient = SubResource("Gradient_qbwp3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qr37k"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 7.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -60.0
+initial_velocity_max = 63.16
+angular_velocity_min = -514.61
+angular_velocity_max = 675.27
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.5
+scale_max = 2.5
+color_ramp = SubResource("GradientTexture1D_so2mm")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_qr37k")
+lifetime = 0.8
+explosiveness = 0.9
+randomness = 0.42
+trail_lifetime = 0.15
+trail_section_subdivisions = 6
+script = ExtResource("1_r1ylu")
+
+[node name="timeout" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[connection signal="timeout" from="timeout" to="." method="_on_timeout_timeout"]

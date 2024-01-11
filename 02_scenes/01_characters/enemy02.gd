@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var max_speed = 50
 
 var following_player = true
-var damage = 10.0
+var damage = 15.0
 var active = false
 var exploding = false
 var sprite_string = "res://01_assets/01_sprites/enemy_%s.png"
@@ -79,6 +79,7 @@ func _on_timer_timeout():
 		hitbox.damage(damage * 2)
 		animationPlayer.play("explode")
 		exploding = true
+	queue_free()
 
 
 func _on_nav_timer_timeout():
