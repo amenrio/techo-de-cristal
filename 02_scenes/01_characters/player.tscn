@@ -467,6 +467,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 collision_mask = 54
 motion_mode = 1
 script = ExtResource("1_kxc5o")
+max_speed = 350
 
 [node name="player_collitionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
