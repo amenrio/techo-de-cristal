@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhhdwvextnu6l"]
+
+[ext_resource type="Script" path="res://02_scenes/00_autoload/audio_autoload.gd" id="1_eg7fd"]
+[ext_resource type="AudioStream" uid="uid://rc6a70ux6ie7" path="res://01_assets/03_sound/02_music/intro.wav" id="1_ux64u"]
+
+[node name="AudioAutoload" type="Node"]
+script = ExtResource("1_eg7fd")
+
+[node name="Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ux64u")
+volume_db = -8.0
+autoplay = true

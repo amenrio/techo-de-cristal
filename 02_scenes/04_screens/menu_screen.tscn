@@ -138,7 +138,6 @@ text = "Saír"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_mbe6s")
 volume_db = -18.0
-autoplay = true
 
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bXogar" to="." method="_on_b_xogar_pressed"]
 [connection signal="pressed" from="menuinterfaces/VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]

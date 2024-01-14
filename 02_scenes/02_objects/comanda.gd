@@ -69,6 +69,7 @@ func _process(_delta):
 		tint_orange()
 		timing_out_orange=true
 	if timer.time_left < 5.0 and not timing_out_red:
+		#$comanda_hbox/TimeOut.play()
 		tint_red()
 		timing_out_red=true
 	sorted_completed_ingredients = sort(completed_ingredients)

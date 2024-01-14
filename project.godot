@@ -20,6 +20,8 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 Autoload="*res://02_scenes/00_autoload/autoload.gd"
+AudioAutoload_script="*res://02_scenes/00_autoload/audio_autoload.gd"
+AudioAutoload="*res://02_scenes/00_autoload/audio_autoload.tscn"
 
 [display]
 

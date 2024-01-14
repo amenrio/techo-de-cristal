@@ -25,6 +25,7 @@ func take_damage(damage):
 	health_bar.value = health
 	if sprite:
 		sprite.modulate = Color(1, 0, 0)
+		$AudioHit.play()
 		var timer = Timer.new()
 		add_child(timer)
 		timer.wait_time = 0.2
@@ -36,6 +37,7 @@ func _on_timer_timeout() -> void:
 	sprite.modulate = Color(1, 1, 1)
 
 func add_health(value):
+	$AudioHeal.play()
 	if health + value > MAX_HEALTH:
 		health = MAX_HEALTH
 	else:

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ogvub5b3e6s5"]
+[gd_scene load_steps=5 format=3 uid="uid://ogvub5b3e6s5"]
 
 [ext_resource type="Script" path="res://02_scenes/05_components/health_component.gd" id="1_o0shl"]
+[ext_resource type="AudioStream" uid="uid://bh5unagj6csf5" path="res://01_assets/03_sound/01_sfx/01_player/playerHit_02.wav" id="2_6e5vl"]
+[ext_resource type="AudioStream" uid="uid://bknfwoikv50ke" path="res://01_assets/03_sound/01_sfx/01_player/heal.wav" id="3_qls15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_452y7"]
 bg_color = Color(1, 0.337255, 0.32549, 1)
@@ -22,3 +24,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_452y7")
 show_percentage = false
+
+[node name="AudioHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6e5vl")
+volume_db = 3.0
+
+[node name="AudioHeal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qls15")
+volume_db = 2.0
