@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://ogvub5b3e6s5"]
+[gd_scene load_steps=4 format=3 uid="uid://ogvub5b3e6s5"]
 
 [ext_resource type="Script" path="res://02_scenes/05_components/health_component.gd" id="1_o0shl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_452y7"]
-bg_color = Color(1, 0.337255, 0.32549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vxqr"]
+bg_color = Color(0.588235, 0, 0, 0.741176)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jwgp"]
+bg_color = Color(1, 0.470588, 0.411765, 1)
+border_color = Color(0.490196, 0.12549, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="HealthComponent" type="Node2D"]
 script = ExtResource("1_o0shl")
@@ -14,11 +26,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -8.0
-offset_right = 16.0
-offset_bottom = 8.0
+offset_left = -15.0
+offset_top = -4.0
+offset_right = 15.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_452y7")
+theme_override_styles/background = SubResource("StyleBoxFlat_2vxqr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8jwgp")
+rounded = true
 show_percentage = false
