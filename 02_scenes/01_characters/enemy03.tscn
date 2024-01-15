@@ -76,7 +76,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhaam"]
-radius = 144.014
+radius = 114.0
 
 [node name="enemy03" instance=ExtResource("1_the54")]
 script = ExtResource("2_gnx8y")

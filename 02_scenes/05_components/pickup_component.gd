@@ -11,8 +11,8 @@ var textures = {
 	'naranja': 'res://01_assets/01_sprites/ingredientes/naranja-Sheet.png',
 	'masa': 'res://01_assets/01_sprites/ingredientes/masa-Sheet.png',
 	'health':'res://01_assets/01_sprites/health.png',
-	'2shot':'res://01_assets/01_sprites/2shot.png',
-	'3shot':'res://01_assets/01_sprites/3shot.png'
+	'piercing':'res://01_assets/01_sprites/2shot.png',
+	'extra_shot':'res://01_assets/01_sprites/3shot.png'
 }
 var special_list = ['2shot','3shot','health']
 

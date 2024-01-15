@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5cw65yv7hyj"]
+[gd_scene load_steps=20 format=3 uid="uid://b5cw65yv7hyj"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/girlfriend.gd" id="1_cwfag"]
 [ext_resource type="PackedScene" uid="uid://cx4e1du6imkkr" path="res://02_scenes/05_components/hitbox_component.tscn" id="1_q40ly"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bvpqsl3brjt5c" path="res://01_assets/01_sprites/shadow.png" id="4_dk44n"]
 [ext_resource type="Texture2D" uid="uid://bbn1c44xuuyv5" path="res://01_assets/01_sprites/cocinera_6frames_spritesheet.png" id="4_raptn"]
 [ext_resource type="Texture2D" uid="uid://b3xx0ic8fxdby" path="res://01_assets/01_sprites/tile_0087.png" id="6_0jfi7"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="7_l4dvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3twd"]
 size = Vector2(32, 32)
@@ -142,5 +143,16 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_lq0mj")
 }
+
+[node name="dialog_label" type="Label" parent="."]
+visible = false
+offset_left = 20.0
+offset_top = -74.0
+offset_right = 108.0
+offset_bottom = -47.0
+theme = ExtResource("7_l4dvo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Lore Ipsum "
 
 [editable path="HitboxComponent"]

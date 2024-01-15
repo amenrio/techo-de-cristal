@@ -181,3 +181,5 @@ autoplay = "init"
 libraries = {
 "": SubResource("AnimationLibrary_q38vr")
 }
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
