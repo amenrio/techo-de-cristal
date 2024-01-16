@@ -22,11 +22,12 @@ func pauseMenu():
 	paused = !paused
 	
 func _on_b_menu_pressed():
-		get_tree().change_scene_to_file("res://02_scenes/04_screens/menu_screen.tscn")
+	pauseMenu()
+	get_tree().change_scene_to_file("res://02_scenes/04_screens/menu_screen.tscn")
 
 
 func _on_b_volver_pressed():
 	pauseMenu()
 
 func _on_b_controles_pressed():
-	get_tree().change_scene_to_file("res://02_scenes/04_screens/ongame_controls_screen.tscn")
+	$controlsScreen.show()

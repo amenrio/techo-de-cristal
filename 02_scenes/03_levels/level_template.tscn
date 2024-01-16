@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://csgvbo4n46gvx" path="res://02_scenes/01_characters/player.tscn" id="1_e7f8m"]
 [ext_resource type="Script" path="res://02_scenes/03_levels/level_template.gd" id="1_pt6n6"]
 [ext_resource type="PackedScene" uid="uid://do7t4aw2geyt5" path="res://02_scenes/02_objects/spawner.tscn" id="2_wjpsb"]
-[ext_resource type="PackedScene" uid="uid://ok5m2y52avmy" path="res://02_scenes/04_screens/pause_menu.tscn" id="4_gx3hq"]
+[ext_resource type="PackedScene" uid="uid://i2udqkqkksy4" path="res://02_scenes/04_screens/pause_screen.tscn" id="4_5wrdo"]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_hpwq3"]
 
@@ -19,7 +19,8 @@ script = ExtResource("1_pt6n6")
 [node name="AnimationTree" parent="player" index="9"]
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hpwq3")
 
-[node name="PauseMenu" parent="player/GUI/interfaces" index="2" instance=ExtResource("4_gx3hq")]
+[node name="pauseScreen" parent="player/GUI/interfaces" index="2" instance=ExtResource("4_5wrdo")]
+process_mode = 3
 visible = false
 layout_mode = 1
 

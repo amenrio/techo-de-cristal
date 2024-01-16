@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckytpfmi22hwr"]
+[gd_scene load_steps=19 format=3 uid="uid://cvvlmqbdgi7ci"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/recipe_screen.gd" id="1_w8e4t"]
-[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_xw80o"]
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_xw80o"]
 [ext_resource type="Texture2D" uid="uid://c7bw6d1sdx4wc" path="res://01_assets/01_sprites/01_interfaces/recetaSprite.png" id="3_jod2d"]
 [ext_resource type="Texture2D" uid="uid://btkggqkrobevm" path="res://01_assets/01_sprites/01_interfaces/recipeBar.png" id="4_0aq4s"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="4_rs3ig"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://c72smlr03a4ct" path="res://01_assets/01_sprites/01_interfaces/chocolate.png" id="8_e7jld"]
 [ext_resource type="Texture2D" uid="uid://dhl4k88hv2qkc" path="res://01_assets/01_sprites/naranja.png" id="8_p6vbq"]
 [ext_resource type="Texture2D" uid="uid://bwrw00kg23vrs" path="res://01_assets/01_sprites/recetas/tarta.png" id="9_1fciu"]
-[ext_resource type="Texture2D" uid="uid://c76fbuex3lgme" path="res://01_assets/01_sprites/01_interfaces/recipeArrow.png" id="10_agfk1"]
 [ext_resource type="Texture2D" uid="uid://x7f7kj55ohri" path="res://01_assets/01_sprites/01_interfaces/recipeRArrow.png" id="10_xsp8y"]
 [ext_resource type="Texture2D" uid="uid://dre22kps8kaeb" path="res://01_assets/01_sprites/01_interfaces/recipeLArrow.png" id="12_5kx5j"]
 
@@ -57,6 +56,7 @@ offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="Paso0" type="HBoxContainer" parent="recipeZume"]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 159.0
 offset_right = 567.0
@@ -166,6 +166,7 @@ offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="Paso0" type="HBoxContainer" parent="recipeGofres"]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 159.0
 offset_right = 567.0
@@ -275,6 +276,7 @@ offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="Paso0" type="HBoxContainer" parent="recipeTarta"]
+layout_mode = 0
 offset_left = 185.0
 offset_top = 161.0
 offset_right = 563.0
@@ -380,6 +382,7 @@ offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="Paso0" type="HBoxContainer" parent="recipeChurros"]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 159.0
 offset_right = 567.0
@@ -498,7 +501,7 @@ theme_override_constants/outline_size = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fi7bd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_advor")
-icon = ExtResource("10_agfk1")
+icon = ExtResource("10_xsp8y")
 flat = true
 
 [node name="bPrevious" type="Button" parent="."]
