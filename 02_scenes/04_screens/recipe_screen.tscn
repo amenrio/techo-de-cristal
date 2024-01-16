@@ -34,9 +34,9 @@ script = ExtResource("1_w8e4t")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 157.0
+offset_left = 139.0
 offset_top = 17.0
-offset_right = 597.0
+offset_right = 607.0
 offset_bottom = 470.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -44,9 +44,9 @@ texture = ExtResource("3_jod2d")
 
 [node name="recipeBar" type="TextureRect" parent="."]
 offset_left = 190.0
-offset_top = 70.0
+offset_top = 50.0
 offset_right = 566.0
-offset_bottom = 146.0
+offset_bottom = 126.0
 texture = ExtResource("4_0aq4s")
 
 [node name="recipeZume" type="Control" parent="."]
@@ -316,12 +316,35 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
+[node name="Paso0" type="HBoxContainer" parent="recipeChurros"]
+offset_left = 159.0
+offset_top = 159.0
+offset_right = 587.0
+offset_bottom = 231.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeChurros/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Ingredientes : 1 vaso de auga e outro de fariña, unhas areíñas de sal e de azucre e aceite para fritir.
+Para o chocolate: 400 g. de chocolate negro, 1 l. de leite enteiro, unhas areiñas de sal e azucre ao gusto."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Paso1" type="HBoxContainer" parent="recipeChurros"]
 layout_mode = 2
-offset_left = 189.0
-offset_top = 178.0
-offset_right = 500.0
-offset_bottom = 298.0
+offset_left = 165.0
+offset_top = 243.0
+offset_right = 509.0
+offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 33
@@ -343,17 +366,16 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Poñer a ferver nun cazo a auga e a sal. En canto ferva, retirar do lume e botar a fariña de golpe. Remexer con forza ata que a masa se despegue. Formar os churros cunha manga e fritir. Deixar escorrer en papel de cociña. Esparexer con azucre.
-"
+text = "Poñer a ferver nun cazo a auga e o sal. En canto ferva, retirar do lume e botar a fariña de golpe. Remexer con forza ata que a masa se despegue. Formar os churros cunha manga e fritir. Deixar escorrer en papel de cociña. Esparexer con azucre."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Paso2" type="HBoxContainer" parent="recipeChurros"]
 layout_mode = 2
-offset_left = 192.0
-offset_top = 286.0
-offset_right = 499.0
+offset_left = 164.0
+offset_top = 348.0
+offset_right = 509.0
 offset_bottom = 429.0
 theme_override_constants/separation = 33
 alignment = 1
@@ -374,7 +396,7 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Quentar leite nun cazo, engadir azucre a gusto. Picar o chocolate e engadir xunto coa sal. Remover cunha culler de madeira ata que o chocolate se funda. Apartar do lume cando ferva. Servir xunto cos churros.
+text = "Quentar leite nun cazo, engadir azucre ao gusto. Picar o chocolate e engadir xunto coa sal. Remexer cunha culler de madeira ata que o chocolate se funda. Apartar do lume cando ferva. Servir xunto cos churros.
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -382,17 +404,17 @@ autowrap_mode = 2
 
 [node name="dishSprite" type="Sprite2D" parent="recipeChurros"]
 texture_filter = 1
-position = Vector2(382, 104)
-scale = Vector2(1.06169, 0.985821)
+position = Vector2(382, 89.5)
+scale = Vector2(1.06169, 1.01681)
 texture = ExtResource("6_qsdy3")
 
 [node name="ingredient1" type="Sprite2D" parent="recipeChurros"]
-position = Vector2(532, 229)
+position = Vector2(553, 279)
 scale = Vector2(0.234099, 0.238701)
 texture = ExtResource("7_dpevt")
 
 [node name="ingredient2" type="Sprite2D" parent="recipeChurros"]
-position = Vector2(540, 357)
+position = Vector2(553, 382)
 scale = Vector2(0.270531, 0.29108)
 texture = ExtResource("8_e7jld")
 
@@ -407,9 +429,9 @@ icon_alignment = 1
 
 [node name="bNext" type="Button" parent="."]
 offset_left = 478.0
-offset_top = 84.0
+offset_top = 65.0
 offset_right = 551.0
-offset_bottom = 136.0
+offset_bottom = 117.0
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
@@ -420,9 +442,9 @@ flat = true
 
 [node name="bPrevious" type="Button" parent="."]
 offset_left = 209.0
-offset_top = 85.0
+offset_top = 66.0
 offset_right = 282.0
-offset_bottom = 137.0
+offset_bottom = 118.0
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fi7bd")
