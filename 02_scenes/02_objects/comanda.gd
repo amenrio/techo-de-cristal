@@ -13,12 +13,14 @@ var _recipe_path:String
 var timing_out_yellow = false
 var timing_out_orange = false
 var timing_out_red = false
+var ingredient_instance = preload("res://02_scenes/04_screens/comanda_ingredient.tscn")
+
 @onready var animation_player = $AnimationPlayer
 @onready var recipe_sprite = $sprite
 @onready var timer = $timer
 @onready var ingredient_vb = $HBoxContainer/MarginContainer/ingredients
-var ingredient_instance = preload("res://02_scenes/04_screens/comanda_ingredient.tscn")
 @onready var player_instance = get_tree().get_first_node_in_group('player')
+@onready var timeOut_sound = $TimeOut
 
 func tint_yellow():
 	var tween = get_tree().create_tween()
@@ -69,6 +71,7 @@ func _process(_delta):
 		tint_orange()
 		timing_out_orange=true
 	if timer.time_left < 5.0 and not timing_out_red:
+#		timeOut_sound.play()
 		tint_red()
 		timing_out_red=true
 	sorted_completed_ingredients = sort(completed_ingredients)
