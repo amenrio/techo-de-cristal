@@ -36,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 139.0
 offset_top = 17.0
-offset_right = 607.0
+offset_right = 613.0
 offset_bottom = 470.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -50,21 +50,43 @@ offset_bottom = 126.0
 texture = ExtResource("4_0aq4s")
 
 [node name="recipeZume" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
+[node name="Paso0" type="HBoxContainer" parent="recipeZume"]
+offset_left = 190.0
+offset_top = 159.0
+offset_right = 567.0
+offset_bottom = 231.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeZume/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para o zume: 300 g. de grosellas2 pomelos, 1 laranxa, 1 chorriño del xarope de romeu, 1 variña de romeu, xeo, auga e gasosa (opcional).
+Para o xarope de romeu: 10 g. de follas de romeu (sen talo), 30 g. de azucre branco e 210 ml. de auga."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Paso1" type="HBoxContainer" parent="recipeZume"]
 layout_mode = 2
-offset_left = 189.0
-offset_top = 184.0
-offset_right = 500.0
-offset_bottom = 288.0
+offset_left = 166.0
+offset_top = 254.0
+offset_right = 507.0
+offset_bottom = 326.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeZume/Paso1"]
@@ -83,18 +105,18 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Ferver auga con azucre ata que a última se disolva. Reposar e engadir romeiro. Pelar e cortar un pomelo e machacar lixeiramente xunto con grosellas. Por xeo ata enrriba."
-horizontal_alignment = 1
+text = "Ferver auga con azucre ata que a última se disolva. Deixar en repouso e engadir romeiro. Pelar e cortar un pomelo e machacar lixeiramente xunto con grosellas. Poñer xeo ata arriba.
+"
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Paso2" type="HBoxContainer" parent="recipeZume"]
 layout_mode = 2
-offset_left = 192.0
-offset_top = 302.0
+offset_left = 164.0
+offset_top = 342.0
 offset_right = 495.0
-offset_bottom = 414.0
-theme_override_constants/separation = 33
+offset_bottom = 434.0
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeZume/Paso2"]
@@ -113,27 +135,26 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Exprimir o zume da laranxa e o do outro pomelo e mezclar co sirope de romeiro. Chear o vaso co zume ata a metade, e o resto con auga ou gaseosa ao gusto. Decorar cunha rama de romero ou con rodas das frutas."
-horizontal_alignment = 1
+text = "Exprimir o zume da laranxa e o do outro pomelo e mesturar co sirope de romeiro. Encher o vaso co zume ata a metade, e o resto con auga ou gaseosa ao gusto. Decorar cunha rama de romeiro ou con rodas das froitas"
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="dishSprite" type="Sprite2D" parent="recipeZume"]
 texture_filter = 1
-position = Vector2(386, 106)
-scale = Vector2(3.5, 3.5)
+position = Vector2(381, 86)
+scale = Vector2(3.5625, 4)
 texture = ExtResource("6_2uuj0")
 
 [node name="ingredient1" type="Sprite2D" parent="recipeZume"]
 texture_filter = 1
-position = Vector2(539.5, 239)
-scale = Vector2(1.90625, 1.875)
+position = Vector2(549.25, 281.5)
+scale = Vector2(2.10937, 1.84375)
 texture = ExtResource("8_p6vbq")
 
 [node name="ingredient2" type="Sprite2D" parent="recipeZume"]
 texture_filter = 1
-position = Vector2(542, 345)
-scale = Vector2(1.90625, 1.875)
+position = Vector2(551, 373)
+scale = Vector2(2.04688, 1.90625)
 texture = ExtResource("8_p6vbq")
 
 [node name="recipeGofres" type="Control" parent="."]
@@ -143,15 +164,37 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
+[node name="Paso0" type="HBoxContainer" parent="recipeGofres"]
+offset_left = 190.0
+offset_top = 159.0
+offset_right = 567.0
+offset_bottom = 231.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeGofres/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para os gofres: 25 g de manteiga, 150 g de azucre e de fariña, 1 culler de café de lévedo químico en po e outra de café de esencia de vainilla, unha manchea de arandos frescos, zume de ½ laranxa e raiadura de laranxa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Paso1" type="HBoxContainer" parent="recipeGofres"]
 layout_mode = 2
-offset_left = 189.0
-offset_top = 181.0
+offset_left = 166.0
+offset_top = 248.0
 offset_right = 500.0
-offset_bottom = 301.0
+offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeGofres/Paso1"]
@@ -170,19 +213,18 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Batir 2 ovos e engadir pouco a pouco o azucre, a fariña, a levadura, laranxa e a vainilla. Integrar todo creando unha masa uniforme.Engadir mantequilla e mentras, calentar a gofrera. 
+text = "Batir 2 ovos e engadir pouco a pouco o azucre, a fariña, a levadura, laranxa e a vainilla. Integrar todo creando unha masa uniforme.Engadir manteiga e mentras, quentar a gofreira.
 "
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Paso2" type="HBoxContainer" parent="recipeGofres"]
 layout_mode = 2
-offset_left = 192.0
-offset_top = 286.0
+offset_left = 165.0
+offset_top = 348.0
 offset_right = 499.0
 offset_bottom = 429.0
-theme_override_constants/separation = 33
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeGofres/Paso2"]
@@ -201,27 +243,26 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Verter a masa na gofrera engrasada, pechar, e esperar a que se dora. Repetir hasta que non quede máis masa. Servir xunto cos arándanos e un pouco de sirope de chocolate.
+text = "Verter a masa na gofreira engrasada, pechar, e esperar a que se doure. Repetir ata que non quede máis masa. Servir xunto cos arandos e un pouco de sirope de chocolate.
 "
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="dishSprite" type="Sprite2D" parent="recipeGofres"]
 texture_filter = 1
-position = Vector2(381.5, 110)
-scale = Vector2(4.34375, 3.3125)
+position = Vector2(381.5, 89.5)
+scale = Vector2(4.34375, 3.78125)
 texture = ExtResource("6_i6wq1")
 
 [node name="ingredient1" type="Sprite2D" parent="recipeGofres"]
 texture_filter = 1
-position = Vector2(530, 354)
+position = Vector2(549, 372)
 scale = Vector2(0.234099, 0.238701)
 texture = ExtResource("7_dpevt")
 
 [node name="ingredient2" type="Sprite2D" parent="recipeGofres"]
 texture_filter = 1
-position = Vector2(533, 240)
+position = Vector2(549, 281)
 scale = Vector2(2.08356, 1.97579)
 texture = ExtResource("8_p6vbq")
 
@@ -232,15 +273,39 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
+[node name="Paso0" type="HBoxContainer" parent="recipeTarta"]
+offset_left = 185.0
+offset_top = 159.0
+offset_right = 563.0
+offset_bottom = 285.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeTarta/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para a marmelada de amorodos: 1 kg. de amorodos. (65%) e 750 g. de azucre branco. (35%) e zume dun limón.
+Para a cobertura: 200 g. de azucre, 100 ml. de auga, 200 g. de chocolate negro e 20 g. de cacao en po.
+Para o biscoito de chocolate: 7 ovos, 140 g. de azucre, 150 g. de manteiga a temperatura ambiente e de chocolate negro, 120 g. de fariña de repostería, 30 g. de cacao en po e unhas areíñas de sal."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Paso1" type="HBoxContainer" parent="recipeTarta"]
 layout_mode = 2
-offset_left = 189.0
-offset_top = 184.0
+offset_left = 165.0
+offset_top = 243.0
 offset_right = 500.0
-offset_bottom = 288.0
+offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeTarta/Paso1"]
@@ -259,18 +324,18 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Separar yemas de claras de 7 ovos. Mesturar as yemas con mantequilla, azucre e chocolate derretido. Tamizar a fariña e engadirlle cacao en polvo. Montar as claras a punto cde neve con azucre. Verter nun molde e fornear 50 min a 170º."
-horizontal_alignment = 1
+text = "Separar xemas de claras de 7 ovos. Mesturar as xemas con manteiga, azucre e chocolate derretido. Tamizar a fariña e engadirlle cacao en polvo. Montar as claras a punto de neve con azucre. Verter nun molde e fornear 50 min a 170o.
+"
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Paso2" type="HBoxContainer" parent="recipeTarta"]
 layout_mode = 2
-offset_left = 192.0
-offset_top = 302.0
+offset_left = 164.0
+offset_top = 343.0
 offset_right = 495.0
-offset_bottom = 414.0
-theme_override_constants/separation = 33
+offset_bottom = 433.0
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeTarta/Paso2"]
@@ -289,37 +354,37 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Preparar unha cobertura almíbar con chocolate fundido e cacao. Cortar o biscoito en dúas lonchas, esparcer marmelada de fresa entre unha e outra. Volver a poñer a segunda loncha enriba e verter a cobertura."
-horizontal_alignment = 1
+text = "Preparar unha cobertura almíbar con chocolate fundido e cacao. Cortar o biscoito en dúas lonchas, esparexer marmelada de amorodo entre unha e outra. Volver a poñer a segunda loncha enriba e verter a cobertura."
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="dishSprite" type="Sprite2D" parent="recipeTarta"]
 texture_filter = 1
-position = Vector2(383, 113)
-scale = Vector2(4.5625, 3.5)
+position = Vector2(383, 95.5)
+scale = Vector2(4.5625, 4.09375)
 texture = ExtResource("9_1fciu")
 
 [node name="ingredient2" type="Sprite2D" parent="recipeTarta"]
-position = Vector2(540, 357)
+position = Vector2(554, 381)
 scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("8_e7jld")
 
 [node name="ingredient3" type="Sprite2D" parent="recipeTarta"]
-position = Vector2(539, 237)
+position = Vector2(549, 283)
 scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("8_e7jld")
 
 [node name="recipeChurros" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
 [node name="Paso0" type="HBoxContainer" parent="recipeChurros"]
-offset_left = 159.0
+offset_left = 190.0
 offset_top = 159.0
-offset_right = 587.0
+offset_right = 567.0
 offset_bottom = 231.0
 theme_override_constants/separation = 33
 alignment = 1
@@ -333,7 +398,7 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Ingredientes : 1 vaso de auga e outro de fariña, unhas areíñas de sal e de azucre e aceite para fritir.
+text = "Para os churros : 1 vaso de auga e outro de fariña, unhas areíñas de sal e de azucre e aceite para fritir.
 Para o chocolate: 400 g. de chocolate negro, 1 l. de leite enteiro, unhas areiñas de sal e azucre ao gusto."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -347,7 +412,7 @@ offset_right = 509.0
 offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeChurros/Paso1"]
@@ -367,7 +432,6 @@ theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
 text = "Poñer a ferver nun cazo a auga e o sal. En canto ferva, retirar do lume e botar a fariña de golpe. Remexer con forza ata que a masa se despegue. Formar os churros cunha manga e fritir. Deixar escorrer en papel de cociña. Esparexer con azucre."
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -377,7 +441,7 @@ offset_left = 164.0
 offset_top = 348.0
 offset_right = 509.0
 offset_bottom = 429.0
-theme_override_constants/separation = 33
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="number" type="Label" parent="recipeChurros/Paso2"]
@@ -398,7 +462,6 @@ theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
 text = "Quentar leite nun cazo, engadir azucre ao gusto. Picar o chocolate e engadir xunto coa sal. Remexer cunha culler de madeira ata que o chocolate se funda. Apartar do lume cando ferva. Servir xunto cos churros.
 "
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
