@@ -13,11 +13,13 @@ func _process(_delta):
 	
 func pauseMenu():
 	if paused:
+		$AnimationPlayer.play("hide_pause")
 		hide()
 		get_tree().paused = false
 	else:
-		get_tree().paused = true	
+		get_tree().paused = true
 		show()
+		$AnimationPlayer.play("show_pause")
 		
 	paused = !paused
 	
