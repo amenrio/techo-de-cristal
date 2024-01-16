@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://de4yexnjnfet"]
+[gd_scene load_steps=35 format=3 uid="uid://de4yexnjnfet"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/enemy02.gd" id="1_sr8wj"]
 [ext_resource type="PackedScene" uid="uid://ll1gibctxlws" path="res://02_scenes/05_components/pickup_component.tscn" id="2_tmdi8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bijixlluuc04o" path="res://01_assets/01_sprites/EnemySprites/chocolate_run.png" id="4_lqgnm"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="5_3qyqs"]
 [ext_resource type="Texture2D" uid="uid://bcbrtjcku23br" path="res://01_assets/01_sprites/EnemySprites/chocolate_ataque.png" id="5_8ec8y"]
+[ext_resource type="Texture2D" uid="uid://788i66wsqqgh" path="res://01_assets/01_sprites/EnemySprites/chocolate_idle.png" id="7_lsor7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcnqx"]
 atlas = ExtResource("4_lqgnm")
@@ -69,6 +70,22 @@ region = Rect2(224, 0, 32, 32)
 atlas = ExtResource("5_8ec8y")
 region = Rect2(256, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d08y"]
+atlas = ExtResource("7_lsor7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb5if"]
+atlas = ExtResource("7_lsor7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fkrf"]
+atlas = ExtResource("7_lsor7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxrwm"]
+atlas = ExtResource("7_lsor7")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_e546c"]
 animations = [{
 "frames": [{
@@ -125,6 +142,29 @@ animations = [{
 "loop": true,
 "name": &"explode",
 "speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d08y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb5if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fkrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxrwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fkrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb5if")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gn6rt"]
@@ -165,9 +205,9 @@ texture = ExtResource("3_5wxqv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e546c")
-animation = &"explode"
+animation = &"idle"
 autoplay = "default"
-frame_progress = 0.551887
+frame_progress = 0.43843
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_51mka")]
 collision_layer = 2

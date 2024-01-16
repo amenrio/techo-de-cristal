@@ -1,11 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://djsscuerlbs64"]
+[gd_scene load_steps=13 format=3 uid="uid://djsscuerlbs64"]
 
 [ext_resource type="Script" path="res://02_scenes/05_components/bullet_component.gd" id="1_yqqig"]
 [ext_resource type="Texture2D" uid="uid://delqfjkalylkr" path="res://01_assets/01_sprites/bullet02.png" id="2_8eeya"]
 [ext_resource type="Texture2D" uid="uid://dv12t4rl5p3gj" path="res://01_assets/01_sprites/bullet01.png" id="3_mjln5"]
+[ext_resource type="Texture2D" uid="uid://8487obc5lrqj" path="res://01_assets/01_sprites/bala_naranja.png" id="4_3oi8b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0g3du"]
 radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq1hg"]
+atlas = ExtResource("4_3oi8b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgicy"]
+atlas = ExtResource("4_3oi8b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koatg"]
+atlas = ExtResource("4_3oi8b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw2lv"]
+atlas = ExtResource("4_3oi8b")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c1qb"]
+atlas = ExtResource("4_3oi8b")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cme08"]
+atlas = ExtResource("4_3oi8b")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7hye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq1hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgicy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koatg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw2lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cme08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="BulletComponent" type="Area2D"]
 collision_layer = 4
@@ -14,9 +65,17 @@ script = ExtResource("1_yqqig")
 sprite = ExtResource("2_8eeya")
 
 [node name="sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_mjln5")
 
 [node name="collision_zone" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0g3du")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_d7hye")
+autoplay = "default"
+frame_progress = 0.515094
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

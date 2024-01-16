@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd4v18s4lrgy1"]
+
+[sub_resource type="Gradient" id="Gradient_k3vt3"]
+colors = PackedColorArray(0.847022, 0.298937, 0.0131014, 1, 1, 0.656709, 0.44748, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kmro0"]
+gradient = SubResource("Gradient_k3vt3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lo65h"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+spread = 80.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -150.0
+initial_velocity_max = 146.34
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_kmro0")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_lo65h")
+explosiveness = 0.91
+randomness = 0.65

@@ -44,6 +44,7 @@ func _shoot():
 	bullet.bullet_speed = 400
 	bullet.position = position
 	bullet.velocity = raycast.target_position.normalized()
+	bullet.rotation = randi_range(0, 360)
 	get_tree().current_scene.add_child(bullet)
 	$attack.play()
 	loaded = false
