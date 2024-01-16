@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://pd8stp4u7wqj"]
 
-[ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="1_2bqb1"]
 [ext_resource type="Texture2D" uid="uid://bji88v4ssadqy" path="res://01_assets/01_sprites/01_interfaces/hoverButton.png" id="1_35b16"]
 [ext_resource type="Texture2D" uid="uid://n03jsmrgckxm" path="res://01_assets/01_sprites/01_interfaces/normalButton.png" id="2_bdjgn"]
+[ext_resource type="FontFile" uid="uid://y11acynshig1" path="res://01_assets/02_fonts/PixelifySans-VariableFont_wght.ttf" id="3_8q77b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nm1n"]
 content_margin_left = 4.0
@@ -33,7 +33,8 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [resource]
-default_font = ExtResource("1_2bqb1")
+default_font = ExtResource("3_8q77b")
+default_font_size = 16
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -49,7 +50,7 @@ Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/h_separation = 2
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 16
+Button/font_sizes/font_size = 18
 Button/styles/disabled = SubResource("StyleBoxFlat_0nm1n")
 Button/styles/focus = SubResource("StyleBoxTexture_aetwt")
 Button/styles/hover = SubResource("StyleBoxTexture_1sh2j")

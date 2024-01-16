@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ahqompk8p3h"
-path="res://.godot/imported/inventory.png-7886f38706ffeb46b4316297c2022c44.ctex"
+uid="uid://tv5typx4gwn4"
+path="res://.godot/imported/dialogueTriangle.png-54c7828713ae6fe8c8ac6df4ea6a414c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/01_interfaces/inventory.png"
-dest_files=["res://.godot/imported/inventory.png-7886f38706ffeb46b4316297c2022c44.ctex"]
+source_file="res://01_assets/01_sprites/01_interfaces/dialogueTriangle.png"
+dest_files=["res://.godot/imported/dialogueTriangle.png-54c7828713ae6fe8c8ac6df4ea6a414c.ctex"]
 
 [params]
 

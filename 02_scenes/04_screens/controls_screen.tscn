@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuk24j5wdg104"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_iwvct"]
-[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="2_2apdb"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_77ttm"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_q8mp1"]
 [ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_wwh5h"]
-[ext_resource type="Texture2D" uid="uid://bf6ybg1s4c5f7" path="res://01_assets/01_sprites/01_interfaces/controles.png" id="3_0k6ts"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_ymfwe"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_jmtwj"]
+[ext_resource type="Texture2D" uid="uid://mt2l2i6iet00" path="res://01_assets/01_sprites/01_interfaces/rightIcon.png" id="7_7kgr5"]
 
 [node name="controlsScreen" type="Node2D"]
 script = ExtResource("1_iwvct")
@@ -18,31 +18,14 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="background" type="TextureRect" parent="interfaces"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 639.0
-offset_bottom = 1199.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_2apdb")
+[node name="background" parent="interfaces" instance=ExtResource("2_q8mp1")]
 
 [node name="controlesSprite" type="TextureRect" parent="interfaces"]
+layout_mode = 0
 offset_left = 66.0
 offset_right = 641.0
 offset_bottom = 480.0
 texture = ExtResource("2_wwh5h")
-
-[node name="TextureRect" type="TextureRect" parent="interfaces"]
-offset_left = 135.0
-offset_top = 139.0
-offset_right = 398.0
-offset_bottom = 360.0
-texture = ExtResource("3_0k6ts")
 
 [node name="bControlesAtras" type="Button" parent="interfaces"]
 layout_mode = 1
@@ -59,25 +42,12 @@ theme = ExtResource("2_77ttm")
 icon = ExtResource("5_ymfwe")
 icon_alignment = 1
 
-[node name="story" type="Label" parent="interfaces"]
-offset_left = 405.0
-offset_top = 36.0
-offset_right = 622.0
-offset_bottom = 435.0
-theme = ExtResource("2_77ttm")
-theme_override_colors/font_outline_color = Color(0.494118, 0.298039, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 12
-text = "A túa moza acaba de abrir o seu restaurante en pleno centro. Aínda non comprendedes a sorte que tivestes para atopar un alugueiro tan barato! Todo vai a pedir de boca: comida exquisita, clientela abraiada... cando de súpeto os ingredientes cobran vida. O restaurante está encantado! Seica por iso non duraban os negocios.
-Aí é onde entras ti, de profesión caza demos debes dispararlle aos ingredientes que atopes para levarllos de volta a túa moza. Pero vai rápido, antes de que os clientes marchen e ela se enfade. Ningunha pantasma nin ningunha moza torpe van impedir a súa estrela Michelin!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="title" type="TextureRect" parent="interfaces"]
-offset_left = 100.0
-offset_top = 52.0
-offset_right = 340.0
-offset_bottom = 122.0
+layout_mode = 0
+offset_left = 146.0
+offset_top = 51.0
+offset_right = 383.0
+offset_bottom = 121.0
 rotation = -0.0314159
 texture = ExtResource("6_jmtwj")
 expand_mode = 1
@@ -89,10 +59,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.9058
-offset_top = -33.9985
-offset_right = 80.0942
-offset_bottom = 28.0015
+offset_left = -97.0
+offset_top = -29.0
+offset_right = 97.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_77ttm")
@@ -100,5 +70,69 @@ theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 40
 text = "Controles"
 horizontal_alignment = 1
+
+[node name="controlestexto2" type="Label" parent="interfaces"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 164.0
+offset_right = 379.0
+offset_bottom = 388.0
+theme = ExtResource("2_77ttm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 18
+text = ":
+:
+:
+:
+Disparar:
+Dash:
+Interactuar:
+Aceptar:"
+horizontal_alignment = 2
+
+[node name="controlestexto" type="Label" parent="interfaces"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 164.0
+offset_right = 550.0
+offset_bottom = 388.0
+theme = ExtResource("2_77ttm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 18
+text = "\"W\" / ARRIBA 
+\"S\" / ABAIXO
+\"A\" / ESQUERDA
+ \"D\" / DEREITA
+ESPAZO/ Click Esq.
+SHIFT
+\"E\"
+ENTER"
+
+[node name="RightIcon" type="Sprite2D" parent="interfaces"]
+position = Vector2(348.5, 259)
+scale = Vector2(1.03333, 1.125)
+texture = ExtResource("7_7kgr5")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon"]
+position = Vector2(-1.25, -23)
+texture = ExtResource("5_ymfwe")
+
+[node name="LeftIcon2" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon"]
+position = Vector2(2.5024, -23.4277)
+rotation = -1.5708
+scale = Vector2(0.679897, 1.04043)
+texture = ExtResource("5_ymfwe")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon/LeftIcon2"]
+position = Vector2(41.65, 0.647824)
+rotation = -3.14159
+scale = Vector2(1.08983, 0.864865)
+texture = ExtResource("5_ymfwe")
 
 [connection signal="pressed" from="interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]

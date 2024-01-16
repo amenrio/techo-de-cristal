@@ -1,31 +1,40 @@
 [gd_scene load_steps=3 format=3 uid="uid://brkplwxswskhb"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/inventory.gd" id="1_jxqra"]
-[ext_resource type="Texture2D" uid="uid://djkehryccawuw" path="res://01_assets/01_sprites/01_interfaces/inventory.png" id="2_ck6fy"]
+[ext_resource type="Texture2D" uid="uid://ckdv53jwnkbbl" path="res://01_assets/01_sprites/01_interfaces/inventory_v02.png" id="2_nfelu"]
 
 [node name="inventario" type="Control"]
 layout_mode = 3
-anchor_right = 0.082
-anchor_bottom = 0.335
-offset_right = -52.48
-offset_bottom = -160.8
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
 script = ExtResource("1_jxqra")
 
 [node name="background" type="TextureRect" parent="."]
-layout_mode = 2
-offset_right = 51.0
-offset_bottom = 162.0
-texture = ExtResource("2_ck6fy")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.5
+offset_right = 99.5
+offset_bottom = 58.0
+grow_horizontal = 2
+texture = ExtResource("2_nfelu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 11.0
-offset_top = 21.0
-offset_right = 60.0
-offset_bottom = 165.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_right = 78.0
+offset_bottom = 47.0
+grow_horizontal = 2
+scale = Vector2(1.04198, 1.01596)
 size_flags_horizontal = 4
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 50

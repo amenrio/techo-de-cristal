@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ahqompk8p3h"
-path="res://.godot/imported/inventory.png-7886f38706ffeb46b4316297c2022c44.ctex"
+uid="uid://dre22kps8kaeb"
+path="res://.godot/imported/recipeLArrow.png-e3f197528963ed15da6fc7f7410791d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/01_interfaces/inventory.png"
-dest_files=["res://.godot/imported/inventory.png-7886f38706ffeb46b4316297c2022c44.ctex"]
+source_file="res://01_assets/01_sprites/01_interfaces/recipeLArrow.png"
+dest_files=["res://.godot/imported/recipeLArrow.png-e3f197528963ed15da6fc7f7410791d6.ctex"]
 
 [params]
 

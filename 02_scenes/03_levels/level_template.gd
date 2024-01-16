@@ -18,6 +18,7 @@ func _ready():
 	timer_node.wait_time = time_limit
 	player.position = player_start.position
 	timer_node.start()
+	AudioAutoload.stopIntro()
 	
 func _process(_delta):
 	gui_timer_gui.text = str(int(timer_node.time_left))
