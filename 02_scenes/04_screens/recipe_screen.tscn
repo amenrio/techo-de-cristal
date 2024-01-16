@@ -50,6 +50,7 @@ offset_bottom = 126.0
 texture = ExtResource("4_0aq4s")
 
 [node name="recipeZume" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -275,9 +276,9 @@ offset_bottom = 480.0
 
 [node name="Paso0" type="HBoxContainer" parent="recipeTarta"]
 offset_left = 185.0
-offset_top = 159.0
+offset_top = 161.0
 offset_right = 563.0
-offset_bottom = 285.0
+offset_bottom = 249.0
 theme_override_constants/separation = 33
 alignment = 1
 
@@ -290,9 +291,7 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Para a marmelada de amorodos: 1 kg. de amorodos. (65%) e 750 g. de azucre branco. (35%) e zume dun limón.
-Para a cobertura: 200 g. de azucre, 100 ml. de auga, 200 g. de chocolate negro e 20 g. de cacao en po.
-Para o biscoito de chocolate: 7 ovos, 140 g. de azucre, 150 g. de manteiga a temperatura ambiente e de chocolate negro, 120 g. de fariña de repostería, 30 g. de cacao en po e unhas areíñas de sal."
+text = "Para o biscoito de chocolate: 7 ovos, 140 g. de azucre, 150 g. de manteiga a temperatura ambiente e de chocolate negro, 120 g. de fariña de repostería, 30 g. de cacao en po e unhas areíñas de sal."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -354,7 +353,7 @@ theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 11
-text = "Preparar unha cobertura almíbar con chocolate fundido e cacao. Cortar o biscoito en dúas lonchas, esparexer marmelada de amorodo entre unha e outra. Volver a poñer a segunda loncha enriba e verter a cobertura."
+text = "Preparar unha cobertura almíbar con chocolate fundido e cacao. Cortar o biscoito en dúas lonchas, esparexer marmelada de amorodo entre unha e outra. Volver a poñer a segunda loncha enriba e verter a cobertura de chocolate."
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -375,7 +374,6 @@ scale = Vector2(0.271739, 0.278169)
 texture = ExtResource("8_e7jld")
 
 [node name="recipeChurros" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
