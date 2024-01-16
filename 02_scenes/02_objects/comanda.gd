@@ -110,5 +110,5 @@ func _on_timer_timeout():
 	timed_out = true
 	timer.stop()
 	if not is_completed:
-		print("%s comanda not done in time" % recipe_name)
+		#print("%s comanda not done in time" % recipe_name)
 		animation_player.play("exit")# Replace with function body.

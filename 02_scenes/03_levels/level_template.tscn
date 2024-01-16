@@ -20,7 +20,6 @@ script = ExtResource("1_pt6n6")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_hpwq3")
 
 [node name="pauseScreen" parent="player/GUI/interfaces" index="2" instance=ExtResource("4_5wrdo")]
-process_mode = 3
 visible = false
 layout_mode = 1
 

@@ -20,7 +20,7 @@ func _get_recipes():
 	recipes_text = FileAccess.get_file_as_string(recipes_file)
 	recipes_dict = JSON.parse_string(recipes_text)
 	total_recipes = len(recipes_dict.keys())# Replace with function body.
-#	print(total_recipes)
+#	#print(total_recipes)
 func get_random_dialog_from_context(context):
 	var _index = randi_range(0,len(dialog_dict[context])-1)
 	var dialog = dialog_dict[context][_index]
@@ -37,7 +37,7 @@ func set_level_comandas():
 	var _recipes_todo:Array = []
 	var _recipe = get_random_recipe()
 	return _recipe
-#	print(_recipe)
+#	#print(_recipe)
 #		_recipes_todo.append({recipes_dict[randi_range(0,total_recipes-1]:})
 # FUNCION DE CHECKEAR LAS COMANDAS HECHAS
 func get_new_comandas(number_of_comandas:int):
