@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D
 @onready var viewrage = $viewRange
 @onready var animated_sprite_2d = $AnimatedSprite2D
-
+@onready var explosion = preload("res://02_scenes/05_others/enemyExplosion.tscn")
 
 var max_speed = 200
 var following_player = true
@@ -24,6 +24,8 @@ func _ready():
 	health_component.connect('death',death)
 	
 func death(_args):
+	var explInstance = explosion.instantiate()
+	get_parent().add_child(explInstance)
 	queue_free()
 	
 func stateMachine(currentState: String) -> void:
