@@ -1,38 +1,30 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0r7455aj0tpr"]
+[gd_scene load_steps=16 format=3 uid="uid://c0r7455aj0tpr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/results_screen.gd" id="1_70ytu"]
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_8fn4k"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_58q14"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_bvoy4"]
 [ext_resource type="Texture2D" uid="uid://dc4fm2qnfg6gq" path="res://01_assets/01_sprites/01_interfaces/detailsSprite.png" id="3_d0lyj"]
 [ext_resource type="Texture2D" uid="uid://bq735mfy46iwj" path="res://01_assets/01_sprites/01_interfaces/dataSprite.png" id="4_7ltpw"]
-[ext_resource type="Texture2D" uid="uid://dq0ehhh3ng0ts" path="res://01_assets/01_sprites/01_interfaces/illustrationFrame.png" id="4_dwvia"]
-[ext_resource type="Texture2D" uid="uid://biytqdrbrghn4" path="res://01_assets/01_sprites/01_interfaces/background.png" id="4_r3pcd"]
 [ext_resource type="Texture2D" uid="uid://dropr4gmnu3lr" path="res://01_assets/01_sprites/01_interfaces/feedbackText.png" id="5_ba4lo"]
 [ext_resource type="Texture2D" uid="uid://bijkl2rtw6nsb" path="res://01_assets/01_sprites/01_interfaces/retryIcon.png" id="6_u6kcp"]
 [ext_resource type="Texture2D" uid="uid://d0y3jlsgqxfpq" path="res://01_assets/01_sprites/01_interfaces/menuIcon.png" id="7_tqi0d"]
 [ext_resource type="Texture2D" uid="uid://d05jgrm8de4ak" path="res://01_assets/01_sprites/rightArrow.png" id="7_ucpke"]
+[ext_resource type="Texture2D" uid="uid://i502f2l1wcub" path="res://01_assets/01_sprites/01_interfaces/illustrationFrame_v02.png" id="9_ej81r"]
 
 [sub_resource type="Theme" id="Theme_811cl"]
 default_font = ExtResource("2_58q14")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oueon"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsirw"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwaoi"]
 
 [node name="resultsScreen" type="Node2D"]
 script = ExtResource("1_70ytu")
 
-[node name="background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 639.0
-offset_bottom = 1199.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_r3pcd")
+[node name="background" parent="." instance=ExtResource("2_8fn4k")]
 
 [node name="detailsLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -137,16 +129,16 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 97.0
+offset_left = 94.0
 offset_top = -63.0
-offset_right = -86.0
+offset_right = -78.0
 offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VSeparator" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 37
+theme_override_constants/separation = 29
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Points" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
@@ -156,11 +148,11 @@ size_flags_horizontal = 3
 [node name="Diñeiro ganado" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Diñeiro 
-Gañado
+text = "Cartos
+Gañados
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -168,14 +160,14 @@ vertical_alignment = 1
 [node name="Diñeiro ganado2" type="Label" parent="detailsLayer/interfaces/statsboxs/Points"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_font_sizes/font_size = 20
 text = "353445345"
 horizontal_alignment = 1
 
 [node name="VSeparator3" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 39
+theme_override_constants/separation = 26
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
@@ -185,7 +177,7 @@ size_flags_horizontal = 3
 [node name="Alimentos Recollidos" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Alimentos 
@@ -195,34 +187,43 @@ horizontal_alignment = 1
 [node name="Alimentos Recollidos2" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_font_sizes/font_size = 20
 text = "43543453"
 horizontal_alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 14
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oueon")
 
 [node name="Alimentos Recollidos2" type="VBoxContainer" parent="detailsLayer/interfaces/statsboxs"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="HSeparator" type="HSeparator" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lsirw")
+
 [node name="Pratos Entregados" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Pratos 
 Entregados"
 horizontal_alignment = 1
-vertical_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lsirw")
 
 [node name="Diñeiro ganado3" type="Label" parent="detailsLayer/interfaces/statsboxs/Alimentos Recollidos2"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = SubResource("Theme_811cl")
+theme = ExtResource("3_bvoy4")
 theme_override_font_sizes/font_size = 20
 text = "344353453"
 horizontal_alignment = 1
@@ -243,7 +244,8 @@ rotation = -0.0523599
 theme = ExtResource("3_bvoy4")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 40
 text = "Resultados"
@@ -264,24 +266,26 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 68.0
-offset_right = -45.0
-offset_bottom = -196.0
+offset_left = 34.5
+offset_top = 0.5
+offset_right = -0.5
+offset_bottom = -115.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_dwvia")
+texture = ExtResource("9_ej81r")
 
 [node name="illustration_top" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 68.0
-offset_right = -45.0
-offset_bottom = -196.0
+offset_left = 27.0
+offset_top = 1.0
+offset_right = -15.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_dwvia")
+expand_mode = 2
 
 [node name="feedbackBox" type="TextureRect" parent="feedbackLayer/interfaces"]
 layout_mode = 1
@@ -289,18 +293,19 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 45.0
-offset_top = 215.0
+offset_top = 254.0
 offset_right = -65.0
-offset_bottom = -118.0
+offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_ba4lo")
 
 [node name="feedbackText" type="Label" parent="feedbackLayer/interfaces/feedbackBox"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 26.0
 offset_top = 75.0
-offset_right = 570.0
+offset_right = 506.0
 offset_bottom = 102.0
 theme = ExtResource("3_bvoy4")
 

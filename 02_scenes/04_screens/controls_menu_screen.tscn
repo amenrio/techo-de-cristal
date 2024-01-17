@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctt6tedh4jnai"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_ktddy"]
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_reuqx"]
+[ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="3_f00n0"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="4_isk5w"]
+[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_gasdm"]
+[ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_umxja"]
+[ext_resource type="Texture2D" uid="uid://mt2l2i6iet00" path="res://01_assets/01_sprites/01_interfaces/rightIcon.png" id="7_d2mu8"]
+
+[node name="controlsScreen" type="Node2D"]
+script = ExtResource("1_ktddy")
+
+[node name="interfaces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="background" parent="interfaces" instance=ExtResource("2_reuqx")]
+
+[node name="controlesSprite" type="TextureRect" parent="interfaces"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 641.0
+offset_bottom = 480.0
+texture = ExtResource("3_f00n0")
+
+[node name="bControlesAtras" type="Button" parent="interfaces"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 380.0
+offset_right = 114.0
+offset_bottom = 460.0
+grow_vertical = 0
+scale = Vector2(1.00766, 1)
+theme = ExtResource("4_isk5w")
+icon = ExtResource("5_gasdm")
+icon_alignment = 1
+
+[node name="title" type="TextureRect" parent="interfaces"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 51.0
+offset_right = 383.0
+offset_bottom = 121.0
+rotation = -0.0314159
+texture = ExtResource("6_umxja")
+expand_mode = 1
+
+[node name="controles" type="Label" parent="interfaces/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -29.0
+offset_right = 97.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_isk5w")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Controles"
+horizontal_alignment = 1
+
+[node name="controlestexto2" type="Label" parent="interfaces"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 164.0
+offset_right = 379.0
+offset_bottom = 388.0
+theme = ExtResource("4_isk5w")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 18
+text = ":
+:
+:
+:
+Disparar:
+Dash:
+Interactuar:
+Aceptar:"
+horizontal_alignment = 2
+
+[node name="controlestexto" type="Label" parent="interfaces"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 164.0
+offset_right = 550.0
+offset_bottom = 388.0
+theme = ExtResource("4_isk5w")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 18
+text = "\"W\" / ARRIBA 
+\"S\" / ABAIXO
+\"A\" / ESQUERDA
+ \"D\" / DEREITA
+ESPAZO/ Click Esq.
+SHIFT
+\"E\"
+ENTER"
+
+[node name="RightIcon" type="Sprite2D" parent="interfaces"]
+position = Vector2(348.5, 259)
+scale = Vector2(1.03333, 1.125)
+texture = ExtResource("7_d2mu8")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon"]
+position = Vector2(-1.25, -23)
+texture = ExtResource("5_gasdm")
+
+[node name="LeftIcon2" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon"]
+position = Vector2(2.5024, -23.4277)
+rotation = -1.5708
+scale = Vector2(0.679897, 1.04043)
+texture = ExtResource("5_gasdm")
+
+[node name="LeftIcon" type="Sprite2D" parent="interfaces/RightIcon/LeftIcon/LeftIcon2"]
+position = Vector2(41.65, 0.647824)
+rotation = -3.14159
+scale = Vector2(1.08983, 0.864865)
+texture = ExtResource("5_gasdm")
+
+[connection signal="pressed" from="interfaces/bControlesAtras" to="." method="_on_b_controles_atras_pressed"]

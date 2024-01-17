@@ -1,6 +1,6 @@
 extends Node2D
 var result_message: Dictionary = {
-	"BAD" : "Non diches nin un só pau á auga. 
+	"BAD" : "Non diches pancada. 
 	Faralo mellor á próxima?.",
 	"NORMAL": "Querida, apenas fixeches o teu traballo,
 	non te des tanto mérito.",

@@ -11,10 +11,10 @@ script = ExtResource("1_ec6i4")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 47.0
-offset_top = -70.0
-offset_right = 139.0
-offset_bottom = -9.0
+offset_left = 3.0
+offset_top = -60.0
+offset_right = 70.0
+offset_bottom = 3.0
 grow_vertical = 0
 
 [node name="interfaces" type="Control" parent="."]
@@ -27,16 +27,13 @@ grow_vertical = 2
 
 [node name="inventoryMargin" type="MarginContainer" parent="interfaces"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.919
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -598.16
-offset_top = 149.0
-offset_right = -583.0
-offset_bottom = 149.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_top = -212.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/margin_top = 154
 
 [node name="inventory" parent="interfaces/inventoryMargin" instance=ExtResource("1_8c1m7")]

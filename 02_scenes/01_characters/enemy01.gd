@@ -75,7 +75,7 @@ func _on_nav_timer_timeout():
 func _on_view_range_body_entered(body):
 	if body.is_in_group("player"):
 		isOnView = true
-		print(isOnView)
+		#print(isOnView)
 
 
 func _on_view_range_body_exited(body):

@@ -14,7 +14,7 @@ var spawn_count: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer_node.wait_time = spawn_timer
-	print(timer_node.wait_time)	
+	#print(timer_node.wait_time)	
 	
 func _on_spawn_timer_timeout():
 	if spawn_count < limit:
@@ -32,7 +32,7 @@ func _on_spawn_timer_timeout():
 		new_enemy._name = new_enemy_name
 		var spawn_position = Vector2(randf_range(spawn_min.x,spawn_max.x),randf_range(spawn_min.y,spawn_max.y))
 #		var test_result = get_world_2d().direct_space_state.intersect_point(spawn_position)
-#		print(test_result)
+#		#print(test_result)
 		new_enemy.position = spawn_position
 		current_level.add_child(new_enemy)
 		new_enemy.get_node('HealthComponent').connect('death',current_level.pickup_system) # Replace with function body.

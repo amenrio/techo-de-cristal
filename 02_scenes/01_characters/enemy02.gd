@@ -71,7 +71,7 @@ func _on_activation_range_body_entered(body):
 
 func _on_activation_range_body_exited(body):
 	if body.name == "player":
-		print("COME HERE")
+		#print("COME HERE")
 		if exploding == false:
 			following_player = true
 		fuse.stop()

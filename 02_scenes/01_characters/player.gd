@@ -66,7 +66,7 @@ func _physics_process(_delta: float) ->  void:
 	desired_velocity = direction * max_speed
 	# Restamos a la velocidad y direccion deseada la velocidad actual del jugador.
 	turn_velocity = desired_velocity - velocity
-#	print(turn_velocity)
+#	#print(turn_velocity)
 	velocity += turn_velocity * drag
 	
 	# Orientamos el arma hacia el raton

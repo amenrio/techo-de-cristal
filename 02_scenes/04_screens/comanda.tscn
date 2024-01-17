@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw5bufylc4nfb"]
+[gd_scene load_steps=8 format=3 uid="uid://cw5bufylc4nfb"]
 
-[ext_resource type="Script" path="res://02_scenes/02_objects/comanda.gd" id="1_bmvw8"]
+[ext_resource type="Script" path="res://02_scenes/04_screens/comanda.gd" id="1_7h7v4"]
 [ext_resource type="Texture2D" uid="uid://d1eg7jvmdxrpn" path="res://01_assets/01_sprites/01_interfaces/comanda.png" id="2_yyndh"]
+[ext_resource type="AudioStream" uid="uid://dyuvugghaufq" path="res://01_assets/03_sound/01_sfx/03_game/countDown.wav" id="3_3ibwf"]
 
 [sub_resource type="Animation" id="Animation_qnetb"]
 resource_name = "exit"
@@ -139,7 +140,7 @@ anchor_right = 0.133
 anchor_bottom = 0.24
 offset_right = 595.72
 offset_bottom = 806.2
-script = ExtResource("1_bmvw8")
+script = ExtResource("1_7h7v4")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 2
@@ -181,5 +182,8 @@ autoplay = "init"
 libraries = {
 "": SubResource("AnimationLibrary_q38vr")
 }
+
+[node name="TimeOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ibwf")
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

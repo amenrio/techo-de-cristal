@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2tlr5jmovf11"]
+
+[ext_resource type="Texture2D" uid="uid://dp0abjy7627d3" path="res://01_assets/01_sprites/01_interfaces/dialogueBox.png" id="1_ihtcf"]
+[ext_resource type="Texture2D" uid="uid://tv5typx4gwn4" path="res://01_assets/01_sprites/01_interfaces/dialogueTriangle.png" id="2_l7kk5"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_ujhy7"]
+
+[node name="dialogue_box" type="MarginContainer"]
+offset_right = 62.0
+offset_bottom = 42.0
+
+[node name="background" type="NinePatchRect" parent="."]
+texture_filter = 3
+layout_mode = 2
+texture = ExtResource("1_ihtcf")
+draw_center = false
+region_rect = Rect2(2.72857, 0, 245.977, 50)
+patch_margin_left = 32
+patch_margin_top = 21
+patch_margin_right = 30
+patch_margin_bottom = 21
+
+[node name="DialogueTriangle" type="Sprite2D" parent="background"]
+position = Vector2(27, 53)
+texture = ExtResource("2_l7kk5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="dialogue" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_ujhy7")

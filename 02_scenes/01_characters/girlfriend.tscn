@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bvpqsl3brjt5c" path="res://01_assets/01_sprites/shadow.png" id="4_dk44n"]
 [ext_resource type="Texture2D" uid="uid://bbn1c44xuuyv5" path="res://01_assets/01_sprites/cocinera_6frames_spritesheet.png" id="4_raptn"]
 [ext_resource type="Texture2D" uid="uid://b3xx0ic8fxdby" path="res://01_assets/01_sprites/tile_0087.png" id="6_0jfi7"]
-[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="7_l4dvo"]
+[ext_resource type="PackedScene" uid="uid://b2tlr5jmovf11" path="res://02_scenes/04_screens/dialogue_box.tscn" id="8_7duge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3twd"]
 size = Vector2(32, 32)
@@ -134,7 +134,8 @@ autoplay = "default"
 frame_progress = 0.0532015
 
 [node name="interact_sprite" type="Sprite2D" parent="."]
-modulate = Color(0.52549, 0.776471, 0.603922, 1)
+visible = false
+modulate = Color(0.427451, 0.670588, 0.505882, 1)
 position = Vector2(1, -62)
 texture = ExtResource("6_0jfi7")
 
@@ -144,15 +145,13 @@ libraries = {
 "": SubResource("AnimationLibrary_lq0mj")
 }
 
-[node name="dialog_label" type="Label" parent="."]
+[node name="dialogue_box" parent="." instance=ExtResource("8_7duge")]
 visible = false
-offset_left = 20.0
-offset_top = -74.0
-offset_right = 108.0
-offset_bottom = -47.0
-theme = ExtResource("7_l4dvo")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 11
-text = "Lore Ipsum "
+offset_left = 14.0
+offset_top = -70.0
+offset_right = 76.0
+offset_bottom = -28.0
+scale = Vector2(0.5, 0.5)
 
 [editable path="HitboxComponent"]
+[editable path="dialogue_box"]

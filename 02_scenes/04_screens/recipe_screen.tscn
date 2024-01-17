@@ -1,0 +1,521 @@
+[gd_scene load_steps=19 format=3 uid="uid://cvvlmqbdgi7ci"]
+
+[ext_resource type="Script" path="res://02_scenes/04_screens/recipe_screen.gd" id="1_w8e4t"]
+[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_xw80o"]
+[ext_resource type="Texture2D" uid="uid://c7bw6d1sdx4wc" path="res://01_assets/01_sprites/01_interfaces/recetaSprite.png" id="3_jod2d"]
+[ext_resource type="Texture2D" uid="uid://btkggqkrobevm" path="res://01_assets/01_sprites/01_interfaces/recipeBar.png" id="4_0aq4s"]
+[ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="4_rs3ig"]
+[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_utrma"]
+[ext_resource type="Texture2D" uid="uid://bvy563t6s7y3x" path="res://01_assets/01_sprites/recetas/zumo.png" id="6_2uuj0"]
+[ext_resource type="Texture2D" uid="uid://cnqr3qs0b030y" path="res://01_assets/01_sprites/recetas/gofre.png" id="6_i6wq1"]
+[ext_resource type="Texture2D" uid="uid://dywqwfsnwo7ks" path="res://01_assets/01_sprites/01_interfaces/churros 1.png" id="6_qsdy3"]
+[ext_resource type="Texture2D" uid="uid://b8qaby4l5h7g2" path="res://01_assets/01_sprites/01_interfaces/masa.png" id="7_dpevt"]
+[ext_resource type="Texture2D" uid="uid://c72smlr03a4ct" path="res://01_assets/01_sprites/01_interfaces/chocolate.png" id="8_e7jld"]
+[ext_resource type="Texture2D" uid="uid://dhl4k88hv2qkc" path="res://01_assets/01_sprites/naranja.png" id="8_p6vbq"]
+[ext_resource type="Texture2D" uid="uid://bwrw00kg23vrs" path="res://01_assets/01_sprites/recetas/tarta.png" id="9_1fciu"]
+[ext_resource type="Texture2D" uid="uid://x7f7kj55ohri" path="res://01_assets/01_sprites/01_interfaces/recipeRArrow.png" id="10_xsp8y"]
+[ext_resource type="Texture2D" uid="uid://dre22kps8kaeb" path="res://01_assets/01_sprites/01_interfaces/recipeLArrow.png" id="12_5kx5j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fi7bd"]
+texture = ExtResource("10_xsp8y")
+modulate_color = Color(0.592157, 0.592157, 0.592157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_advor"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b0y0"]
+
+[node name="pregameScreen" type="Node2D"]
+script = ExtResource("1_w8e4t")
+
+[node name="background" parent="." instance=ExtResource("2_xw80o")]
+
+[node name="recipe" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = 17.0
+offset_right = 613.0
+offset_bottom = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jod2d")
+
+[node name="recipeBar" type="TextureRect" parent="."]
+offset_left = 190.0
+offset_top = 50.0
+offset_right = 566.0
+offset_bottom = 126.0
+texture = ExtResource("4_0aq4s")
+
+[node name="recipeZume" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Paso0" type="HBoxContainer" parent="recipeZume"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 159.0
+offset_right = 567.0
+offset_bottom = 231.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeZume/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para o zume: 300 g. de grosellas2 pomelos, 1 laranxa, 1 chorriño del xarope de romeu, 1 variña de romeu, xeo, auga e gasosa (opcional).
+Para o xarope de romeu: 10 g. de follas de romeu (sen talo), 30 g. de azucre branco e 210 ml. de auga."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso1" type="HBoxContainer" parent="recipeZume"]
+layout_mode = 2
+offset_left = 166.0
+offset_top = 254.0
+offset_right = 507.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeZume/Paso1"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeZume/Paso1"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Ferver auga con azucre ata que a última se disolva. Deixar en repouso e engadir romeiro. Pelar e cortar un pomelo e machacar lixeiramente xunto con grosellas. Poñer xeo ata arriba.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso2" type="HBoxContainer" parent="recipeZume"]
+layout_mode = 2
+offset_left = 164.0
+offset_top = 342.0
+offset_right = 495.0
+offset_bottom = 434.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeZume/Paso2"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeZume/Paso2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Exprimir o zume da laranxa e o do outro pomelo e mesturar co sirope de romeiro. Encher o vaso co zume ata a metade, e o resto con auga ou gaseosa ao gusto. Decorar cunha rama de romeiro ou con rodas das froitas"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="dishSprite" type="Sprite2D" parent="recipeZume"]
+texture_filter = 1
+position = Vector2(381, 86)
+scale = Vector2(3.5625, 4)
+texture = ExtResource("6_2uuj0")
+
+[node name="ingredient1" type="Sprite2D" parent="recipeZume"]
+texture_filter = 1
+position = Vector2(549.25, 281.5)
+scale = Vector2(2.10937, 1.84375)
+texture = ExtResource("8_p6vbq")
+
+[node name="ingredient2" type="Sprite2D" parent="recipeZume"]
+texture_filter = 1
+position = Vector2(551, 373)
+scale = Vector2(2.04688, 1.90625)
+texture = ExtResource("8_p6vbq")
+
+[node name="recipeGofres" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Paso0" type="HBoxContainer" parent="recipeGofres"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 159.0
+offset_right = 567.0
+offset_bottom = 231.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeGofres/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para os gofres: 25 g de manteiga, 150 g de azucre e de fariña, 1 culler de café de lévedo químico en po e outra de café de esencia de vainilla, unha manchea de arandos frescos, zume de ½ laranxa e raiadura de laranxa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso1" type="HBoxContainer" parent="recipeGofres"]
+layout_mode = 2
+offset_left = 166.0
+offset_top = 248.0
+offset_right = 500.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeGofres/Paso1"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeGofres/Paso1"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Batir 2 ovos e engadir pouco a pouco o azucre, a fariña, a levadura, laranxa e a vainilla. Integrar todo creando unha masa uniforme.Engadir manteiga e mentras, quentar a gofreira.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso2" type="HBoxContainer" parent="recipeGofres"]
+layout_mode = 2
+offset_left = 165.0
+offset_top = 348.0
+offset_right = 499.0
+offset_bottom = 429.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeGofres/Paso2"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeGofres/Paso2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Verter a masa na gofreira engrasada, pechar, e esperar a que se doure. Repetir ata que non quede máis masa. Servir xunto cos arandos e un pouco de sirope de chocolate.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="dishSprite" type="Sprite2D" parent="recipeGofres"]
+texture_filter = 1
+position = Vector2(381.5, 89.5)
+scale = Vector2(4.34375, 3.78125)
+texture = ExtResource("6_i6wq1")
+
+[node name="ingredient1" type="Sprite2D" parent="recipeGofres"]
+texture_filter = 1
+position = Vector2(549, 372)
+scale = Vector2(0.234099, 0.238701)
+texture = ExtResource("7_dpevt")
+
+[node name="ingredient2" type="Sprite2D" parent="recipeGofres"]
+texture_filter = 1
+position = Vector2(549, 281)
+scale = Vector2(2.08356, 1.97579)
+texture = ExtResource("8_p6vbq")
+
+[node name="recipeTarta" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Paso0" type="HBoxContainer" parent="recipeTarta"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 161.0
+offset_right = 563.0
+offset_bottom = 249.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeTarta/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para o biscoito de chocolate: 7 ovos, 140 g. de azucre, 150 g. de manteiga a temperatura ambiente e de chocolate negro, 120 g. de fariña de repostería, 30 g. de cacao en po e unhas areíñas de sal."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso1" type="HBoxContainer" parent="recipeTarta"]
+layout_mode = 2
+offset_left = 165.0
+offset_top = 243.0
+offset_right = 500.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeTarta/Paso1"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeTarta/Paso1"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Separar xemas de claras de 7 ovos. Mesturar as xemas con manteiga, azucre e chocolate derretido. Tamizar a fariña e engadirlle cacao en polvo. Montar as claras a punto de neve con azucre. Verter nun molde e fornear 50 min a 170o.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso2" type="HBoxContainer" parent="recipeTarta"]
+layout_mode = 2
+offset_left = 164.0
+offset_top = 343.0
+offset_right = 495.0
+offset_bottom = 433.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeTarta/Paso2"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeTarta/Paso2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Preparar unha cobertura almíbar con chocolate fundido e cacao. Cortar o biscoito en dúas lonchas, esparexer marmelada de amorodo entre unha e outra. Volver a poñer a segunda loncha enriba e verter a cobertura de chocolate."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="dishSprite" type="Sprite2D" parent="recipeTarta"]
+texture_filter = 1
+position = Vector2(383, 95.5)
+scale = Vector2(4.5625, 4.09375)
+texture = ExtResource("9_1fciu")
+
+[node name="ingredient2" type="Sprite2D" parent="recipeTarta"]
+position = Vector2(554, 381)
+scale = Vector2(0.271739, 0.278169)
+texture = ExtResource("8_e7jld")
+
+[node name="ingredient3" type="Sprite2D" parent="recipeTarta"]
+position = Vector2(549, 283)
+scale = Vector2(0.271739, 0.278169)
+texture = ExtResource("8_e7jld")
+
+[node name="recipeChurros" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Paso0" type="HBoxContainer" parent="recipeChurros"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 159.0
+offset_right = 567.0
+offset_bottom = 231.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="text" type="Label" parent="recipeChurros/Paso0"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Para os churros : 1 vaso de auga e outro de fariña, unhas areíñas de sal e de azucre e aceite para fritir.
+Para o chocolate: 400 g. de chocolate negro, 1 l. de leite enteiro, unhas areiñas de sal e azucre ao gusto."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso1" type="HBoxContainer" parent="recipeChurros"]
+layout_mode = 2
+offset_left = 165.0
+offset_top = 243.0
+offset_right = 509.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeChurros/Paso1"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeChurros/Paso1"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Poñer a ferver nun cazo a auga e o sal. En canto ferva, retirar do lume e botar a fariña de golpe. Remexer con forza ata que a masa se despegue. Formar os churros cunha manga e fritir. Deixar escorrer en papel de cociña. Esparexer con azucre."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Paso2" type="HBoxContainer" parent="recipeChurros"]
+layout_mode = 2
+offset_left = 164.0
+offset_top = 348.0
+offset_right = 509.0
+offset_bottom = 429.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="number" type="Label" parent="recipeChurros/Paso2"]
+layout_mode = 2
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="recipeChurros/Paso2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rs3ig")
+theme_override_colors/font_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.301961, 0.176471, 0.0117647, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+text = "Quentar leite nun cazo, engadir azucre ao gusto. Picar o chocolate e engadir xunto coa sal. Remexer cunha culler de madeira ata que o chocolate se funda. Apartar do lume cando ferva. Servir xunto cos churros.
+"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="dishSprite" type="Sprite2D" parent="recipeChurros"]
+texture_filter = 1
+position = Vector2(382, 89.5)
+scale = Vector2(1.06169, 1.01681)
+texture = ExtResource("6_qsdy3")
+
+[node name="ingredient1" type="Sprite2D" parent="recipeChurros"]
+position = Vector2(553, 279)
+scale = Vector2(0.234099, 0.238701)
+texture = ExtResource("7_dpevt")
+
+[node name="ingredient2" type="Sprite2D" parent="recipeChurros"]
+position = Vector2(553, 382)
+scale = Vector2(0.270531, 0.29108)
+texture = ExtResource("8_e7jld")
+
+[node name="bContinuar" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 389.0
+offset_right = 97.0
+offset_bottom = 469.0
+theme = ExtResource("4_rs3ig")
+icon = ExtResource("5_utrma")
+icon_alignment = 1
+
+[node name="bNext" type="Button" parent="."]
+offset_left = 478.0
+offset_top = 65.0
+offset_right = 551.0
+offset_bottom = 117.0
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_advor")
+icon = ExtResource("10_xsp8y")
+flat = true
+
+[node name="bPrevious" type="Button" parent="."]
+offset_left = 209.0
+offset_top = 66.0
+offset_right = 282.0
+offset_bottom = 118.0
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fi7bd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8b0y0")
+icon = ExtResource("12_5kx5j")
+flat = true
+
+[connection signal="pressed" from="bContinuar" to="." method="_on_b_continuar_pressed"]
+[connection signal="pressed" from="bNext" to="." method="_on_b_next_pressed"]
+[connection signal="pressed" from="bPrevious" to="." method="_on_b_previous_pressed"]

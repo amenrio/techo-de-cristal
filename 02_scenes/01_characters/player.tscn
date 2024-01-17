@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://csgvbo4n46gvx"]
+[gd_scene load_steps=50 format=3 uid="uid://csgvbo4n46gvx"]
 
 [ext_resource type="Script" path="res://02_scenes/01_characters/player.gd" id="1_kxc5o"]
 [ext_resource type="PackedScene" uid="uid://ogvub5b3e6s5" path="res://02_scenes/05_components/HealthComponent.tscn" id="3_jo3xj"]
@@ -19,8 +19,19 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js4q1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3l8r"]
-bg_color = Color(0, 0.721569, 0.262745, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b26ux"]
+bg_color = Color(0, 0.231373, 0, 0.870588)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50553"]
+bg_color = Color(0.6, 1, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rujx5"]
 size = Vector2(32, 32)
@@ -478,11 +489,8 @@ position = Vector2(0, -36)
 MAX_HEALTH = 150.0
 
 [node name="health_bar" parent="HealthComponent" index="0"]
-offset_left = -24.0
-offset_top = 0.0
-offset_right = 24.0
-offset_bottom = 6.0
-theme_override_styles/background = SubResource("StyleBoxFlat_j3l8r")
+theme_override_styles/background = SubResource("StyleBoxFlat_b26ux")
+theme_override_styles/fill = SubResource("StyleBoxFlat_50553")
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_p68kg")]
 collision_layer = 1
