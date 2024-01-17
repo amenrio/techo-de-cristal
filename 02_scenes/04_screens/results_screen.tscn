@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c0r7455aj0tpr"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/results_screen.gd" id="1_70ytu"]
-[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_8fn4k"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_8fn4k"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_58q14"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="3_bvoy4"]
 [ext_resource type="Texture2D" uid="uid://dc4fm2qnfg6gq" path="res://01_assets/01_sprites/01_interfaces/detailsSprite.png" id="3_d0lyj"]

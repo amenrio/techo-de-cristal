@@ -48,6 +48,7 @@ _data = {
 script = ExtResource("1_7hywk")
 
 [node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
 hframes = 6
 
 [node name="collision_zone" type="CollisionShape2D" parent="."]

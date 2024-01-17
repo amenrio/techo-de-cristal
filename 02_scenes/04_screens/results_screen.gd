@@ -13,6 +13,7 @@ var result_img: Dictionary = {
 	"EXCELENT" :"res://01_assets/01_sprites/02_ilustraciones/placeholder_victoria_normalRes.png"
 }
 func _ready():
+	AudioAutoload.playIntro()
 	var result_text = $feedbackLayer/interfaces/feedbackBox/feedbackText
 	var scoreboard = get_node("detailsLayer/interfaces/statsboxs/Points/Diñeiro ganado2")
 	var ingredients = get_node("detailsLayer/interfaces/statsboxs/Alimentos Recollidos/Alimentos Recollidos2")
