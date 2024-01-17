@@ -254,7 +254,7 @@ autostart = true
 [node name="viewRageCollision" type="CollisionShape2D" parent="viewRange"]
 shape = SubResource("CircleShape2D_oj4wm")
 
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="explosionDeath" from="." to="HealthComponent" method="_on_enemy_explode_explosion_death"]
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]
 [connection signal="body_entered" from="activationRange" to="." method="_on_activation_range_body_entered"]
 [connection signal="body_exited" from="activationRange" to="." method="_on_activation_range_body_exited"]

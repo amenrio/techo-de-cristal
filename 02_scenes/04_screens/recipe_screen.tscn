@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cvvlmqbdgi7ci"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/recipe_screen.gd" id="1_w8e4t"]
-[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_xw80o"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_xw80o"]
 [ext_resource type="Texture2D" uid="uid://c7bw6d1sdx4wc" path="res://01_assets/01_sprites/01_interfaces/recetaSprite.png" id="3_jod2d"]
 [ext_resource type="Texture2D" uid="uid://btkggqkrobevm" path="res://01_assets/01_sprites/01_interfaces/recipeBar.png" id="4_0aq4s"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="4_rs3ig"]

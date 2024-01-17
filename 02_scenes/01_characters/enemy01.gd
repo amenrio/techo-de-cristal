@@ -24,8 +24,8 @@ func _ready():
 	health_component.connect('death',death)
 	
 func death(_args):
-	var explInstance = explosion.instantiate()
-	get_parent().add_child(explInstance)
+#	var explInstance = explosion.instantiate()
+#	get_parent().add_child(explInstance)
 	queue_free()
 	
 func stateMachine(currentState: String) -> void:

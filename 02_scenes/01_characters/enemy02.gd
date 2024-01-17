@@ -14,8 +14,9 @@ extends CharacterBody2D
 @onready var animationPlayer = $AnimatedSprite2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
-
 @export var max_speed = 50
+
+signal explosionDeath
 
 var following_player = true
 var damage = 15.0
@@ -27,6 +28,10 @@ var isOnView = false
 func _ready():
 	var actual_texture = sprite_string % _name
 	$sprite.texture = load(actual_texture)
+	health_component.connect('death',death)
+
+func death(_args):
+	queue_free()
 
 func stateMachine(currentState: String) -> void:
 	match currentState:
@@ -87,10 +92,10 @@ func _on_timer_timeout():
 		get_parent().add_child(explosionInstance)
 		var hitbox = player_instance.get_node("HitboxComponent")
 		hitbox.damage(damage * 2)
-		animationPlayer.play("explode")
+#		animationPlayer.play("explode")
 		exploding = true
-	queue_free()
-
+	emit_signal("explosionDeath")
+	print("mando una seña")
 
 func _on_nav_timer_timeout():
 	if following_player and isOnView:
@@ -98,11 +103,6 @@ func _on_nav_timer_timeout():
 		stateMachine("default")
 	else:
 		stateMachine("idle")
-
-
-func _on_animated_sprite_2d_animation_looped():
-	if exploding == true:
-		queue_free()
 
 
 func _on_view_range_body_entered(body):

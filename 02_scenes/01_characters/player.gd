@@ -205,3 +205,6 @@ func talk_to_girlfriend():
 func _on_interaction_zone_area_exited(area):
 	if area.is_in_group('girlfriend'):
 		can_talk_to_girlfriend = false # Replace with function body.
+		
+func _on_health_component_death(_args):
+	pass

@@ -43,3 +43,7 @@ func add_health(value):
 	else:
 		health += value
 	health_bar.value = health
+
+
+func _on_enemy_explode_explosion_death():
+	emit_signal('death',parent)

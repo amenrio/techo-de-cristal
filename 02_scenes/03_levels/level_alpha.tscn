@@ -109,10 +109,10 @@ spawn_timer = 4.0
 limit = 3
 
 [node name="area" parent="spawner2" index="0"]
-offset_left = -106.667
-offset_top = -103.125
-offset_right = 93.3333
-offset_bottom = 96.875
+offset_left = -98.3333
+offset_top = -107.813
+offset_right = 101.667
+offset_bottom = 92.1875
 metadata/_edit_use_anchors_ = true
 
 [node name="spawner3" parent="." index="5" instance=ExtResource("7_wmyyt")]
@@ -127,10 +127,10 @@ spawn_timer = 4.0
 limit = 3
 
 [node name="area" parent="spawner3" index="0"]
-offset_left = -132.0
-offset_top = -115.0
-offset_right = 68.0
-offset_bottom = 85.0
+offset_left = -105.0
+offset_top = -107.0
+offset_right = 95.0
+offset_bottom = 93.0
 metadata/_edit_use_anchors_ = true
 
 [node name="girlfriend" parent="." index="6" instance=ExtResource("4_8kabd")]
@@ -190,6 +190,7 @@ autostart = true
 [editable path="spawner3"]
 [editable path="girlfriend"]
 [editable path="girlfriend/HitboxComponent"]
+[editable path="girlfriend/dialogue_box"]
 [editable path="player"]
 [editable path="player/HealthComponent"]
 [editable path="player/HitboxComponent"]
