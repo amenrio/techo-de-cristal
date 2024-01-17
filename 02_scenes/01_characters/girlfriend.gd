@@ -7,8 +7,11 @@ var recipes_text:String
 var recipes_dict:Dictionary
 var total_recipes:int
 @onready var interact_sprite = $interact_sprite 
-@onready var dialog_label = $dialog_label
+@onready var dialogue_box = $dialogue_box
+@onready var dialog_label = $dialogue_box/MarginContainer/dialogue
 var comandas_nivel: Array
+
+@onready var player_instance = get_tree().get_first_node_in_group('player')
 
 @onready var level_instance = get_tree().current_scene
 
@@ -49,15 +52,19 @@ func get_new_comandas(number_of_comandas:int):
 func show_dialog():
 	var dialog_phrase = get_random_dialog_from_context("new_recipes")
 	dialog_label.text = dialog_phrase
-	dialog_label.show()
+	dialogue_box.show()
 	await get_tree().create_timer(5).timeout
-	dialog_label.hide()
+	dialogue_box.hide()
 # DAR NUEVAS COMANDAS
+
 func _ready():
 	var _recipes_databse = _get_recipes()
 	_get_dialog()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if len(player_instance.objetivos) < 1:
+		interact_sprite.show()
+	else:
+		interact_sprite.hide()
 

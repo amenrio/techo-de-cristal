@@ -37,7 +37,7 @@ func pickup_system(enemy):
 func extra_drop(enemy,new_position):
 	var extra_pickup = enemy.loot.instantiate()
 	extra_pickup._class = 'modifiers'
-	extra_pickup._name = special_drops[randi_range(0,2)]
+	extra_pickup._name = special_drops[0]
 	extra_pickup.position = new_position + Vector2(32,32)
 	call_deferred("add_child",extra_pickup)
 
