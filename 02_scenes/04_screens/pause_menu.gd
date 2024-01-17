@@ -25,5 +25,6 @@ func _on_resume_button_pressed():
 
 
 func _on_exit_button_pressed():
+	pauseMenu()
 	get_tree().quit() # Replace with function body.
 

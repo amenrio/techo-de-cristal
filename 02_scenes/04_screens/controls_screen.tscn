@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuk24j5wdg104"]
 
-[ext_resource type="Script" path="res://02_scenes/04_screens/controlsScreen.gd" id="1_iwvct"]
+[ext_resource type="Script" path="res://02_scenes/04_screens/controls_pause_Screen.gd" id="1_jc8as"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_77ttm"]
-[ext_resource type="PackedScene" path="res://02_scenes/04_screens/background.tscn" id="2_q8mp1"]
+[ext_resource type="PackedScene" uid="uid://hb1b6eov5xsm" path="res://02_scenes/04_screens/background.tscn" id="2_q8mp1"]
 [ext_resource type="Texture2D" uid="uid://dvhx4uarywhtb" path="res://01_assets/01_sprites/01_interfaces/controlesSprite.png" id="2_wwh5h"]
 [ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="5_ymfwe"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="6_jmtwj"]
 [ext_resource type="Texture2D" uid="uid://mt2l2i6iet00" path="res://01_assets/01_sprites/01_interfaces/rightIcon.png" id="7_7kgr5"]
 
 [node name="controlsScreen" type="Node2D"]
-script = ExtResource("1_iwvct")
+script = ExtResource("1_jc8as")
 
 [node name="interfaces" type="Control" parent="."]
 layout_mode = 3
