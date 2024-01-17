@@ -12,11 +12,14 @@ extends CharacterBody2D
 @onready var nav_agent = $NavigationAgent2D
 @onready var explosion = preload("res://02_scenes/05_others/explosion.tscn")
 @onready var animationPlayer = $AnimatedSprite2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 @export var max_speed = 50
 
+signal explosionDeath
+
 var following_player = true
-var damage = 10.0
+var damage = 15.0
 var active = false
 var exploding = false
 var sprite_string = "res://01_assets/01_sprites/enemy_%s.png"
@@ -25,7 +28,20 @@ var isOnView = false
 func _ready():
 	var actual_texture = sprite_string % _name
 	$sprite.texture = load(actual_texture)
-	
+	health_component.connect('death',death)
+
+func death(_args):
+	queue_free()
+
+func stateMachine(currentState: String) -> void:
+	match currentState:
+		"idle":
+			if animated_sprite_2d.animation == "default":
+				animated_sprite_2d.play("idle")
+		"default":
+			if animated_sprite_2d.animation == "idle":
+				animated_sprite_2d.play("default")
+
 func _physics_process(_delta):
 	#if following_player == true:
 	#	velocity = position.direction_to(player_instance.position) * max_speed
@@ -38,7 +54,6 @@ func _physics_process(_delta):
 			animationPlayer.flip_h = true
 		elif dir.x >= 0:
 			animationPlayer.flip_h = false
-		print(dir.x)
 		move_and_slide()
 
 func makepath():
@@ -61,7 +76,7 @@ func _on_activation_range_body_entered(body):
 
 func _on_activation_range_body_exited(body):
 	if body.name == "player":
-		print("COME HERE")
+		#print("COME HERE")
 		if exploding == false:
 			following_player = true
 		fuse.stop()
@@ -77,18 +92,17 @@ func _on_timer_timeout():
 		get_parent().add_child(explosionInstance)
 		var hitbox = player_instance.get_node("HitboxComponent")
 		hitbox.damage(damage * 2)
-		animationPlayer.play("explode")
+#		animationPlayer.play("explode")
 		exploding = true
-
+	emit_signal("explosionDeath")
+	print("mando una seña")
 
 func _on_nav_timer_timeout():
 	if following_player and isOnView:
 		makepath()
-
-
-func _on_animated_sprite_2d_animation_looped():
-	if exploding == true:
-		queue_free()
+		stateMachine("default")
+	else:
+		stateMachine("idle")
 
 
 func _on_view_range_body_entered(body):

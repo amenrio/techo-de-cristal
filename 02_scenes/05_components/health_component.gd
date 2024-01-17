@@ -4,6 +4,7 @@ class_name HealthComponent
 @export var MAX_HEALTH := 10.0
 @onready var health_bar = $health_bar
 @onready var parent = get_parent()
+@onready var sprite = get_parent().get_node("sprite")
 
 signal death
 
@@ -22,10 +23,27 @@ func _physics_process(_delta):
 func take_damage(damage):
 	health -= damage
 	health_bar.value = health
-	
+	if sprite:
+		sprite.modulate = Color(1, 0, 0)
+		$AudioHit.play()
+		var timer = Timer.new()
+		add_child(timer)
+		timer.wait_time = 0.2
+		timer.one_shot = true
+		timer.connect("timeout", _on_timer_timeout)
+		timer.start()
+
+func _on_timer_timeout() -> void:
+	sprite.modulate = Color(1, 1, 1)
+
 func add_health(value):
+	$AudioHeal.play()
 	if health + value > MAX_HEALTH:
 		health = MAX_HEALTH
 	else:
 		health += value
 	health_bar.value = health
+
+
+func _on_enemy_explode_explosion_death():
+	emit_signal('death',parent)

@@ -1,6 +1,6 @@
 extends Node2D
 var result_message: Dictionary = {
-	"BAD" : "Non diches nin un só pau á auga. 
+	"BAD" : "Non diches pancada. 
 	Faralo mellor á próxima?.",
 	"NORMAL": "Querida, apenas fixeches o teu traballo,
 	non te des tanto mérito.",
@@ -13,6 +13,7 @@ var result_img: Dictionary = {
 	"EXCELENT" :"res://01_assets/01_sprites/02_ilustraciones/placeholder_victoria_normalRes.png"
 }
 func _ready():
+	AudioAutoload.playIntro()
 	var result_text = $feedbackLayer/interfaces/feedbackBox/feedbackText
 	var scoreboard = get_node("detailsLayer/interfaces/statsboxs/Points/Diñeiro ganado2")
 	var ingredients = get_node("detailsLayer/interfaces/statsboxs/Alimentos Recollidos/Alimentos Recollidos2")
@@ -26,10 +27,11 @@ func _ready():
 
 func _on_b_menu_pressed():
 	get_tree().change_scene_to_file("res://02_scenes/04_screens/menu_screen.tscn")
-
+	
 
 func _on_b_reintentar_pressed():
 	get_tree().change_scene_to_file("res://02_scenes/03_levels/level_alpha.tscn")
+
 
 
 func _on_b_continuar_pressed():

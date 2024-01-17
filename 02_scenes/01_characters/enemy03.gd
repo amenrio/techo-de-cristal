@@ -17,7 +17,7 @@ func _on_shoot_rage_area_entered(area):
 		following_player = false
 		playerIsTarget = true
 		shootDelay.start()
-		#print("Player On Area")
+		##print("Player On Area")
 
 func _aim():
 	raycast.target_position = to_local(player_instance.position)
@@ -32,7 +32,7 @@ func _on_shoot_rage_area_exited(area):
 		playerIsTarget = false
 		shootDelay.stop()
 		shootDelay.set_wait_time(initialTime)
-		#print("Player Out Of Area")
+		##print("Player Out Of Area")
 
 func _on_shoot_delay_timeout():
 	loaded = true
@@ -44,6 +44,7 @@ func _shoot():
 	bullet.bullet_speed = 400
 	bullet.position = position
 	bullet.velocity = raycast.target_position.normalized()
+	bullet.rotation = randi_range(0, 360)
 	get_tree().current_scene.add_child(bullet)
 	$attack.play()
 	loaded = false

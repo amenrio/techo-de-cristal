@@ -32,6 +32,7 @@ func _create_bullet(bullet_idx):
 	new_bullet.piercing = bullet_piercing
 	new_bullet.position = bulletSpawn.global_position + positions[bullet_number][bullet_idx]
 	new_bullet.velocity = (bulletSpawn.global_position - global_position) + new_angle
+	new_bullet.rotation = bulletSpawn.global_rotation
 	can_shoot=false
 	return new_bullet
 	

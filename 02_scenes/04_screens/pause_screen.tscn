@@ -1,17 +1,255 @@
-[gd_scene load_steps=10 format=3 uid="uid://i2udqkqkksy4"]
+[gd_scene load_steps=15 format=3 uid="uid://i2udqkqkksy4"]
 
 [ext_resource type="Script" path="res://02_scenes/04_screens/pause_screen.gd" id="1_nh62t"]
 [ext_resource type="Theme" uid="uid://pd8stp4u7wqj" path="res://03_themes/gameTheme.tres" id="2_dm7q6"]
 [ext_resource type="FontFile" uid="uid://db6d2d1an2lbk" path="res://01_assets/02_fonts/DotGothic16-Regular.ttf" id="2_l8hfc"]
 [ext_resource type="Texture2D" uid="uid://cu0ysk1hot2cl" path="res://01_assets/01_sprites/01_interfaces/pauseSprite.png" id="3_kjorr"]
-[ext_resource type="Texture2D" uid="uid://d0y3jlsgqxfpq" path="res://01_assets/01_sprites/01_interfaces/menuIcon.png" id="4_bktbj"]
-[ext_resource type="Texture2D" uid="uid://clep2e2npjqqk" path="res://01_assets/01_sprites/01_interfaces/controlsIcon.png" id="5_vmsag"]
-[ext_resource type="Texture2D" uid="uid://dgv15cpoy7k6a" path="res://01_assets/01_sprites/01_interfaces/leftIcon.png" id="6_0104u"]
+[ext_resource type="Texture2D" uid="uid://do6jlq5qsns4" path="res://01_assets/01_sprites/01_interfaces/iconos v02/backIcon.png" id="5_livr6"]
+[ext_resource type="Texture2D" uid="uid://cj3sc1d43to8g" path="res://01_assets/01_sprites/01_interfaces/iconos v02/controlsIcon.png" id="6_krw7g"]
+[ext_resource type="Texture2D" uid="uid://bxklu1nvu488g" path="res://01_assets/01_sprites/01_interfaces/iconos v02/menuIcon.png" id="7_m542g"]
 [ext_resource type="Texture2D" uid="uid://d0enab65usedi" path="res://01_assets/01_sprites/01_interfaces/Titulo 2.png" id="8_ju8tu"]
+[ext_resource type="PackedScene" uid="uid://cuk24j5wdg104" path="res://02_scenes/04_screens/controls_screen.tscn" id="9_6ulni"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1jjys"]
 
+[sub_resource type="Animation" id="Animation_o74jb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pauseSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(180, -450)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(264, 131)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("title:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 51)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("title:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pauseSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_orc1p"]
+resource_name = "hide_pause"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pauseSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(2.21914, 2.21914),
+"update": 0,
+"values": [Vector2(180, 0), Vector2(180, -450)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(0.392292, 1.27456),
+"update": 0,
+"values": [Vector2(264, 131), Vector2(264, -319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("title:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(137, 51), Vector2(137, -200)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("title:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pauseSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8cfac"]
+resource_name = "show_pause"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pauseSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2.21914, 2.21914),
+"update": 0,
+"values": [Vector2(180, -450), Vector2(180, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15, 0.3),
+"transitions": PackedFloat32Array(1.27456, 0.392292),
+"update": 0,
+"values": [Vector2(264, -319), Vector2(264, 131)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("title:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(137, -200), Vector2(137, 51)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("title:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pauseSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbfm5"]
+_data = {
+"RESET": SubResource("Animation_o74jb"),
+"hide_pause": SubResource("Animation_orc1p"),
+"show_pause": SubResource("Animation_8cfac")
+}
+
 [node name="pauseScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,41 +259,36 @@ grow_vertical = 2
 script = ExtResource("1_nh62t")
 
 [node name="background" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 0.231373)
 
-[node name="textoPausa" type="Label" parent="."]
-offset_left = 235.0
-offset_top = 103.0
-offset_right = 402.0
-offset_bottom = 227.0
-theme = ExtResource("2_dm7q6")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 43
-text = "Pausa"
-horizontal_alignment = 1
-
 [node name="pauseSprite" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 180.0
+offset_top = -450.0
 offset_right = 425.0
-offset_bottom = 459.0
+offset_bottom = 9.0
 texture = ExtResource("3_kjorr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 264.0
 offset_top = 131.0
 offset_right = 338.0
 offset_bottom = 381.0
 
-[node name="bMenu" type="Button" parent="VBoxContainer"]
+[node name="bVolver" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_dm7q6")
 theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "
 "
-icon = ExtResource("4_bktbj")
+icon = ExtResource("5_livr6")
 icon_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
@@ -70,7 +303,7 @@ theme = ExtResource("2_dm7q6")
 theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "
 "
-icon = ExtResource("5_vmsag")
+icon = ExtResource("6_krw7g")
 icon_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
@@ -78,17 +311,19 @@ layout_mode = 2
 theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_1jjys")
 
-[node name="bVolver" type="Button" parent="VBoxContainer"]
+[node name="bMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_dm7q6")
 theme_override_fonts/font = ExtResource("2_l8hfc")
 text = "
 "
-icon = ExtResource("6_0104u")
+icon = ExtResource("7_m542g")
 icon_alignment = 1
 
 [node name="title" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 137.0
 offset_top = 51.0
 offset_right = 296.0
@@ -104,10 +339,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -49.8744
-offset_top = -34.998
-offset_right = 50.1256
-offset_bottom = 27.002
+offset_left = -59.5
+offset_top = -30.0
+offset_right = 60.5
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_dm7q6")
@@ -116,6 +351,15 @@ theme_override_font_sizes/font_size = 40
 text = "Pausa"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
+[node name="controlsScreen" parent="." instance=ExtResource("9_6ulni")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_qbfm5")
+}
+
 [connection signal="pressed" from="VBoxContainer/bVolver" to="." method="_on_b_volver_pressed"]
+[connection signal="pressed" from="VBoxContainer/bControles" to="." method="_on_b_controles_pressed"]
+[connection signal="pressed" from="VBoxContainer/bMenu" to="." method="_on_b_menu_pressed"]
